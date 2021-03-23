@@ -1,0 +1,93 @@
+2021-03-22 14:55:51.880 [http-nio-8080-exec-4] INFO  com.example.webfinal.servlet.HelloServlet [doPost] -- [Person{name=1age=1}]
+2021-03-22 15:53:10.816 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [doPost] -- [Person{name=1age=2}]
+2021-03-22 17:06:34.362 [http-nio-8080-exec-5] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:06:34.401 [http-nio-8080-exec-5] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:07:59.917 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:07:59.973 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- com.example.webfinal.command.impl.LoginCommand@197ee3f5
+2021-03-22 17:07:59.975 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:10:35.925 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:10:35.956 [http-nio-8080-exec-4] INFO  com.example.webfinal.command.CommandProvider [defineCommand] -- LOGIN
+2021-03-22 17:10:35.957 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:11:26.396 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:11:26.419 [http-nio-8080-exec-4] INFO  com.example.webfinal.command.CommandProvider [defineCommand] -- LOGIN
+2021-03-22 17:11:26.419 [http-nio-8080-exec-4] INFO  com.example.webfinal.command.CommandProvider [defineCommand] -- Optional[com.example.webfinal.command.impl.LoginCommand@769aac21]
+2021-03-22 17:11:26.421 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:14:39.215 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:14:39.240 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- login - 1
+pass - 1
+2021-03-22 17:14:39.244 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- /pages/login.jsp
+2021-03-22 17:14:39.244 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:16:18.857 [http-nio-8080-exec-5] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:16:18.892 [http-nio-8080-exec-5] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:17:15.607 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:17:15.631 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- false
+2021-03-22 17:17:15.631 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:18:20.900 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:18:20.955 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:18:20.955 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:18:20.959 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- false
+2021-03-22 17:18:20.961 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:19:22.240 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:19:22.258 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:19:22.258 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:19:22.262 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- true
+2021-03-22 17:19:22.263 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-22 17:20:20.951 [http-nio-8080-exec-3] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:20:21.006 [http-nio-8080-exec-3] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:20:21.006 [http-nio-8080-exec-3] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:20:21.011 [http-nio-8080-exec-3] INFO  example.webfinal.command.impl.LoginCommand [execute] -- true
+2021-03-22 17:20:21.012 [http-nio-8080-exec-3] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-22 17:20:28.318 [http-nio-8080-exec-6] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:20:28.318 [http-nio-8080-exec-6] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:20:28.320 [http-nio-8080-exec-6] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 2
+2021-03-22 17:20:28.320 [http-nio-8080-exec-6] INFO  example.webfinal.command.impl.LoginCommand [execute] -- false
+2021-03-22 17:20:28.321 [http-nio-8080-exec-6] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-22 17:20:30.822 [http-nio-8080-exec-7] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 17:20:30.824 [http-nio-8080-exec-7] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:20:30.824 [http-nio-8080-exec-7] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 17:20:30.825 [http-nio-8080-exec-7] INFO  example.webfinal.command.impl.LoginCommand [execute] -- true
+2021-03-22 17:20:30.826 [http-nio-8080-exec-7] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-22 19:47:27.320 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 19:47:27.345 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 19:47:27.346 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 19:47:27.347 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- true
+2021-03-22 19:47:27.348 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-22 19:47:33.955 [http-nio-8080-exec-5] INFO  com.example.webfinal.controller.Controller [processRequest] -- ShowPersons
+2021-03-22 19:47:33.956 [http-nio-8080-exec-5] ERROR com.example.webfinal.command.CommandProvider [defineCommand] -- Illegal argument exception
+java.lang.IllegalArgumentException: No enum constant com.example.webfinal.command.CommandType.SHOWPERSONS
+	at java.lang.Enum.valueOf(Enum.java:273) ~[?:?]
+	at com.example.webfinal.command.CommandType.valueOf(CommandType.java:8) ~[classes/:?]
+	at com.example.webfinal.command.CommandProvider.defineCommand(CommandProvider.java:17) [classes/:?]
+	at com.example.webfinal.controller.Controller.processRequest(Controller.java:42) [classes/:?]
+	at com.example.webfinal.controller.Controller.doPost(Controller.java:33) [classes/:?]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:652) [servlet-api.jar:4.0.FR]
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733) [servlet-api.jar:4.0.FR]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227) [catalina.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.44]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53) [tomcat-websocket.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) [catalina.jar:9.0.44]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) [catalina.jar:9.0.44]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202) [catalina.jar:9.0.44]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) [catalina.jar:9.0.44]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) [catalina.jar:9.0.44]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143) [catalina.jar:9.0.44]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) [catalina.jar:9.0.44]
+	at org.apache.catalina.valves.AbstractAccessLogValve.invoke(AbstractAccessLogValve.java:687) [catalina.jar:9.0.44]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) [catalina.jar:9.0.44]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) [catalina.jar:9.0.44]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374) [tomcat-coyote.jar:9.0.44]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) [tomcat-coyote.jar:9.0.44]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) [tomcat-coyote.jar:9.0.44]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707) [tomcat-coyote.jar:9.0.44]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) [tomcat-coyote.jar:9.0.44]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130) [?:?]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630) [?:?]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) [tomcat-util.jar:9.0.44]
+	at java.lang.Thread.run(Thread.java:832) [?:?]
+2021-03-22 19:49:35.986 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- login
+2021-03-22 19:49:36.014 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 19:49:36.014 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- 1
+2021-03-22 19:49:36.015 [http-nio-8080-exec-4] INFO  example.webfinal.command.impl.LoginCommand [execute] -- true
+2021-03-22 19:49:36.016 [http-nio-8080-exec-4] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-22 19:49:38.995 [http-nio-8080-exec-5] INFO  com.example.webfinal.controller.Controller [processRequest] -- show_persons
+2021-03-22 19:49:38.998 [http-nio-8080-exec-5] INFO  com.example.webfinal.controller.Controller [processRequest] -- /pages/persons.jsp
