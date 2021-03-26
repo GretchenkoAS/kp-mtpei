@@ -1,18 +1,19 @@
 <%--
   Created by IntelliJ IDEA.
   User: admin
-  Date: 18.03.2021
-  Time: 22:23
+  Date: 22.03.2021
+  Time: 19:43
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib  uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
 <html>
 <head>
-    <title>MainNuha</title>
+    <title>Persons</title>
 </head>
 <body>
-<table align="center">
+<table border="1px" style="border-collapse: collapse">
     <th>email</th>
     <th>username</th>
     <th>role</th>
@@ -24,12 +25,5 @@
         </tr>
     </c:forEach>
 </table>
-<br/>
-<br/>
-<br/>
-<form align="center" name="ShowUsers" method="POST" action="controller">
-    <input type="hidden" name="command" value="show_users" />
-    <input type="submit" value="Show users"/>
-</form><hr/>
 </body>
 </html>
