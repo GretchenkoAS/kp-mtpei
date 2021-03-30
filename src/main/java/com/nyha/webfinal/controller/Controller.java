@@ -40,17 +40,8 @@ public class Controller extends HttpServlet {
         Command command = commandOptional.orElseThrow(IllegalArgumentException::new);
         String page = command.execute(request);
         logger.info(page);
-        //убрать этот иф
-        if(page != null) {//fixme
-            RequestDispatcher dispatcher = request.getRequestDispatcher(page);
-            dispatcher.forward(request, response);
-        } else {
-//            request.getSession().setAttribute("nullPage",
-//                    MessageManager.getProperty("message.nullpage"));//fixme
-//            response.sendRedirect(request.getContextPath() + page);
-            RequestDispatcher dispatcher = request.getRequestDispatcher(PagePath.LOGIN);
-            dispatcher.forward(request, response);
-        }
+        RequestDispatcher dispatcher = request.getRequestDispatcher(page);
+        dispatcher.forward(request, response);
     }
 }
 

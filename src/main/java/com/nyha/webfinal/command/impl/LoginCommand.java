@@ -2,9 +2,9 @@ package com.nyha.webfinal.command.impl;
 
 import com.nyha.webfinal.command.Command;
 import com.nyha.webfinal.command.PagePath;
-import com.nyha.webfinal.entity.User;
+import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.ServiceException;
-import com.nyha.webfinal.service.UserService;
+import com.nyha.webfinal.model.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -37,9 +37,11 @@ public class LoginCommand implements Command {
                 request.setAttribute("users", users);
                 page = PagePath.MAIN;
             } else {
+                request.setAttribute(RequestA);
 //            request.setAttribute("errorLoginPassMessage",
 //                    MessageManager.getProperty("message.loginerror")); //fixme
 //            page = ConfigurationManager.getProperty("path.page.login");
+                //добавить сообщение, что юзера не существует
                 page = PagePath.LOGIN;
             }
         } catch (ServiceException e) {

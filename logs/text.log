@@ -180,3 +180,65 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2021-03-25 21:53:50.743 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
 2021-03-25 21:53:52.052 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
 2021-03-25 21:53:52.105 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-03-29 17:35:29.220 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 17:35:30.349 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-29 17:35:33.664 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 17:35:33.701 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-29 17:35:40.072 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-03-29 17:35:40.105 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-03-29 17:53:15.791 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 17:53:16.475 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-29 17:53:18.295 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-03-29 17:53:18.344 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-03-29 17:54:35.974 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 17:54:36.757 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-29 17:54:38.656 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-03-29 17:54:38.702 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-03-29 18:32:25.860 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:32:26.690 [http-nio-8080-exec-8] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLException: Data truncated for column 'role' at row 1
+2021-03-29 18:32:26.690 [http-nio-8080-exec-8] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Data truncated for column 'role' at row 1
+2021-03-29 18:32:26.691 [http-nio-8080-exec-8] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Data truncated for column 'role' at row 1
+2021-03-29 18:32:26.693 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 18:34:34.959 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:34:35.601 [http-nio-8080-exec-5] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLException: Data truncated for column 'role' at row 1
+2021-03-29 18:34:35.602 [http-nio-8080-exec-5] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Data truncated for column 'role' at row 1
+2021-03-29 18:34:35.602 [http-nio-8080-exec-5] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Data truncated for column 'role' at row 1
+2021-03-29 18:34:35.604 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 18:39:01.980 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:39:02.803 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-03-29 18:39:04.399 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-03-29 18:39:04.448 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-03-29 18:42:20.283 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:42:20.931 [http-nio-8080-exec-4] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLException: Field 'user_id' doesn't have a default value
+2021-03-29 18:42:20.931 [http-nio-8080-exec-4] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Field 'user_id' doesn't have a default value
+2021-03-29 18:42:20.932 [http-nio-8080-exec-4] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Field 'user_id' doesn't have a default value
+2021-03-29 18:42:20.934 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 18:43:02.332 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:43:02.964 [http-nio-8080-exec-4] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLException: Field 'user_id' doesn't have a default value
+2021-03-29 18:43:02.965 [http-nio-8080-exec-4] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Field 'user_id' doesn't have a default value
+2021-03-29 18:43:02.965 [http-nio-8080-exec-4] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Field 'user_id' doesn't have a default value
+2021-03-29 18:43:02.968 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 18:54:34.242 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:54:34.988 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-03-29 18:57:21.502 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:57:22.195 [http-nio-8080-exec-4] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '3' for key 'users.PRIMARY'
+2021-03-29 18:57:22.195 [http-nio-8080-exec-4] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '3' for key 'users.PRIMARY'
+2021-03-29 18:57:22.196 [http-nio-8080-exec-4] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry '3' for key 'users.PRIMARY'
+2021-03-29 18:57:22.198 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 18:59:50.676 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 18:59:51.344 [http-nio-8080-exec-2] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ola@gmail.com' for key 'users.email'
+2021-03-29 18:59:51.345 [http-nio-8080-exec-2] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ola@gmail.com' for key 'users.email'
+2021-03-29 18:59:51.346 [http-nio-8080-exec-2] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ola@gmail.com' for key 'users.email'
+2021-03-29 18:59:51.348 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 19:01:15.405 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 19:01:16.038 [http-nio-8080-exec-4] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ola@gmail.com' for key 'users.email'
+2021-03-29 19:01:16.039 [http-nio-8080-exec-4] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ola@gmail.com' for key 'users.email'
+2021-03-29 19:01:16.039 [http-nio-8080-exec-4] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'ola@gmail.com' for key 'users.email'
+2021-03-29 19:01:16.042 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 19:02:41.372 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 19:02:41.989 [http-nio-8080-exec-4] ERROR webfinal.model.dao.impl.UserDaoImpl [addUser] -- java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Ola' for key 'users.username'
+2021-03-29 19:02:41.989 [http-nio-8080-exec-4] ERROR webfinal.model.service.impl.UserServiceImpl [addUser] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Ola' for key 'users.username'
+2021-03-29 19:02:41.990 [http-nio-8080-exec-4] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'Ola' for key 'users.username'
+2021-03-29 19:02:41.993 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-03-29 19:03:48.056 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-03-29 19:03:48.733 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp

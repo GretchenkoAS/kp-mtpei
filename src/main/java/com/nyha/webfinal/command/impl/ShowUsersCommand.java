@@ -2,9 +2,9 @@ package com.nyha.webfinal.command.impl;
 
 import com.nyha.webfinal.command.Command;
 import com.nyha.webfinal.command.PagePath;
-import com.nyha.webfinal.entity.User;
+import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.ServiceException;
-import com.nyha.webfinal.service.UserService;
+import com.nyha.webfinal.model.service.UserService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -25,6 +25,7 @@ public class ShowUsersCommand implements Command {
         try {
             users = service.findAllUsers();
         } catch (ServiceException e) {
+            page = PagePath.LOGIN;//fixme
             logger.error(e);
             e.printStackTrace();
         }
