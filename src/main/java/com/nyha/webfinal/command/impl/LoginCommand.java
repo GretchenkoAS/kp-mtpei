@@ -2,21 +2,25 @@ package com.nyha.webfinal.command.impl;
 
 import com.nyha.webfinal.command.Command;
 import com.nyha.webfinal.command.PagePath;
+import com.nyha.webfinal.command.Router;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.service.UserService;
+import com.nyha.webfinal.resource.MessageManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Optional;
 
 public class LoginCommand implements Command {
     static Logger logger = LogManager.getLogger();
     private static final String PARAM_EMAIL = "email";
     private static final String PARAM_PASSWORD = "password";
+    private static final String ATTRIBUTE_NAME_USER = "user";
+    private static final String ATTRIBUTE_NAME_ERROR_LOGIN = "error_login";
+    private static final String EXCEPTION = "exception";
+
 
     private UserService service;
 
@@ -25,30 +29,24 @@ public class LoginCommand implements Command {
     }
 
     @Override
-    public String execute(HttpServletRequest request) {
-        String page = null;
+    public Router execute(HttpServletRequest request) {
+        Router router = new Router();
         String email = request.getParameter(PARAM_EMAIL);
         String password = request.getParameter(PARAM_PASSWORD);
         try {
             Optional<User> user = service.findUserByEmailAndPassword(email, password);
             if (user.isPresent()) {
-                List<User> users = new ArrayList<>();
-                users.add(user.get());
-                request.setAttribute("users", users);
-                page = PagePath.MAIN;
+                request.setAttribute(ATTRIBUTE_NAME_USER, user.get().getUsername());
+                router.setPage(PagePath.MAIN);
             } else {
-                request.setAttribute(RequestA);
-//            request.setAttribute("errorLoginPassMessage",
-//                    MessageManager.getProperty("message.loginerror")); //fixme
-//            page = ConfigurationManager.getProperty("path.page.login");
-                //добавить сообщение, что юзера не существует
-                page = PagePath.LOGIN;
+                request.setAttribute(ATTRIBUTE_NAME_ERROR_LOGIN, MessageManager.getProperty("message.error_login"));
+                router.setPage(PagePath.LOGIN);
             }
         } catch (ServiceException e) {
-            logger.error(e);
-            e.printStackTrace();
+            logger.error("login error", e);
+            router.setPage(PagePath.ERROR_500);
+            request.setAttribute(EXCEPTION, e);
         }
-
-        return page;
+        return router;
     }
 }

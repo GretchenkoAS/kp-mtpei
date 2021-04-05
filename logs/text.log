@@ -242,3 +242,102 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2021-03-29 19:02:41.993 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
 2021-03-29 19:03:48.056 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
 2021-03-29 19:03:48.733 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-04-02 20:09:51.672 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:10:31.849 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:11:23.642 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:12:06.142 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:12:37.188 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:12:41.178 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:15:25.243 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:16:40.783 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:17:43.650 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:18:45.390 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:19:34.096 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:21:07.202 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:22:54.763 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:22:54.811 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:24:14.654 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:24:14.687 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:26:18.845 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:26:18.883 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:26:19.542 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got connection
+2021-04-02 20:28:18.827 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:28:18.858 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:28:19.418 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got connection
+2021-04-02 20:28:19.443 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- User{id=1, email='gret@gmail.com', username='Andry', role=ADMIN}
+2021-04-02 20:28:27.167 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:28:27.168 [http-nio-8080-exec-5] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:28:27.206 [http-nio-8080-exec-5] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got connection
+2021-04-02 20:29:22.522 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:29:22.560 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:29:23.269 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got connection
+2021-04-02 20:29:23.287 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got result set
+2021-04-02 20:30:19.380 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:30:19.381 [http-nio-8080-exec-6] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:30:19.437 [http-nio-8080-exec-6] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got connection
+2021-04-02 20:30:19.441 [http-nio-8080-exec-6] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got result set
+2021-04-02 20:30:19.446 [http-nio-8080-exec-6] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- User{id=1, email='gret@gmail.com', username='Andry', role=ADMIN}
+2021-04-02 20:32:15.675 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:32:15.717 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- start find
+2021-04-02 20:32:16.333 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got connection
+2021-04-02 20:32:16.354 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- got result set
+2021-04-02 20:32:16.357 [http-nio-8080-exec-4] DEBUG webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- User{id=4, email='gret.andrey@gmail.com', username='Nyha', role=ADMIN}
+2021-04-02 20:33:45.624 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:33:46.290 [http-nio-8080-exec-4] DEBUG webfinal.model.service.impl.UserServiceImpl [findUserByEmailAndPassword] -- User{id=4, email='gret.andrey@gmail.com', username='Nyha', role=ADMIN}
+2021-04-02 20:34:40.442 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:34:41.138 [http-nio-8080-exec-4] DEBUG nyha.webfinal.command.impl.LoginCommand [execute] -- User{id=4, email='gret.andrey@gmail.com', username='Nyha', role=ADMIN}
+2021-04-02 20:36:26.927 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:36:27.591 [http-nio-8080-exec-4] DEBUG com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-04-02 20:39:17.179 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:40:35.534 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:41:18.604 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:44:25.329 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:47:25.470 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:47:26.334 [http-nio-8080-exec-4] DEBUG com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-04-02 20:49:18.403 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:49:22.206 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-02 20:59:20.308 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 20:59:29.045 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 21:00:52.287 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 21:02:37.459 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 21:02:37.491 [http-nio-8080-exec-4] DEBUG nyha.webfinal.model.connection.ConnectionCreator [<clinit>] -- Start block
+2021-04-02 21:04:57.957 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 21:04:57.989 [http-nio-8080-exec-7] DEBUG nyha.webfinal.model.connection.ConnectionCreator [<clinit>] -- null
+2021-04-02 21:23:59.891 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 21:24:00.492 [http-nio-8080-exec-4] ERROR webfinal.model.dao.impl.UserDaoImpl [findUserByEmailAndPassword] -- java.sql.SQLException: Access denied for user ''@'localhost' (using password: YES)
+2021-04-02 21:24:00.493 [http-nio-8080-exec-4] ERROR webfinal.model.service.impl.UserServiceImpl [findUserByEmailAndPassword] -- com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Access denied for user ''@'localhost' (using password: YES)
+2021-04-02 21:24:00.493 [http-nio-8080-exec-4] ERROR nyha.webfinal.command.impl.LoginCommand [execute] -- com.nyha.webfinal.exception.ServiceException: com.nyha.webfinal.exception.DaoException: java.sql.SQLException: Access denied for user ''@'localhost' (using password: YES)
+2021-04-02 21:27:13.762 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 21:30:54.368 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 22:10:40.802 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-02 22:10:41.638 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-02 22:10:41.695 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:06:07.340 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-05 20:06:07.360 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-05 20:06:07.457 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:06:10.872 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-05 20:06:10.879 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:08:34.958 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-05 20:08:34.959 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers have been deregistered
+2021-04-05 20:22:09.197 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-05 20:22:09.215 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-05 20:22:09.273 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:22:09.279 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:22:09.300 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:22:19.717 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-05 20:22:19.718 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers have been deregistered
+2021-04-05 20:24:12.349 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-05 20:24:12.365 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-05 20:24:12.438 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:24:12.672 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-05 20:24:12.677 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:24:26.207 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-05 20:24:26.211 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 20:24:50.076 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-05 20:24:50.076 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers have been deregistered
+2021-04-05 23:28:41.388 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-05 23:28:41.408 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-05 23:28:41.500 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-05 23:29:22.734 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-05 23:29:34.462 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-05 23:29:34.463 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration

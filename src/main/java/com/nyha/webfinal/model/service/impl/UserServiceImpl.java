@@ -13,8 +13,7 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Optional;
-//переопределить методы
-//fixme
+//fixme переопределить методы
 public class UserServiceImpl implements UserService {
     static Logger logger = LogManager.getLogger();
     private UserDao userDao = new UserDaoImpl();
@@ -29,15 +28,13 @@ public class UserServiceImpl implements UserService {
     public Optional<User> findUserByEmailAndPassword(String email, String password) throws ServiceException {
         if (UserValidator.isValidEmail(email) && UserValidator.isValidPassword(password)) {
             try {
-                Optional<User> user = userDao.findByEmailAndPassword(email, password);
+                String encodedPassword = PasswordEncryption.encrypt(password);
+                Optional<User> user = userDao.findUserByEmailAndPassword(email, encodedPassword);
                 return user;
             } catch (DaoException e) {
-                logger.error(e);
-                throw new ServiceException(e);
+                logger.error("search error", e);
+                throw new ServiceException("search error", e);
             }
-        } else {
-            // FIXME
-            //добавить еррор мэсэдж
         }
         return Optional.empty();
     }
@@ -48,8 +45,8 @@ public class UserServiceImpl implements UserService {
         try {
             users = userDao.findAll();
         } catch (DaoException e) {
-            logger.error(e);
-            e.printStackTrace();
+            logger.error("search error", e);
+            throw new ServiceException("search error", e);
         }
         return users;
     }
@@ -62,13 +59,9 @@ public class UserServiceImpl implements UserService {
                 String encodedPassword = PasswordEncryption.encrypt(password);
                 isAdd = userDao.addUser(user, encodedPassword);
             } catch (DaoException e) {
-                logger.error(e);
-                throw new ServiceException(e);
+                logger.error("add error", e);
+                throw new ServiceException("add error", e);
             }
-        }
-        else {
-            // FIXME
-            //добавить еррор мэсэдж
         }
         return isAdd;
     }

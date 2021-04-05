@@ -1,10 +1,10 @@
 package com.nyha.webfinal.model.dao.impl;
 
-import com.nyha.webfinal.model.connection.ConnectionCreator;
 import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.UserDao;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.DaoException;
+import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,8 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-//переопределить методы
-//fixme
+//fixme переопределить методы
 public class UserDaoImpl implements UserDao {
 
     static Logger logger = LogManager.getLogger();
@@ -25,25 +24,21 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public List<User> findAll() throws DaoException {
-//переделать конекшин
-//        //fixme
-
         List<User> users = new ArrayList<>();
-        try (Connection connection = ConnectionCreator.getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_ALL_USERS)) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 User user = new User();
-                //создать класс с  именами колонок
-                user.setId(resultSet.getLong(ColumnName.USER_ID));//fixme
+                user.setId(resultSet.getLong(ColumnName.USER_ID));
                 user.setEmail(resultSet.getString(ColumnName.USER_EMAIL));
                 user.setUsername(resultSet.getString(ColumnName.USER_USERNAME));
                 user.setRole(User.Role.valueOf(resultSet.getString(ColumnName.USER_ROLE).toUpperCase()));
                 users.add(user);
             }
         } catch (SQLException e) {
-            logger.error(e);
-            throw new DaoException(e);
+            logger.error("search error", e);
+            throw new DaoException("search error", e);
         }
         return users;
     }
@@ -74,11 +69,9 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Optional<User> findByEmailAndPassword(String email, String password) throws DaoException {
-        //переделать конекшин
-        //fixme
+    public Optional<User> findUserByEmailAndPassword(String email, String password) throws DaoException {
         Optional<User> userOptional = Optional.empty();
-        try (Connection connection = ConnectionCreator.getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_EMAIL_AND_PASSWORD)) {
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
@@ -92,21 +85,21 @@ public class UserDaoImpl implements UserDao {
                 userOptional = Optional.ofNullable(user);
             }
         } catch (SQLException e) {
-            logger.error(e);
-            throw new DaoException(e);
+            logger.error("search error", e);
+            throw new DaoException("search error", e);
         }
         return userOptional;
     }
 
     @Override
-    public Optional<User> findByEmail(String email) throws DaoException {
+    public Optional<User> findUserByEmail(String email) throws DaoException {
         return Optional.empty();
     }
 
     @Override
     public boolean addUser(User user, String password) throws DaoException {
         boolean isAdd;
-        try (Connection connection = ConnectionCreator.getConnection();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ADD_USER)) {
             preparedStatement.setString(1, user.getId().toString());
             preparedStatement.setString(2, user.getEmail());
@@ -115,8 +108,8 @@ public class UserDaoImpl implements UserDao {
             preparedStatement.setString(5, user.getRole().toString());
             isAdd = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
-            logger.error(e);
-            throw new DaoException(e);
+            logger.error("add error", e);
+            throw new DaoException("add error", e);
         }
         return isAdd;
     }

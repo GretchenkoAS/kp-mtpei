@@ -2,7 +2,8 @@ package com.nyha.webfinal.controller;
 
 import com.nyha.webfinal.command.Command;
 import com.nyha.webfinal.command.CommandProvider;
-import com.nyha.webfinal.command.PagePath;
+import com.nyha.webfinal.command.Router;
+import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -18,10 +19,13 @@ public class Controller extends HttpServlet {
     static Logger logger = LogManager.getLogger();
     public static final String COMMAND = "command";
 
+    @Override
     public void init() {
+        ConnectionPool.getInstance();
     }
 
-    public void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
+    @Override
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         processRequest(request, response);
     }
 
@@ -30,18 +34,26 @@ public class Controller extends HttpServlet {
         processRequest(request, response);
     }
 
-    public void destroy() {
-    }
-
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String commandStr = request.getParameter(COMMAND);
         logger.info(commandStr);
         Optional<Command> commandOptional = CommandProvider.defineCommand(commandStr);
         Command command = commandOptional.orElseThrow(IllegalArgumentException::new);
-        String page = command.execute(request);
-        logger.info(page);
-        RequestDispatcher dispatcher = request.getRequestDispatcher(page);
-        dispatcher.forward(request, response);
+        Router router = command.execute(request);
+        boolean result = router.isRedirect();
+        String page = router.getPage();
+        if (result == false) {
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
+            requestDispatcher.forward(request, response);
+        } else {
+            response.sendRedirect(page);
+        }
+    }
+
+    @Override
+    public void destroy() {
+        super.destroy();
+        ConnectionPool.getInstance().destroyPool();
     }
 }
 

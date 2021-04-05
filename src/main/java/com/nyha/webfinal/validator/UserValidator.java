@@ -8,8 +8,8 @@ public class UserValidator {
             .compile("^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}");
     private static final Pattern PASSWORD_PATTERN = Pattern
             .compile("^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$");
-    /* пароль должен включать минимум одну букву в верхнем и нижнем регистре,минимум одину цифру,
-     без пробелов, табуляции,Не менее 8 символов*/
+    /* the password must include at least one upper and lower case letter, at least one digit,
+     no spaces, tabs, at least 8 characters*/
 
     private UserValidator() {
     }
