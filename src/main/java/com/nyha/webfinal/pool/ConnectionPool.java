@@ -18,8 +18,8 @@ public class ConnectionPool {
     private static final int DEFAULT_POOL_SIZE = 8;
     private static Lock lock = new ReentrantLock();
     private static ConnectionPool instance;
-    private BlockingQueue<ProxyConnection> freeConnections;
-    private Queue<ProxyConnection> givenAwayConnections;
+    private final BlockingQueue<ProxyConnection> freeConnections;
+    private final Queue<ProxyConnection> givenAwayConnections;
 
     private ConnectionPool() {
         freeConnections = new LinkedBlockingDeque<>(DEFAULT_POOL_SIZE);
@@ -66,7 +66,11 @@ public class ConnectionPool {
     public void releaseConnection(Connection connection) {
         if (connection.getClass() == ProxyConnection.class) {
             if (givenAwayConnections.remove(connection)) {
-                freeConnections.offer((ProxyConnection) connection);
+                try {
+                    freeConnections.put((ProxyConnection) connection);
+                } catch (InterruptedException e) {
+                    logger.error("Invalid connection to release" + e);
+                }
             }
             logger.info("Connection has been released");
         } else {

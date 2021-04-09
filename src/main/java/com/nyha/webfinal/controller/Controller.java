@@ -1,8 +1,8 @@
 package com.nyha.webfinal.controller;
 
-import com.nyha.webfinal.command.Command;
-import com.nyha.webfinal.command.CommandProvider;
-import com.nyha.webfinal.command.Router;
+import com.nyha.webfinal.controller.command.Command;
+import com.nyha.webfinal.controller.command.CommandProvider;
+import com.nyha.webfinal.controller.command.Router;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -14,7 +14,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
-@WebServlet("/controller")
+@WebServlet(name = "controller", urlPatterns = {"/controller"})
 public class Controller extends HttpServlet {
     static Logger logger = LogManager.getLogger();
     public static final String COMMAND = "command";
@@ -37,6 +37,8 @@ public class Controller extends HttpServlet {
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String commandStr = request.getParameter(COMMAND);
         logger.info(commandStr);
+        String pathServ = request.getServletPath();
+        //logger.debug(pathServ);
         Optional<Command> commandOptional = CommandProvider.defineCommand(commandStr);
         Command command = commandOptional.orElseThrow(IllegalArgumentException::new);
         Router router = command.execute(request);

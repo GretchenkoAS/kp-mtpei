@@ -26,7 +26,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public Optional<User> findUserByEmailAndPassword(String email, String password) throws ServiceException {
-        if (UserValidator.isValidEmail(email) && UserValidator.isValidPassword(password)) {
+        if (UserValidator.isValidEmail(email) && UserValidator.isValidPassword(password)) {//fixme нужна ли тут валидация?
             try {
                 String encodedPassword = PasswordEncryption.encrypt(password);
                 Optional<User> user = userDao.findUserByEmailAndPassword(email, encodedPassword);

@@ -341,3 +341,400 @@ The last packet sent successfully to the server was 0 milliseconds ago. The driv
 2021-04-05 23:29:22.734 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
 2021-04-05 23:29:34.462 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
 2021-04-05 23:29:34.463 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-07 15:31:32.147 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-07 15:31:32.163 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-07 15:31:32.303 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-07 15:31:32.515 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-07 15:31:32.519 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-07 15:31:54.086 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-07 15:34:53.382 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-07 15:34:53.386 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-08 10:18:24.574 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-08 10:18:24.607 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-08 10:18:24.607 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-08 10:18:24.815 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-08 10:18:24.815 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-08 10:18:29.590 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-08 10:18:29.596 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-08 10:22:34.248 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-08 10:22:34.250 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:04:28.122 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:04:28.140 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- null
+2021-04-09 01:04:36.102 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:04:36.103 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:05:56.625 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:05:56.646 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:06:02.154 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:06:14.897 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:06:14.898 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:06:54.433 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:06:54.450 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:07:42.423 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:07:42.424 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:08:59.268 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:08:59.283 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:08:59.313 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:09:28.576 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:09:28.576 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:17:50.711 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:17:50.727 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:17:50.759 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:17:50.760 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:18:32.219 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:18:32.220 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:20:47.416 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:20:47.435 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:20:47.463 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:20:47.465 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:21:01.956 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:21:01.956 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:28:33.775 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:28:33.793 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:28:33.826 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:30:47.142 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:30:47.143 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:33:16.269 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:33:16.286 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:33:16.321 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:34:05.039 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:34:05.040 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:34:28.812 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:34:28.827 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:34:28.855 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:34:28.857 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:34:40.228 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:34:40.228 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:37:08.651 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:37:10.453 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:37:13.267 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:37:13.269 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:37:13.310 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:37:13.312 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:37:45.216 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:37:45.217 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:38:37.633 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:38:37.647 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:38:39.588 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:38:39.589 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:38:42.823 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:38:42.824 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:38:42.825 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:38:42.861 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:38:42.866 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:38:53.499 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:38:53.500 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:39:32.769 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:39:32.785 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:39:34.607 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:39:34.607 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:39:37.402 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:39:37.403 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:39:37.403 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:39:37.404 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:39:37.432 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:39:37.433 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:40:15.473 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:40:15.474 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:41:00.694 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:41:00.711 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:41:00.720 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:41:02.641 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:41:02.642 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:41:02.643 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:41:05.765 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:41:05.765 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:41:05.766 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:41:05.767 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:41:05.767 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:41:05.795 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:41:05.797 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:41:35.238 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:41:35.239 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:42:11.181 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:42:11.195 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:42:11.209 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/
+2021-04-09 01:42:11.223 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:42:13.092 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:42:13.093 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:42:13.094 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/
+2021-04-09 01:42:13.094 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:42:22.758 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:42:22.758 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:42:22.759 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:42:22.759 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/controller
+2021-04-09 01:42:22.760 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:42:22.761 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:42:22.797 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:42:22.799 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:45:07.908 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:45:07.909 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:45:26.248 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:45:26.262 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:45:26.263 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:45:26.263 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:45:26.269 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:45:28.035 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:45:28.036 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:45:28.037 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:45:28.037 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:45:28.038 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:46:55.828 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:46:55.842 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:46:57.590 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:46:57.591 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:47:00.969 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:47:00.970 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:47:00.970 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:47:00.971 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:47:01.001 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   en
+2021-04-09 01:47:01.003 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /controller
+2021-04-09 01:47:48.653 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:47:48.654 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:48:16.087 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:48:16.098 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:48:16.105 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:48:17.886 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:48:17.887 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:48:17.889 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:48:20.858 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:48:20.859 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:48:20.860 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:48:20.860 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /controller
+2021-04-09 01:48:20.861 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:48:20.893 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /controller
+2021-04-09 01:49:02.549 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:49:02.550 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:49:39.345 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:49:39.356 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:49:39.357 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:49:39.357 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:49:39.363 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:49:41.149 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:49:41.149 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:49:41.149 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:49:41.150 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:49:41.151 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:49:44.924 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:49:44.925 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:49:44.925 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:49:44.925 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:49:44.926 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /controller
+2021-04-09 01:49:44.928 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:49:44.929 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:49:44.959 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:51:59.471 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:51:59.472 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:52:18.026 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:52:18.040 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:52:18.041 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:52:18.041 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:52:18.041 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:52:18.047 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:52:19.903 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:52:19.903 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:52:19.904 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:52:19.904 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 01:52:19.904 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:52:19.905 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:52:23.563 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:52:23.564 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:52:23.565 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:52:23.566 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded
+2021-04-09 01:52:23.567 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /controller
+2021-04-09 01:52:23.567 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:52:23.567 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:52:23.568 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:52:23.603 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 01:52:31.521 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 01:52:31.522 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 01:59:37.456 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:59:37.473 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:59:37.473 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/
+2021-04-09 01:59:37.480 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:59:39.318 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:59:39.319 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:59:39.319 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/
+2021-04-09 01:59:39.320 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:59:50.400 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 01:59:50.401 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 01:59:50.401 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 01:59:50.402 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/controller
+2021-04-09 01:59:50.402 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- null
+2021-04-09 01:59:50.403 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 01:59:50.440 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   null
+2021-04-09 02:08:53.253 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:08:53.254 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:10:03.770 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:10:03.790 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 02:10:03.792 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/
+2021-04-09 02:10:03.800 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:10:05.993 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:10:05.994 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- start headerfilter
+2021-04-09 02:10:05.994 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /webfinal_war_exploded/
+2021-04-09 02:10:05.994 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:10:08.865 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:10:08.866 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:10:08.867 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:10:08.902 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:11:18.070 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:11:18.072 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:12:07.303 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:12:07.326 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:12:09.070 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:12:09.071 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:12:12.406 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:12:12.409 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:12:12.410 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:12:12.441 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:12:12.448 [http-nio-8080-exec-5] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:12:12.449 [http-nio-8080-exec-5] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:12:19.077 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:12:19.078 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:12:19.080 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:12:19.085 [http-nio-8080-exec-7] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:12:19.088 [http-nio-8080-exec-7] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:12:34.127 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:12:34.128 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:12:58.587 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:12:58.608 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:13:00.444 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:13:00.445 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:13:02.836 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:13:02.836 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:13:02.838 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:13:02.870 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:13:05.544 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:13:05.546 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:13:05.549 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:13:11.936 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:13:11.937 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:14:22.703 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:14:22.721 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:14:24.577 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:14:24.577 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:14:39.175 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:14:39.175 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:14:39.176 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 02:14:39.540 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:14:46.164 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:14:46.165 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:17:15.875 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:15.897 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- index.jsp
+2021-04-09 02:17:17.757 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:17.758 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- index.jsp
+2021-04-09 02:17:27.424 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:17:27.425 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:27.426 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:17:27.460 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   index.jsp
+2021-04-09 02:17:27.468 [http-nio-8080-exec-5] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:27.469 [http-nio-8080-exec-5] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- index.jsp
+2021-04-09 02:17:28.720 [http-nio-8080-exec-6] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:28.723 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:17:28.723 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   index.jsp
+2021-04-09 02:17:28.728 [http-nio-8080-exec-7] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:28.729 [http-nio-8080-exec-7] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- index.jsp
+2021-04-09 02:17:39.942 [http-nio-8080-exec-9] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:39.944 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:17:39.945 [http-nio-8080-exec-9] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   index.jsp
+2021-04-09 02:17:39.952 [http-nio-8080-exec-10] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:39.952 [http-nio-8080-exec-10] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- index.jsp
+2021-04-09 02:17:41.764 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:41.766 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:17:41.767 [http-nio-8080-exec-1] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   index.jsp
+2021-04-09 02:17:41.778 [http-nio-8080-exec-2] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:17:41.781 [http-nio-8080-exec-2] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- index.jsp
+2021-04-09 02:18:29.418 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:18:29.419 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:19:10.089 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:19:10.110 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:19:11.954 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:19:11.954 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:19:23.364 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:19:23.365 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:19:23.366 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 02:19:23.438 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:19:26.792 [http-nio-8080-exec-5] DEBUG nyha.webfinal.controller.filter.EncodingFilter [doFilter] -- start enc filter
+2021-04-09 02:19:26.794 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-09 02:19:26.804 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:21:24.287 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:21:24.288 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:23:28.485 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:23:28.498 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 02:23:28.593 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:23:34.042 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-09 02:23:34.044 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:24:21.921 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:24:21.922 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:25:41.145 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:25:41.165 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 02:25:41.277 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:25:43.062 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-09 02:25:43.067 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:26:17.924 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:26:17.925 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:26:41.108 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:26:43.041 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:26:53.115 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:26:53.116 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 02:26:53.209 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:26:55.156 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-09 02:26:55.160 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 02:28:14.053 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:28:14.054 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:29:09.744 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:29:11.598 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:29:15.239 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:29:15.240 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:29:15.273 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:29:26.324 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:29:26.324 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 02:29:59.675 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:30:01.619 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:30:08.089 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 02:30:08.091 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:30:08.118 [http-nio-8080-exec-4] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:30:08.124 [http-nio-8080-exec-5] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:30:08.417 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:30:08.417 [http-nio-8080-exec-6] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:30:08.424 [http-nio-8080-exec-7] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:30:10.629 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:30:10.630 [http-nio-8080-exec-8] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:30:10.638 [http-nio-8080-exec-9] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:30:11.603 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_locale
+2021-04-09 02:30:11.605 [http-nio-8080-exec-10] DEBUG webfinal.controller.command.impl.ChangeLocaleCommand [execute] -- !!!!!!!!!   /index.jsp
+2021-04-09 02:30:11.623 [http-nio-8080-exec-2] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 02:30:34.918 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 02:30:34.920 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 08:55:27.414 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 08:55:29.221 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 08:55:39.650 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 08:55:39.651 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 08:55:39.651 [http-nio-8080-exec-6] DEBUG com.nyha.webfinal.controller.Controller [processRequest] -- /controller
+2021-04-09 08:55:39.739 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 08:55:42.089 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-09 08:55:42.091 [http-nio-8080-exec-7] DEBUG com.nyha.webfinal.controller.Controller [processRequest] -- /controller
+2021-04-09 08:55:42.093 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 08:56:05.185 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 08:56:05.185 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 08:56:47.944 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 08:56:50.140 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 08:56:59.169 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 08:56:59.169 [http-nio-8080-exec-4] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /controller
+2021-04-09 08:56:59.170 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 08:56:59.270 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 08:57:00.684 [http-nio-8080-exec-5] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /controller
+2021-04-09 08:57:00.685 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-09 08:57:00.688 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 08:59:44.187 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 08:59:44.188 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-04-09 09:01:50.797 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- !!# 
+2021-04-09 09:01:50.859 [http-nio-8080-exec-1] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 09:01:53.593 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- !!# 
+2021-04-09 09:01:53.594 [http-nio-8080-exec-3] DEBUG nyha.webfinal.controller.filter.HeaderFilter [doFilter] -- /index.jsp
+2021-04-09 09:02:02.310 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-04-09 09:02:02.312 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-04-09 09:02:02.420 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 09:02:04.288 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- show_users
+2021-04-09 09:02:04.292 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-04-09 09:02:21.734 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-04-09 09:02:21.734 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
