@@ -1,5 +1,7 @@
 package com.nyha.webfinal.controller.command.impl;
 
+import com.nyha.webfinal.controller.RequestAttribute;
+import com.nyha.webfinal.controller.RequestParameter;
 import com.nyha.webfinal.controller.command.Command;
 import com.nyha.webfinal.controller.command.PagePath;
 import com.nyha.webfinal.controller.command.Router;
@@ -15,11 +17,7 @@ import java.util.Optional;
 
 public class LoginCommand implements Command {
     static Logger logger = LogManager.getLogger();
-    private static final String PARAM_EMAIL = "email";
-    private static final String PARAM_PASSWORD = "password";
-    private static final String ATTRIBUTE_NAME_USER = "user";
     private static final String ATTRIBUTE_NAME_ERROR_LOGIN = "error_login";
-    private static final String EXCEPTION = "exception";
 
     private UserService service;
 
@@ -30,21 +28,21 @@ public class LoginCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
-        String email = request.getParameter(PARAM_EMAIL);
-        String password = request.getParameter(PARAM_PASSWORD);
+        String email = request.getParameter(RequestParameter.EMAIL);
+        String password = request.getParameter(RequestParameter.PASSWORD);
         try {
             Optional<User> user = service.findUserByEmailAndPassword(email, password);
             if (user.isPresent()) {
-                request.setAttribute(ATTRIBUTE_NAME_USER, user.get().getUsername());
+                request.setAttribute(RequestAttribute.USER, user.get().getUsername());
                 router.setPage(PagePath.MAIN);
             } else {
-                request.setAttribute(ATTRIBUTE_NAME_ERROR_LOGIN, MessageManager.getProperty("message.error_login"));
+                request.setAttribute(RequestAttribute.ERROR_LOGIN, MessageManager.getProperty("message.error_login"));//fixme что-то с этим придумать
                 router.setPage(PagePath.LOGIN);
             }
         } catch (ServiceException e) {
             logger.error("login error", e);
             router.setPage(PagePath.ERROR_500);
-            request.setAttribute(EXCEPTION, e);
+            request.setAttribute(RequestAttribute.EXCEPTION, e);
         }
         return router;
     }

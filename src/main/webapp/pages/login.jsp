@@ -1,34 +1,19 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <fmt:setLocale value="${locale}"/>
-<%--<fmt:setLocale value="ru_RU"/>--%>
 <fmt:setBundle basename="pagecontent"/>
 
 <html>
 <head>
     <title>Login</title>
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/style.css">
-    <link rel="stylesheet" href="${pageContext.request.contextPath}/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 
 </head>
 
+<body>
 <header>
-    <form action="controller" method="post">
-        <input type="hidden" name="command" value="change_locale"/>
-        <input type="hidden" name="language" value="en"/>
-        <button class="btn btn-secondary nav-link button-margin"><fmt:message
-                key="local.en"/></button>
-    </form>
-    <form action="controller" method="post">
-        <input type="hidden" name="command" value="change_locale"/>
-        <input type="hidden" name="language" value="ru"/>
-        <button class="btn btn-secondary nav-link button-margin"><fmt:message
-                key="local.ru"/></button>
-    </form>
+    <jsp:include page="${pageContext.request.contextPath}/pages/header.jsp"/>
 </header>
 
-<body>
 <div class="container">
     <div class="row">
         <div class="col-4 mx-auto my-lg-4 p-3 bg-light">
@@ -54,5 +39,8 @@
         </div>
     </div>
 </div>
+<footer>
+    <jsp:include page="${pageContext.request.contextPath}/pages/footer.jsp"/>
+</footer>
 </body>
 </html>

@@ -19,7 +19,7 @@ public class UserDaoImpl implements UserDao {
     static Logger logger = LogManager.getLogger();
     private static final String FIND_USER_BY_EMAIL_AND_PASSWORD = "SELECT user_id, email, username, role FROM railway.users WHERE email = ? AND password = ?";
     private static final String FIND_ALL_USERS = "SELECT user_id, email, username, role FROM railway.users";
-    private static final String ADD_USER = "INSERT INTO `users` (`user_id`, `email`, `password`, `username`, `role`) VALUES (?, ?, ?, ?, ?)";
+    private static final String ADD_USER = "INSERT INTO `users` (`email`, `password`, `username`, `role`) VALUES (?, ?, ?, ?)";
 
 
     @Override
@@ -101,11 +101,10 @@ public class UserDaoImpl implements UserDao {
         boolean isAdd;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ADD_USER)) {
-            preparedStatement.setString(1, user.getId().toString());
-            preparedStatement.setString(2, user.getEmail());
-            preparedStatement.setString(3, password);
-            preparedStatement.setString(4, user.getUsername());
-            preparedStatement.setString(5, user.getRole().toString());
+            preparedStatement.setString(1, user.getEmail());
+            preparedStatement.setString(2, password);
+            preparedStatement.setString(3, user.getUsername());
+            preparedStatement.setString(4, user.getRole().toString());
             isAdd = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             logger.error("add error", e);

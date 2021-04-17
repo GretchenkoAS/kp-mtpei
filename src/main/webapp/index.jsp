@@ -2,6 +2,8 @@
 <!DOCTYPE html>
 <html>
 <body>
-<jsp:forward page="/pages/login.jsp"/>
+<jsp:forward page="controller">
+    <jsp:param name="command" value="main_page"/>
+</jsp:forward>
 </body>
 </html>

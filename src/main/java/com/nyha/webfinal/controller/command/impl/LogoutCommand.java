@@ -14,7 +14,7 @@ public class LogoutCommand implements Command {
         router.setPage(PagePath.INDEX);
         router.setRedirect();
         HttpSession session = request.getSession();
-        session.invalidate(); //fixme что это?
+        session.invalidate();
         return router;
     }
 }

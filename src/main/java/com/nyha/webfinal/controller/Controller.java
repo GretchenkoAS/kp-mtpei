@@ -17,7 +17,6 @@ import javax.servlet.annotation.*;
 @WebServlet(name = "controller", urlPatterns = {"/controller"})
 public class Controller extends HttpServlet {
     static Logger logger = LogManager.getLogger();
-    public static final String COMMAND = "command";
 
     @Override
     public void init() {
@@ -35,20 +34,20 @@ public class Controller extends HttpServlet {
     }
 
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String commandStr = request.getParameter(COMMAND);
+        String commandStr = request.getParameter(RequestParameter.COMMAND);
         logger.info(commandStr);
-        String pathServ = request.getServletPath();
-        //logger.debug(pathServ);
         Optional<Command> commandOptional = CommandProvider.defineCommand(commandStr);
         Command command = commandOptional.orElseThrow(IllegalArgumentException::new);
         Router router = command.execute(request);
-        boolean result = router.isRedirect();
+        HttpSession session = request.getSession();
+        session.setAttribute(SessionAttribute.CURRENT_PAGE, router.getPage());
         String page = router.getPage();
-        if (result == false) {
+        logger.info(page);
+        if (router.isRedirect()) {
+            response.sendRedirect(page);
+        } else {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher(page);
             requestDispatcher.forward(request, response);
-        } else {
-            response.sendRedirect(page);
         }
     }
 

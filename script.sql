@@ -1,6 +1,6 @@
 DROP TABLE IF EXISTS `trains`;
 CREATE TABLE `trains` (
-  `train_id` bigint(20) NOT NULL,
+  `train_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `manufacturer` varchar(40) DEFAULT NULL,
   `model` varchar(40) DEFAULT NULL,
   `number_of_seats` int(11) DEFAULT NULL,
@@ -10,7 +10,7 @@ CREATE TABLE `trains` (
 
 DROP TABLE IF EXISTS `stations`;
 CREATE TABLE `stations` (
-  `station_id` bigint(20) NOT NULL,
+  `station_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `station_name` varchar(40) DEFAULT NULL,
   `city` varchar(40) DEFAULT NULL,
   `country` varchar(40) DEFAULT NULL,
@@ -20,7 +20,7 @@ CREATE TABLE `stations` (
 
 DROP TABLE IF EXISTS `trips`;
 CREATE TABLE `trips` (
-  `trip_id` bigint(20) NOT NULL,
+  `trip_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `departure_datetime` timestamp DEFAULT NULL,
   `arrival_datetime` timestamp DEFAULT NULL,
   `train_id` bigint(20) DEFAULT NULL,
@@ -34,7 +34,7 @@ CREATE TABLE `trips` (
 
 DROP TABLE IF EXISTS `passengers`;
 CREATE TABLE `passengers` (
-  `passenger_id` bigint(20) NOT NULL,
+  `passenger_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `address` varchar(40) DEFAULT NULL,
   `first_name` varchar(40) DEFAULT NULL,
   `last_name` varchar(40) DEFAULT NULL,
@@ -47,7 +47,7 @@ CREATE TABLE `passengers` (
 
 DROP TABLE IF EXISTS `tickets`;
 CREATE TABLE `tickets` (
-  `ticket_id` bigint(20) NOT NULL,
+  `ticket_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `trip_id` bigint(20) NOT NULL,
   `passenger_id` bigint(20) NOT NULL,
   `seat` varchar(20) NOT NULL,
@@ -59,7 +59,7 @@ CREATE TABLE `tickets` (
 
 DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
-  `user_id` bigint(20) NOT NULL,
+  `user_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `email` varchar(40) NOT NULL UNIQUE,
   `password` varchar(40) NOT NULL,
   `username` varchar(40) NOT NULL UNIQUE,

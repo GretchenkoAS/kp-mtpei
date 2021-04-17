@@ -19,6 +19,11 @@ public enum CommandType {
             this.command = new AddUserCommand(new UserServiceImpl());
         }
     },
+    MAIN_PAGE {
+        {
+            this.command = new MainPageCommand();
+        }
+    },
     CHANGE_LOCALE {
         {
             this.command = new ChangeLocaleCommand();
