@@ -2,7 +2,7 @@ package com.nyha.webfinal.model.entity;
 
 public class User extends Entity{
     public enum Role {
-        ADMIN, USER, GUEST;
+        ADMIN, USER, GUEST
     }
 
     private String username;
@@ -12,7 +12,7 @@ public class User extends Entity{
     public User() {
     }
 
-    public User(String username, String email, Role role, boolean enabled) {
+    public User(String username, String email, Role role) {
         this.username = username;
         this.email = email;
         this.role = role;
@@ -88,8 +88,7 @@ public class User extends Entity{
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("User{");
-        sb.append("id=").append(getId().toString());
-        sb.append(", email='").append(email).append('\'');
+        sb.append("email='").append(email).append('\'');
         sb.append(", username='").append(username).append('\'');
         sb.append(", role=").append(role);
         sb.append('}');

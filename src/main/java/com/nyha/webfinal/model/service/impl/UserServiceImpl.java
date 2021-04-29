@@ -13,30 +13,48 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Optional;
+
 //fixme переопределить методы
 public class UserServiceImpl implements UserService {
     static Logger logger = LogManager.getLogger();
+    public static final String INCORRECT_EMAIL = "incorrectEmail";
+    public static final String EMAIL_ALREADY_EXISTS = "emailAlreadyExists";
+    public static final String INCORRECT_USERNAME = "incorrectUsername";
+    public static final String INCORRECT_PASSWORD = "incorrectPassword";
+
     private UserDao userDao = new UserDaoImpl();
 
     @Override
     public Optional<User> findUserByEmail(String email) throws ServiceException {
-
-        return Optional.empty();
-    }
-
-    @Override
-    public Optional<User> findUserByEmailAndPassword(String email, String password) throws ServiceException {
-        if (UserValidator.isValidEmail(email) && UserValidator.isValidPassword(password)) {//fixme нужна ли тут валидация?
+        Optional<User> user;
+        if (UserValidator.isValidEmail(email)) {
             try {
-                String encodedPassword = PasswordEncryption.encrypt(password);
-                Optional<User> user = userDao.findUserByEmailAndPassword(email, encodedPassword);
-                return user;
+                user = userDao.findUserByEmail(email);
             } catch (DaoException e) {
                 logger.error("search error", e);
                 throw new ServiceException("search error", e);
             }
+        } else {
+            user = Optional.empty();
         }
-        return Optional.empty();
+        return user;
+    }
+
+    @Override
+    public Optional<User> findUserByEmailAndPassword(String email, String password) throws ServiceException {
+        Optional<User> user;
+        if (UserValidator.isValidEmail(email) && UserValidator.isValidPassword(password)) {
+            try {
+                String encodedPassword = PasswordEncryption.encrypt(password);
+                user = userDao.findUserByEmailAndPassword(email, encodedPassword);
+            } catch (DaoException e) {
+                logger.error("search error", e);
+                throw new ServiceException("search error", e);
+            }
+        } else {
+            user = Optional.empty();
+        }
+        return user;
     }
 
     @Override
@@ -52,17 +70,26 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public boolean addUser(User user, String password) throws ServiceException {
-        boolean isAdd = false;
-        if (UserValidator.isValidEmail(user.getEmail()) && UserValidator.isValidPassword(password)) {
-            try {
-                String encodedPassword = PasswordEncryption.encrypt(password);
-                isAdd = userDao.addUser(user, encodedPassword);
-            } catch (DaoException e) {
-                logger.error("add error", e);
-                throw new ServiceException("add error", e);
-            }
+    public Optional<String> addUser(User user, String password) throws ServiceException {
+        if (!UserValidator.isValidEmail(user.getEmail())) {
+            return Optional.of(INCORRECT_EMAIL);
         }
-        return isAdd;
+        if (findUserByEmail(user.getEmail()).isPresent()) {
+            return Optional.of(EMAIL_ALREADY_EXISTS);
+        }
+        if (!UserValidator.isValidUsername(user.getUsername())) {
+            return Optional.of(INCORRECT_USERNAME);
+        }
+        if (!UserValidator.isValidPassword(password)) {
+            return Optional.of(INCORRECT_PASSWORD);
+        }
+        try {
+            String encodedPassword = PasswordEncryption.encrypt(password);
+            userDao.addUser(user, encodedPassword);
+        } catch (DaoException e) {
+            logger.error("add error", e);
+            throw new ServiceException("add error", e);
+        }
+        return Optional.empty();
     }
 }

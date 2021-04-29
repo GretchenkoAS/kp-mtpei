@@ -3,7 +3,7 @@
 <html>
 <body>
 <jsp:forward page="controller">
-    <jsp:param name="command" value="main_page"/>
+    <jsp:param name="command" value="to_main_page"/>
 </jsp:forward>
 </body>
 </html>

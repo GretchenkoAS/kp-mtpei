@@ -10,5 +10,5 @@ public interface UserService {
     Optional<User> findUserByEmail(String email) throws ServiceException;
     Optional<User> findUserByEmailAndPassword(String email, String password) throws ServiceException;
     List<User> findAllUsers() throws ServiceException;
-    public boolean addUser(User user, String password) throws ServiceException;
+    public Optional<String> addUser(User user, String password) throws ServiceException;
 }

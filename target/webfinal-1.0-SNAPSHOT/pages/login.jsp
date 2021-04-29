@@ -1,5 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <fmt:setLocale value="${locale}"/>
 <fmt:setBundle basename="pagecontent"/>
 
@@ -19,22 +20,25 @@
         <div class="col-4 mx-auto my-lg-4 p-3 bg-light">
             <form class="form-horizontal" name="loginForm" method="POST" action="controller">
                 <input type="hidden" name="command" value="login"/>
-                <span class="heading"><fmt:message key="label.authorization"/></span>
+                <span class="heading"><fmt:message key="authorization"/></span>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder=<fmt:message key="label.email"/>>
-                    <i class="fa fa-user"></i>
+                    <input type="email" class="form-control" name="email" placeholder=<fmt:message key="email"/>>
+                    <i class="fa fa-envelope"></i>
                 </div>
                 <div class="form-group help">
                     <input type="password" class="form-control" name="password" placeholder=<fmt:message
-                            key="label.password"/>>
+                            key="password"/>>
                     <i class="fa fa-lock"></i>
                 </div>
                 <div class="form-group">
-                    <button type="submit" class="btn btn-default"><fmt:message key="label.submit"/></button>
+                    <button type="submit" class="btn btn-default"><fmt:message key="login"/></button>
                 </div>
-                ${error_login}
-                ${wrongAction}
-                ${nullPage}
+                <c:if test="${not empty incorrect_email_or_password}">
+                    <p class="alert-warning"><fmt:message key="incorrectEmailOrPassword"/></p>
+                </c:if>
+                <p class="message text-center"><fmt:message key="notRegistered"/>
+                    <a href="${pageContext.request.contextPath}/controller?command=to_registration_page"
+                       class="text-style"><fmt:message key="createAccount"/></a></p>
             </form>
         </div>
     </div>

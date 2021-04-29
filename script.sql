@@ -14,15 +14,14 @@ CREATE TABLE `stations` (
   `station_name` varchar(40) DEFAULT NULL,
   `city` varchar(40) DEFAULT NULL,
   `country` varchar(40) DEFAULT NULL,
-  `state` varchar(40) DEFAULT NULL,
   PRIMARY KEY (`station_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 DROP TABLE IF EXISTS `trips`;
 CREATE TABLE `trips` (
   `trip_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `departure_datetime` timestamp DEFAULT NULL,
-  `arrival_datetime` timestamp DEFAULT NULL,
+  `departure_time` time DEFAULT NULL,
+  `arrival_time` time DEFAULT NULL,
   `train_id` bigint(20) DEFAULT NULL,
   `departure_station_id` bigint(20) DEFAULT NULL,
   `arrival_station_id` bigint(20) DEFAULT NULL,
@@ -35,7 +34,6 @@ CREATE TABLE `trips` (
 DROP TABLE IF EXISTS `passengers`;
 CREATE TABLE `passengers` (
   `passenger_id` bigint(20) NOT NULL AUTO_INCREMENT,
-  `address` varchar(40) DEFAULT NULL,
   `first_name` varchar(40) DEFAULT NULL,
   `last_name` varchar(40) DEFAULT NULL,
   `passport_number` varchar(15) DEFAULT NULL,
@@ -50,7 +48,8 @@ CREATE TABLE `tickets` (
   `ticket_id` bigint(20) NOT NULL AUTO_INCREMENT,
   `trip_id` bigint(20) NOT NULL,
   `passenger_id` bigint(20) NOT NULL,
-  `seat` varchar(20) NOT NULL,
+  `seat` int(11) NOT NULL,
+  `date` date NOT NULL,
   `ticket_price` decimal NOT NULL,
   PRIMARY KEY (`ticket_id`),
   FOREIGN KEY (`trip_id`)  REFERENCES `trips` (`trip_id`),

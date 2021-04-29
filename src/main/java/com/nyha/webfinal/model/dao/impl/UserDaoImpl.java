@@ -17,6 +17,7 @@ import java.util.Optional;
 public class UserDaoImpl implements UserDao {
 
     static Logger logger = LogManager.getLogger();
+    private static final String FIND_USER_BY_EMAIL = "SELECT user_id, email, username, role FROM railway.users WHERE email = ?";
     private static final String FIND_USER_BY_EMAIL_AND_PASSWORD = "SELECT user_id, email, username, role FROM railway.users WHERE email = ? AND password = ?";
     private static final String FIND_ALL_USERS = "SELECT user_id, email, username, role FROM railway.users";
     private static final String ADD_USER = "INSERT INTO `users` (`email`, `password`, `username`, `role`) VALUES (?, ?, ?, ?)";
@@ -70,20 +71,21 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Optional<User> findUserByEmailAndPassword(String email, String password) throws DaoException {
-        Optional<User> userOptional = Optional.empty();
+        Optional<User> userOptional;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_EMAIL_AND_PASSWORD)) {
             preparedStatement.setString(1, email);
             preparedStatement.setString(2, password);
             ResultSet resultSet = preparedStatement.executeQuery();
+            User user = null;
             while (resultSet.next()) {
-                User user = new User();
+                user = new User();
                 user.setId(resultSet.getLong(ColumnName.USER_ID));
                 user.setEmail(resultSet.getString(ColumnName.USER_EMAIL));
                 user.setUsername(resultSet.getString(ColumnName.USER_USERNAME));
                 user.setRole(User.Role.valueOf(resultSet.getString(ColumnName.USER_ROLE).toUpperCase()));
-                userOptional = Optional.ofNullable(user);
             }
+            userOptional = Optional.ofNullable(user);
         } catch (SQLException e) {
             logger.error("search error", e);
             throw new DaoException("search error", e);
@@ -93,7 +95,25 @@ public class UserDaoImpl implements UserDao {
 
     @Override
     public Optional<User> findUserByEmail(String email) throws DaoException {
-        return Optional.empty();
+        Optional<User> userOptional;
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_USER_BY_EMAIL)) {
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            User user = null;
+            while (resultSet.next()) {
+                user = new User();
+                user.setId(resultSet.getLong(ColumnName.USER_ID));
+                user.setEmail(resultSet.getString(ColumnName.USER_EMAIL));
+                user.setUsername(resultSet.getString(ColumnName.USER_USERNAME));
+                user.setRole(User.Role.valueOf(resultSet.getString(ColumnName.USER_ROLE).toUpperCase()));
+            }
+            userOptional = Optional.ofNullable(user);
+        } catch (SQLException e) {
+            logger.error("search error", e);
+            throw new DaoException("search error", e);
+        }
+        return userOptional;
     }
 
     @Override

@@ -6,12 +6,11 @@ import com.nyha.webfinal.controller.command.Router;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class MainPageCommand implements Command {
-
+public class ToLoginPageCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
-        router.setPage(PagePath.LOGIN);//fixme поменять страницу
+        router.setPage(PagePath.LOGIN);
         return router;
     }
 }

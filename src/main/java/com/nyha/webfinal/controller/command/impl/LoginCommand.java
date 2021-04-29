@@ -2,22 +2,23 @@ package com.nyha.webfinal.controller.command.impl;
 
 import com.nyha.webfinal.controller.RequestAttribute;
 import com.nyha.webfinal.controller.RequestParameter;
+import com.nyha.webfinal.controller.SessionAttribute;
 import com.nyha.webfinal.controller.command.Command;
 import com.nyha.webfinal.controller.command.PagePath;
 import com.nyha.webfinal.controller.command.Router;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.service.UserService;
-import com.nyha.webfinal.resource.MessageManager;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 public class LoginCommand implements Command {
+    public static final String INCORRECT_EMAIL_OR_PASSWORD = "Incorrect email or password";
     static Logger logger = LogManager.getLogger();
-    private static final String ATTRIBUTE_NAME_ERROR_LOGIN = "error_login";
 
     private UserService service;
 
@@ -33,10 +34,11 @@ public class LoginCommand implements Command {
         try {
             Optional<User> user = service.findUserByEmailAndPassword(email, password);
             if (user.isPresent()) {
-                request.setAttribute(RequestAttribute.USER, user.get().getUsername());
+                HttpSession session = request.getSession(true);
+                session.setAttribute(SessionAttribute.USER, user.get());
                 router.setPage(PagePath.MAIN);
             } else {
-                request.setAttribute(RequestAttribute.ERROR_LOGIN, MessageManager.getProperty("message.error_login"));//fixme что-то с этим придумать
+                request.setAttribute(RequestAttribute.INCORRECT_EMAIL_OR_PASSWORD, INCORRECT_EMAIL_OR_PASSWORD);
                 router.setPage(PagePath.LOGIN);
             }
         } catch (ServiceException e) {

@@ -9,19 +9,19 @@ public enum CommandType {
             this.command = new LoginCommand(new UserServiceImpl());
         }
     },
+    REGISTER {
+        {
+            this.command = new RegisterCommand(new UserServiceImpl());
+        }
+    },
     LOGOUT {
         {
             this.command = new LogoutCommand();
         }
     },
-    ADD_USER {
+    SHOW_USERS {
         {
-            this.command = new AddUserCommand(new UserServiceImpl());
-        }
-    },
-    MAIN_PAGE {
-        {
-            this.command = new MainPageCommand();
+            this.command = new ShowUsersCommand(new UserServiceImpl());
         }
     },
     CHANGE_LOCALE {
@@ -29,9 +29,19 @@ public enum CommandType {
             this.command = new ChangeLocaleCommand();
         }
     },
-    SHOW_USERS {
+    TO_MAIN_PAGE {
         {
-            this.command = new ShowUsersCommand(new UserServiceImpl());
+            this.command = new ToMainPageCommand();
+        }
+    },
+    TO_REGISTRATION_PAGE {
+        {
+            this.command = new ToRegistrationPageCommand();
+        }
+    },
+    TO_LOGIN_PAGE {
+        {
+            this.command = new ToLoginPageCommand();
         }
     };
 

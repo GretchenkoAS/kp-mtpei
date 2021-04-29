@@ -21,7 +21,7 @@ ${user}, hello!
 <form align="center" name="ShowUsers" method="POST" action="controller">
     <input type="hidden" name="command" value="show_users" />
     <div class="form-group">
-        <button type="submit" class="btn btn-default"><fmt:message key="label.submit"/></button>
+        <button type="submit" class="btn btn-default"><fmt:message key="submit"/></button>
     </div>
 </form><hr/>
 <footer>
