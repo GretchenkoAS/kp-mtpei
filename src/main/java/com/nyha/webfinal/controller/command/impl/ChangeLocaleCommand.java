@@ -4,15 +4,11 @@ import com.nyha.webfinal.controller.RequestParameter;
 import com.nyha.webfinal.controller.SessionAttribute;
 import com.nyha.webfinal.controller.command.Command;
 import com.nyha.webfinal.controller.command.Router;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 public class ChangeLocaleCommand implements Command {
-    static Logger logger = LogManager.getLogger();
-
     @Override
     public Router execute(HttpServletRequest request) {
         HttpSession session = request.getSession(true);

@@ -8,7 +8,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.io.*;
-import java.util.ArrayList;
 import java.util.Optional;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
@@ -38,7 +37,7 @@ public class Controller extends HttpServlet {
         String commandStr = request.getParameter(RequestParameter.COMMAND);
         logger.info(commandStr);
         Optional<Command> commandOptional = CommandProvider.defineCommand(commandStr);
-        Command command = commandOptional.orElseThrow(IllegalArgumentException::new);
+        Command command = commandOptional.orElseThrow(IllegalArgumentException::new);//fixme переделать
         Router router = command.execute(request);
         HttpSession session = request.getSession();
         session.setAttribute(SessionAttribute.CURRENT_PAGE, router.getPage());

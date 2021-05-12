@@ -33,8 +33,8 @@
                 <div class="form-group">
                     <button type="submit" class="btn btn-default"><fmt:message key="login"/></button>
                 </div>
-                <c:if test="${not empty incorrect_email_or_password}">
-                    <p class="alert-warning"><fmt:message key="incorrectEmailOrPassword"/></p>
+                <c:if test="${not empty incorrect_data}">
+                    <p class="alert-warning"><fmt:message key="${incorrect_data}"/></p>
                 </c:if>
                 <p class="message text-center"><fmt:message key="notRegistered"/>
                     <a href="${pageContext.request.contextPath}/controller?command=to_registration_page"

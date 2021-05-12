@@ -9,22 +9,16 @@ import com.nyha.webfinal.controller.command.Router;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.service.UserService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.nyha.webfinal.model.service.impl.UserServiceImpl;
+
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 public class LoginCommand implements Command {
-    public static final String INCORRECT_EMAIL_OR_PASSWORD = "Incorrect email or password";
-    static Logger logger = LogManager.getLogger();
-
-    private UserService service;
-
-    public LoginCommand(UserService service) {
-        this.service = service;
-    }
+    public static final String INCORRECT_EMAIL_OR_PASSWORD = "incorrectEmailOrPassword";
+    private UserService service = new UserServiceImpl();
 
     @Override
     public Router execute(HttpServletRequest request) {
@@ -37,8 +31,9 @@ public class LoginCommand implements Command {
                 HttpSession session = request.getSession(true);
                 session.setAttribute(SessionAttribute.USER, user.get());
                 router.setPage(PagePath.MAIN);
+                router.setRedirect();
             } else {
-                request.setAttribute(RequestAttribute.INCORRECT_EMAIL_OR_PASSWORD, INCORRECT_EMAIL_OR_PASSWORD);
+                request.setAttribute(RequestAttribute.INCORRECT_DATA, INCORRECT_EMAIL_OR_PASSWORD);
                 router.setPage(PagePath.LOGIN);
             }
         } catch (ServiceException e) {

@@ -5,17 +5,17 @@ public class Passenger extends Entity{
     private String lastName;
     private String passportNumber;
     private String phoneNumber;
-    private User user;
+    private Long userId;
 
     public Passenger() {
     }
 
-    public Passenger(String name, String lastName, String passportNumber, String phoneNumber, User user) {
+    public Passenger(String name, String lastName, String passportNumber, String phoneNumber, Long userId) {
         this.name = name;
         this.lastName = lastName;
         this.passportNumber = passportNumber;
         this.phoneNumber = phoneNumber;
-        this.user = user;
+        this.userId = userId;
     }
 
     public String getName() {
@@ -50,12 +50,12 @@ public class Passenger extends Entity{
         this.phoneNumber = phoneNumber;
     }
 
-    public User getUserId() {
-        return user;
+    public Long getUserId() {
+        return userId;
     }
 
-    public void setUserId(User user) {
-        this.user = user;
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 
     @Override
@@ -95,11 +95,11 @@ public class Passenger extends Entity{
         } else if (!phoneNumber.equals(passenger.phoneNumber)) {
             return false;
         }
-        if (user == null) {
-            if (passenger.user != null) {
+        if (userId == null) {
+            if (passenger.userId != null) {
                 return false;
             }
-        } else if (!user.equals(passenger.user)) {
+        } else if (!userId.equals(passenger.userId)) {
             return false;
         }
         return true;
@@ -113,7 +113,7 @@ public class Passenger extends Entity{
         result = prime * result + ((lastName == null) ? 0 : lastName.hashCode());
         result = prime * result + ((passportNumber == null) ? 0 : passportNumber.hashCode());
         result = prime * result + ((phoneNumber == null) ? 0 : phoneNumber.hashCode());
-        result = prime * result + ((user == null) ? 0 : user.hashCode());
+        result = prime * result + ((userId == null) ? 0 : userId.hashCode());
         return result;
     }
 
@@ -124,7 +124,7 @@ public class Passenger extends Entity{
         sb.append(", lastName='").append(lastName).append('\'');
         sb.append(", passportNumber='").append(passportNumber).append('\'');
         sb.append(", phoneNumber='").append(phoneNumber).append('\'');
-        sb.append(", ").append(user);
+        sb.append(", userId=").append(userId);
         sb.append('}');
         return sb.toString();
     }

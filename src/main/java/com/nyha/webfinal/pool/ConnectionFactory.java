@@ -8,7 +8,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
-public final class ConnectionFactory {
+final class ConnectionFactory {
     static Logger logger = LogManager.getLogger();
     private static final String RESOURCE = "database";
     private static final ResourceBundle resourceBundle;

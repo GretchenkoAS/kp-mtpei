@@ -27,15 +27,12 @@
             <li class="nav-item active">
                 <a class="nav-link" href="${pageContext.request.contextPath}/index.jsp"><fmt:message key="home"/><span class="sr-only">(current)</span></a>
             </li>
+            <c:if test="${sessionScope.user != null}">
             <li class="nav-item">
-                <a class="nav-link" href="#">Что-то</a>
+                <a class="nav-link" href="${pageContext.request.contextPath}/controller?command=to_profile_page"><fmt:message key="profile"/></a>
             </li>
+            </c:if>
         </ul>
-        <form class="form-inline mr-auto my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="search" placeholder=<fmt:message key="departureStation"/> aria-label="Search">
-            <input class="form-control mr-sm-2" type="search" placeholder=<fmt:message key="arrivalStation"/> aria-label="Search">
-            <button class="btn btn-outline-light my-2 my-sm-0" type="submit"><fmt:message key="search"/></button>
-        </form>
 
         <c:if test="${sessionScope.user == null}">
             <form class="form-inline my-2 my-lg-0" action="${pageContext.request.contextPath}/controller"
@@ -52,7 +49,7 @@
                         ${sessionScope.user.username}
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="dropdownMenuLink">
-                    <a class="dropdown-item" href="${pageContext.request.contextPath}/controller">
+                    <a class="dropdown-item" href="${pageContext.request.contextPath}/controller?command=to_profile_page">
                         <fmt:message key="profile"/>
                     </a>
                     <div class="dropdown-divider"></div>

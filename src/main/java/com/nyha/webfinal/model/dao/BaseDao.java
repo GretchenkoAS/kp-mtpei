@@ -11,20 +11,11 @@ import java.sql.Statement;
 import java.util.List;
 import java.util.Optional;
 
-public interface BaseDao<K, T extends Entity> {
-    static Logger logger = LogManager.getLogger();
+public interface BaseDao<T extends Entity> {
+    Logger logger = LogManager.getLogger();
 
     List<T> findAll() throws DaoException;
 
-    Optional<T> findEntityById(K id) throws DaoException;
-
-    boolean add(T t) throws DaoException;
-
-    boolean remove(K id) throws DaoException;
-
-    boolean remove(T t) throws DaoException;
-
-    T update(T t) throws DaoException;
 
     default void close(Statement statement) {
         try {
@@ -47,13 +38,13 @@ public interface BaseDao<K, T extends Entity> {
         }
     }
 
-    default void rollback(Connection connection) {
-        try {
-            if (connection != null) {
-                connection.rollback();
-            }
-        } catch (SQLException e) {
-            logger.error("rollback error", e);
-        }
-    }
+//    default void rollback(Connection connection) {
+//        try {
+//            if (connection != null) {
+//                connection.rollback();
+//            }
+//        } catch (SQLException e) {
+//            logger.error("rollback error", e);
+//        }
+//    }
 }

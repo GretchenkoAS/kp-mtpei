@@ -6,8 +6,6 @@ import org.apache.logging.log4j.Logger;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
-import java.util.ArrayDeque;
-import java.util.Queue;
 import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.Lock;
@@ -19,17 +17,17 @@ public class ConnectionPool {
     private static Lock lock = new ReentrantLock();
     private static ConnectionPool instance;
     private final BlockingQueue<ProxyConnection> freeConnections;
-    private final Queue<ProxyConnection> givenAwayConnections;
+    private final BlockingQueue<ProxyConnection> givenAwayConnections;
 
     private ConnectionPool() {
         freeConnections = new LinkedBlockingDeque<>(DEFAULT_POOL_SIZE);
-        givenAwayConnections = new ArrayDeque<>();
+        givenAwayConnections = new LinkedBlockingDeque<>();
         for (int i = 0; i < DEFAULT_POOL_SIZE; i++) {
             try {
                 Connection connection = ConnectionFactory.getConnection();
                 freeConnections.add(new ProxyConnection(connection));
             } catch (SQLException e) {
-                logger.error("couldn't create connection to data base: ", e);
+                logger.fatal("couldn't create connection to data base: ", e);
             }
             if (freeConnections.size() == 0) {
                 throw new RuntimeException("couldn't create connection to data base");
@@ -56,7 +54,7 @@ public class ConnectionPool {
         ProxyConnection connection = null;
         try {
             connection = freeConnections.take();
-            givenAwayConnections.offer(connection);
+            givenAwayConnections.put(connection);
         } catch (InterruptedException e) {
             logger.error("InterruptedException in method getConnection " + e);
         }
@@ -64,13 +62,11 @@ public class ConnectionPool {
     }
 
     public void releaseConnection(Connection connection) {
-        if (connection.getClass() == ProxyConnection.class) {
-            if (givenAwayConnections.remove(connection)) {
-                try {
-                    freeConnections.put((ProxyConnection) connection);
-                } catch (InterruptedException e) {
-                    logger.error("Invalid connection to release" + e);
-                }
+        if (connection.getClass() == ProxyConnection.class || givenAwayConnections.remove(connection)) {
+            try {
+                freeConnections.put((ProxyConnection) connection);
+            } catch (InterruptedException e) {
+                logger.error("Invalid connection to release" + e);
             }
             logger.info("Connection has been released");
         } else {

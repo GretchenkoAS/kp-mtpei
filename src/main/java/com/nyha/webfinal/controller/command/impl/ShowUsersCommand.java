@@ -6,21 +6,15 @@ import com.nyha.webfinal.controller.command.Router;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.service.UserService;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.nyha.webfinal.model.service.impl.UserServiceImpl;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 public class ShowUsersCommand implements Command {
-    static Logger logger = LogManager.getLogger();
-    private UserService service;
+    private UserService service  = new UserServiceImpl();
     private static final String ATTRIBUTE_NAME_USERS = "users";
     public static final String EXCEPTION = "Exception";
-
-    public ShowUsersCommand(UserService service) {
-        this.service = service;
-    }
 
     @Override
     public Router execute(HttpServletRequest request) {

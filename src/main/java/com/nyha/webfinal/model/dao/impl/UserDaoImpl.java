@@ -5,22 +5,20 @@ import com.nyha.webfinal.model.dao.UserDao;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.pool.ConnectionPool;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-//fixme переопределить методы
 public class UserDaoImpl implements UserDao {
 
-    static Logger logger = LogManager.getLogger();
-    private static final String FIND_USER_BY_EMAIL = "SELECT user_id, email, username, role FROM railway.users WHERE email = ?";
-    private static final String FIND_USER_BY_EMAIL_AND_PASSWORD = "SELECT user_id, email, username, role FROM railway.users WHERE email = ? AND password = ?";
-    private static final String FIND_ALL_USERS = "SELECT user_id, email, username, role FROM railway.users";
+    private static final String FIND_USER_BY_EMAIL = "SELECT user_id, email, username, role FROM users WHERE email = ?";
+    private static final String FIND_USER_BY_EMAIL_AND_PASSWORD = "SELECT user_id, email, username, role FROM users WHERE email = ? AND password = ?";
+    private static final String FIND_ALL_USERS = "SELECT user_id, email, username, role FROM users";
     private static final String ADD_USER = "INSERT INTO `users` (`email`, `password`, `username`, `role`) VALUES (?, ?, ?, ?)";
+    private static final String UPDATE_PASSWORD = "UPDATE `users` SET password = ? WHERE user_id = ?";
+    private static final String UPDATE_USER = "UPDATE `users` SET email = ?, username = ?, role = ? WHERE user_id = ?";
 
 
     @Override
@@ -45,31 +43,6 @@ public class UserDaoImpl implements UserDao {
     }
 
     @Override
-    public Optional<User> findEntityById(Long id) throws DaoException {
-        return Optional.empty();
-    }
-
-    @Override
-    public boolean add(User user) throws DaoException {
-        throw new UnsupportedOperationException();
-    }
-
-    @Override
-    public boolean remove(Long id) throws DaoException {
-        return false;
-    }
-
-    @Override
-    public boolean remove(User user) throws DaoException {
-        return false;
-    }
-
-    @Override
-    public User update(User user) throws DaoException {
-        return null;
-    }
-
-    @Override
     public Optional<User> findUserByEmailAndPassword(String email, String password) throws DaoException {
         Optional<User> userOptional;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
@@ -87,8 +60,8 @@ public class UserDaoImpl implements UserDao {
             }
             userOptional = Optional.ofNullable(user);
         } catch (SQLException e) {
-            logger.error("search error", e);
-            throw new DaoException("search error", e);
+            logger.error("search error, email " + email, e);
+            throw new DaoException("search error, email" + email, e);
         }
         return userOptional;
     }
@@ -110,8 +83,8 @@ public class UserDaoImpl implements UserDao {
             }
             userOptional = Optional.ofNullable(user);
         } catch (SQLException e) {
-            logger.error("search error", e);
-            throw new DaoException("search error", e);
+            logger.error("search error, email " + email, e);
+            throw new DaoException("search error, email " + email, e);
         }
         return userOptional;
     }
@@ -127,9 +100,41 @@ public class UserDaoImpl implements UserDao {
             preparedStatement.setString(4, user.getRole().toString());
             isAdd = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
-            logger.error("add error", e);
-            throw new DaoException("add error", e);
+            logger.error("add error, " + user, e);
+            throw new DaoException("add error, " + user, e);
         }
         return isAdd;
+    }
+
+    @Override
+    public boolean changePassword(User user, String password) throws DaoException {
+        boolean isUpdate;
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PASSWORD)) {
+            preparedStatement.setString(1, password);
+            preparedStatement.setLong(2, user.getId());
+            isUpdate = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            logger.error("change password error, " + user, e);
+            throw new DaoException("change password error, " + user, e);
+        }
+        return isUpdate;
+    }
+
+    @Override
+    public boolean updateUser(User user) throws DaoException {
+        boolean isUpdate;
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER)) {
+            preparedStatement.setString(1, user.getEmail());
+            preparedStatement.setString(2, user.getUsername());
+            preparedStatement.setString(3, user.getRole().toString());
+            preparedStatement.setLong(4, user.getId());
+            isUpdate = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            logger.error("change password error, " + user, e);
+            throw new DaoException("change password error, " + user, e);
+        }
+        return isUpdate;
     }
 }

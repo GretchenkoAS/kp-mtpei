@@ -4,6 +4,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class UserValidator {
+    private static final int MAX_LENGTH = 40;
     private static final Pattern EMAIL_REGEX = Pattern
             .compile("^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}");
     private static final Pattern PASSWORD_PATTERN = Pattern
@@ -16,14 +17,14 @@ public class UserValidator {
 
     public static boolean isValidUsername(String username) {
         boolean isCorrect = true;
-        if (username == null || username.isBlank()) {
+        if (username == null || username.isBlank() || username.length() > MAX_LENGTH) {
             isCorrect = false;
         }
         return isCorrect;
     }
 
     public static boolean isValidEmail(String email) {
-        if (email == null || email.isBlank()) {
+        if (email == null || email.isBlank() || email.length() > MAX_LENGTH) {
             return false;
         }
         Matcher matcher = EMAIL_REGEX.matcher(email);
@@ -31,7 +32,7 @@ public class UserValidator {
     }
 
     public static boolean isValidPassword(String password) {
-        if (password == null || password.isBlank()) {
+        if (password == null || password.isBlank()  || password.length() > MAX_LENGTH) {
             return false;
         }
         Matcher matcher = PASSWORD_PATTERN.matcher(password);

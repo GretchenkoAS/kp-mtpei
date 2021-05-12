@@ -1,39 +1,18 @@
 package com.nyha.webfinal.model.entity;
 
-public class Train extends Entity{
-    public enum Type {
-        SIGNATURE, EXPRESS, PASSENGER
-    }
+import java.util.Collections;
+import java.util.List;
 
-    private String manufacturer;
-    private String model;
+public class Train extends Entity{
     private int numberOfSeats;
-    private Train.Type type;
+    private List<Route> routes;
 
     public Train() {
     }
 
-    public Train(String manufacturer, String model, int numberOfSeats, Type type) {
-        this.manufacturer = manufacturer;
-        this.model = model;
+    public Train(int numberOfSeats, List<Route> routes) {
         this.numberOfSeats = numberOfSeats;
-        this.type = type;
-    }
-
-    public String getManufacturer() {
-        return manufacturer;
-    }
-
-    public void setManufacturer(String manufacturer) {
-        this.manufacturer = manufacturer;
-    }
-
-    public String getModel() {
-        return model;
-    }
-
-    public void setModel(String model) {
-        this.model = model;
+        this.routes = routes;
     }
 
     public int getNumberOfSeats() {
@@ -44,12 +23,12 @@ public class Train extends Entity{
         this.numberOfSeats = numberOfSeats;
     }
 
-    public Type getType() {
-        return type;
+    public List<Route> getRoutes() {
+        return Collections.unmodifiableList(routes);
     }
 
-    public void setType(Type type) {
-        this.type = type;
+    public void setRoutes(List<Route> routes) {
+        this.routes = routes;
     }
 
     @Override
@@ -61,28 +40,14 @@ public class Train extends Entity{
             return false;
         }
         Train train = (Train) o;
-        if (manufacturer == null) {
-            if (train.manufacturer != null) {
-                return false;
-            }
-        } else if (!manufacturer.equals(train.manufacturer)) {
-            return false;
-        }
-        if (model == null) {
-            if (train.model != null) {
-                return false;
-            }
-        } else if (!model.equals(train.model)) {
-            return false;
-        }
         if (train.numberOfSeats != numberOfSeats) {
             return false;
         }
-        if (type == null) {
-            if (train.type != null) {
+        if (routes == null) {
+            if (train.routes != null) {
                 return false;
             }
-        } else if (type != train.type) {
+        } else if (!routes.equals(train.routes)) {
             return false;
         }
         return true;
@@ -92,20 +57,16 @@ public class Train extends Entity{
     public int hashCode() {
         int prime = 31;
         int result = super.hashCode();
-        result = prime * result + ((manufacturer == null) ? 0 : manufacturer.hashCode());
-        result = prime * result + ((model == null) ? 0 : model.hashCode());
+        result = prime * result + ((routes == null) ? 0 : routes.hashCode());
         result = prime * result + numberOfSeats;
-        result = prime * result + ((type == null) ? 0 : type.hashCode());
         return result;
     }
 
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Train{");
-        sb.append("manufacturer='").append(manufacturer).append('\'');
-        sb.append(", model='").append(model).append('\'');
-        sb.append(", numberOfSeats='").append(numberOfSeats).append('\'');
-        sb.append(", type=").append(type);
+        sb.append("numberOfSeats='").append(numberOfSeats).append('\'');
+        sb.append(", routes=").append(routes);
         sb.append('}');
         return sb.toString();
     }

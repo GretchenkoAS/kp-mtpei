@@ -17,7 +17,7 @@ public class CommandProvider {
             CommandType type = CommandType.valueOf(commandName.toUpperCase());
             current = Optional.of(type.getCurrentCommand());
         } catch (IllegalArgumentException e) {
-            logger.error("Illegal argument exception", e);
+            logger.error("Illegal argument exception, unknown command", e);
             current = Optional.empty();
         }
         return current;
