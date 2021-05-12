@@ -3,11 +3,14 @@
 
 <fmt:setLocale value="${currentLocale}"/>
 <fmt:setBundle basename="property/local"/>
-<html>
-<head>
-    <title>Title</title>
-</head>
-<body>
-
-</body>
-</html>
+<%--<footer class="footer">--%>
+<%--    <div class="container">--%>
+<%--        <div class="row">--%>
+<%--            <div class="col-sm-6 col-12">--%>
+<%--                <div class="copyright">--%>
+<%--                    <p>Gretchenko Andrey © 2021. All Rights Reserved</p>--%>
+<%--                </div>--%>
+<%--            </div>--%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</footer>--%>

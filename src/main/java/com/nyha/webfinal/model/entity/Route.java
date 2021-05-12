@@ -34,7 +34,11 @@ public class Route extends Entity{
         this.station = station;
     }
 
-    public Time getTime() {
+    public String getTime() {
+        return time.toString().substring(0,5);
+    }
+
+    public Time getTimeTime() {
         return time;
     }
 

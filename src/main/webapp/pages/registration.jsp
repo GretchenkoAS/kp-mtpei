@@ -6,14 +6,17 @@
 <html>
 <head>
     <title>Registration</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginstyle.css">
+
 </head>
 <body>
 <header>
     <jsp:include page="${pageContext.request.contextPath}/pages/header.jsp"/>
 </header>
+<hr/>
 
 
-<div class="container">
+<div class="container" >
     <div class="row">
         <div class="col-4 mx-auto my-lg-4 p-3 bg-light">
             <form class="form-horizontal" name="loginForm" method="POST" action="controller">

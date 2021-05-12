@@ -11,6 +11,7 @@ import com.nyha.webfinal.model.service.TrainService;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 public class TrainServiceImpl implements TrainService {
     private TrainDao trainDao = new TrainDaoImpl();
@@ -37,14 +38,14 @@ public class TrainServiceImpl implements TrainService {
                 boolean flag = false;
                 for (Route route : train.getRoutes()) {
                     if (departureStation.equals(route.getStation())) {
-                        shortTrainData.setDepartureTime(route.getTime());
+                        shortTrainData.setDepartureTime(route.getTime().toString().substring(0,5));
                         flag = true;
                     }
                     if (arrivalStation.equals(route.getStation()) && flag) {
                         shortTrainData.setTrainId(train.getId());
                         shortTrainData.setDepartureStation(departureStation);
                         shortTrainData.setArrivalStation(arrivalStation);
-                        shortTrainData.setArrivalTime(route.getTime());
+                        shortTrainData.setArrivalTime(route.getTime().toString().substring(0,5));
                         double price = calculatePrice(train, departureStation, arrivalStation);
                         shortTrainData.setPrice(price);
                         resultTrains.add(shortTrainData);
@@ -59,6 +60,18 @@ public class TrainServiceImpl implements TrainService {
         return resultTrains;
     }
 
+    @Override
+    public Optional<Train> findTrainById(Long trainId) throws ServiceException {
+        Optional<Train> train;
+        try {
+            train = trainDao.findTrainById(trainId);
+        } catch (DaoException e) {
+            logger.error("search train error, " + trainId, e);
+            throw new ServiceException("search train error, " + trainId, e);
+        }
+        return train;
+    }
+
     private double calculatePrice(Train train, String departureStation, String arrivalStation) {
         double price = 0;
         boolean flag = false;
@@ -71,7 +84,6 @@ public class TrainServiceImpl implements TrainService {
             }
             if (flag) {
                 price += route.getPrice();
-                break;
             }
         }
         return price;

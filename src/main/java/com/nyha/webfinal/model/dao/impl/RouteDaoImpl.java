@@ -44,7 +44,7 @@ public class RouteDaoImpl implements RouteDao {
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ADD_ROUTE)) {
             preparedStatement.setLong(1, route.getTrainNumber());
-            preparedStatement.setTime(2, route.getTime());
+            preparedStatement.setTime(2, route.getTimeTime());
             preparedStatement.setString(3, route.getStation());
             preparedStatement.setDouble(4, route.getPrice());
             isAdd = preparedStatement.executeUpdate() > 0;

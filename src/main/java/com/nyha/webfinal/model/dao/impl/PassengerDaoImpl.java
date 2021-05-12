@@ -15,7 +15,8 @@ import java.util.List;
 
 public class PassengerDaoImpl implements PassengerDao {
     private static final String FIND_ALL_PASSENGERS = "SELECT passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM passengers";
-    private static final String ADD_PASSENGER = "INSERT INTO `passengers` (`first_name`, `last_name`, `passport_number`, `phone_number`, `user_id`) VALUES (?, ?, ?, ?, ?)";
+    private static final String ADD_PASSENGER = "INSERT INTO `passengers` (`first_name`, `last_name`, `passport_number`, `phone_number`, `user_id`, `passenger_id`) VALUES (?, ?, ?, ?, ?, ?)";
+    private static final String FIND_PASSENGERS_BY_ID = "SELECT passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM passengers WHERE passenger_id = ?";
 
     @Override
     public List<Passenger> findAll() throws DaoException {
@@ -44,12 +45,19 @@ public class PassengerDaoImpl implements PassengerDao {
     public boolean addPassenger(Passenger passenger) throws DaoException {
         boolean isAdd;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(ADD_PASSENGER)) {
+             PreparedStatement preparedStatement = connection.prepareStatement(ADD_PASSENGER);
+        PreparedStatement preparedStatementFind = connection.prepareStatement(FIND_PASSENGERS_BY_ID)) {
+            preparedStatementFind.setLong(1, Long.parseLong(passenger.getPassportNumber()));
+            ResultSet resultSet = preparedStatementFind.executeQuery();
+            if (resultSet.next()) {
+                return true;
+            }
             preparedStatement.setString(1, passenger.getName());
             preparedStatement.setString(2, passenger.getLastName());
             preparedStatement.setString(3, passenger.getPassportNumber());
             preparedStatement.setString(4, passenger.getPhoneNumber());
             preparedStatement.setLong(5, passenger.getUserId());
+            preparedStatement.setLong(6, Long.parseLong(passenger.getPassportNumber()));
             isAdd = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             logger.error("add error, " + passenger, e);

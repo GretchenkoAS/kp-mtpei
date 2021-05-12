@@ -7,6 +7,7 @@
 <html>
 <head>
     <title>Login</title>
+    <link rel="stylesheet" href="${pageContext.request.contextPath}/css/loginstyle.css">
 
 </head>
 
@@ -14,7 +15,7 @@
 <header>
     <jsp:include page="${pageContext.request.contextPath}/pages/header.jsp"/>
 </header>
-
+<hr/>
 <div class="container">
     <div class="row">
         <div class="col-4 mx-auto my-lg-4 p-3 bg-light">

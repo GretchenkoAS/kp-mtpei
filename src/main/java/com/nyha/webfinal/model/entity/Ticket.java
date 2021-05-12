@@ -67,7 +67,11 @@ public class Ticket extends Entity {
         this.seat = seat;
     }
 
-    public Timestamp getDepartureDate() {
+    public String getDepartureDate() {
+        return departureDate.toString().substring(0,16);
+    }
+
+    public Timestamp getDepartureDateDate() {
         return departureDate;
     }
 
@@ -75,7 +79,11 @@ public class Ticket extends Entity {
         this.departureDate = departureDate;
     }
 
-    public Timestamp getArrivalDate() {
+    public String getArrivalDate() {
+        return arrivalDate.toString().substring(0,16);
+    }
+
+    public Timestamp getArrivalDateDate() {
         return arrivalDate;
     }
 

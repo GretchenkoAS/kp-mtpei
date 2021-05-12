@@ -8,6 +8,7 @@ import com.nyha.webfinal.model.entity.Ticket;
 import com.nyha.webfinal.model.service.TicketService;
 
 import java.util.List;
+import java.util.Optional;
 
 public class TicketServiceImpl implements TicketService {
     private TicketDao ticketDao = new TicketDaoImpl();
@@ -34,5 +35,16 @@ public class TicketServiceImpl implements TicketService {
             throw new ServiceException("search error", e);
         }
         return tickets;
+    }
+
+    @Override
+    public Optional<String> addTicket(Ticket ticket) throws ServiceException {
+        try {
+            ticketDao.addTicket(ticket);
+        } catch (DaoException e) {
+            logger.error("add ticket error, " + ticket, e);
+            throw new ServiceException("add ticket error, " + ticket, e);
+        }
+        return Optional.empty();
     }
 }

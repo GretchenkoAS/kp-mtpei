@@ -2,6 +2,7 @@ package com.nyha.webfinal.controller.command.impl;
 
 import com.nyha.webfinal.controller.RequestAttribute;
 import com.nyha.webfinal.controller.RequestParameter;
+import com.nyha.webfinal.controller.SessionAttribute;
 import com.nyha.webfinal.controller.command.Command;
 import com.nyha.webfinal.controller.command.PagePath;
 import com.nyha.webfinal.controller.command.Router;
@@ -13,6 +14,7 @@ import com.nyha.webfinal.model.service.impl.TrainServiceImpl;
 import com.nyha.webfinal.validator.RouteValidator;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class FindTrainsByStationsCommand  implements Command {
@@ -30,14 +32,15 @@ public class FindTrainsByStationsCommand  implements Command {
             request.setAttribute(RequestAttribute.INCORRECT_DATA, INCORRECT_STATION_NAME);
             return router;
         }
-        List<ShortTrainData> shortTrainData;
+        List<ShortTrainData> shortTrainsData;
         try {
-            shortTrainData = service.findTrainByStations(departureStation, arrivalStation);
-            if (shortTrainData.isEmpty()) {
+            shortTrainsData = service.findTrainByStations(departureStation, arrivalStation);
+            if (shortTrainsData.isEmpty()) {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, TRAINS_NOT_FOUND);
                 return router;
             }
-            request.setAttribute(RequestAttribute.SHORT_TRAINS_DATA, shortTrainData);
+            HttpSession session = request.getSession(true);
+            session.setAttribute(SessionAttribute.SHORT_TRAINS_DATA, shortTrainsData);
         } catch (ServiceException e) {
             router.setPage(PagePath.ERROR_500);
             request.setAttribute(RequestAttribute.EXCEPTION, e.getMessage());

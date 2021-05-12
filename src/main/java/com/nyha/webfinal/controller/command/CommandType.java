@@ -28,11 +28,6 @@ public enum CommandType {
             this.command = new LogoutCommand();
         }
     },
-    SHOW_USERS {
-        {
-            this.command = new ShowUsersCommand();
-        }
-    },
     CHANGE_LOCALE {
         {
             this.command = new ChangeLocaleCommand();
@@ -46,6 +41,21 @@ public enum CommandType {
     FIND_TRAINS_BY_STATIONS {
         {
             this.command = new FindTrainsByStationsCommand();
+        }
+    },
+    FIND_TRAIN_BY_ID {
+        {
+            this.command = new FindTrainByIdCommand();
+        }
+    },
+    BUY_TICKET {
+        {
+            this.command = new BuyTicketCommand();
+        }
+    },
+    TO_BUY_TICKET_PAGE {
+        {
+            this.command = new ToBuyTicketPageCommand();
         }
     },
     TO_MAIN_PAGE {
@@ -66,6 +76,16 @@ public enum CommandType {
     TO_PROFILE_PAGE {
         {
             this.command = new ToProfilePageCommand();
+        }
+    },
+    TO_ADMIN_PAGE {
+        {
+            this.command = new ToAdminPageCommand();
+        }
+    },
+    TO_USERS_PAGE {
+        {
+            this.command = new ToUsersPageCommand();
         }
     },
     TO_LOGIN_PAGE {

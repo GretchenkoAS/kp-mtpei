@@ -6,14 +6,14 @@ public class ShortTrainData {
     private Long trainId;
     private String departureStation;
     private String arrivalStation;
-    private Time departureTime;
-    private Time arrivalTime;
+    private String departureTime;
+    private String arrivalTime;
     private double price;
 
     public ShortTrainData() {
     }
 
-    public ShortTrainData(Long trainId, String departureStation, String arrivalStation, Time departureTime, Time arrivalTime, double price) {
+    public ShortTrainData(Long trainId, String departureStation, String arrivalStation, String departureTime, String arrivalTime, double price) {
         this.trainId = trainId;
         this.departureStation = departureStation;
         this.arrivalStation = arrivalStation;
@@ -22,19 +22,19 @@ public class ShortTrainData {
         this.price = price;
     }
 
-    public Time getDepartureTime() {
+    public String getDepartureTime() {
         return departureTime;
     }
 
-    public void setDepartureTime(Time departureTime) {
+    public void setDepartureTime(String departureTime) {
         this.departureTime = departureTime;
     }
 
-    public Time getArrivalTime() {
+    public String getArrivalTime() {
         return arrivalTime;
     }
 
-    public void setArrivalTime(Time arrivalTime) {
+    public void setArrivalTime(String arrivalTime) {
         this.arrivalTime = arrivalTime;
     }
 

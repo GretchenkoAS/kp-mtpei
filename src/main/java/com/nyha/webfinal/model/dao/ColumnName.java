@@ -34,8 +34,10 @@ public class ColumnName {
     public static final String ROUTE_STATION = "station";
     public static final String ROUTE_TIME = "time";
     public static final String ROUTE_TRAIN_NUMBER = "train_id";
+    public static final String ROUTE_PRICE = "price";
 
-
+    //Constants for bank_accounts table
+    public static final String MONEY_AMOUNT = "money_amount";
 
     private ColumnName() {
     }

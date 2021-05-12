@@ -10,6 +10,8 @@
 <header>
     <jsp:include page="${pageContext.request.contextPath}/pages/header.jsp"/>
 </header>
+<hr/>
+
 
 <div class="container-fluid">
     <div class="row">
@@ -61,8 +63,6 @@
                     <fmt:message key="edit"/>
                 </button>
             </form>
-
-
         </div>
     </div>
 </div>

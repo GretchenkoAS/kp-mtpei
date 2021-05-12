@@ -58,12 +58,12 @@ public class TicketDaoImpl implements TicketDao {
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ADD_TICKET)) {
             preparedStatement.setLong(1, ticket.getTrainId());
-            preparedStatement.setLong(2, ticket.getPassenger().getId());
+            preparedStatement.setLong(2, Long.parseLong(ticket.getPassenger().getPassportNumber()));
             preparedStatement.setString(3, ticket.getDepartureStation());
             preparedStatement.setString(4, ticket.getArrivalStation());
             preparedStatement.setInt(5, ticket.getSeat());
-            preparedStatement.setTimestamp(6, ticket.getDepartureDate());
-            preparedStatement.setTimestamp(7, ticket.getArrivalDate());
+            preparedStatement.setTimestamp(6, ticket.getDepartureDateDate());
+            preparedStatement.setTimestamp(7, ticket.getArrivalDateDate());
             preparedStatement.setDouble(8, ticket.getPrice());
             isAdd = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
