@@ -18,6 +18,7 @@ public class UserServiceImpl implements UserService {
     public static final String INCORRECT_USERNAME = "incorrectUsername";
     public static final String INCORRECT_PASSWORD = "incorrectPassword";
     public static final String PASSWORD_CHANGED = "passwordChanged";
+    public static final String USER_UPDATED = "userUpdated";
 
 
     private UserDao userDao = new UserDaoImpl();
@@ -111,6 +112,6 @@ public class UserServiceImpl implements UserService {
             logger.error("change role error, " + user, e);
             throw new ServiceException("change role error, " + user, e);
         }
-        return PASSWORD_CHANGED;
+        return USER_UPDATED;
     }
 }

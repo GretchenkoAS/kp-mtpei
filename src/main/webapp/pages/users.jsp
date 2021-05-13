@@ -19,20 +19,31 @@
         <th scope="col"><fmt:message key="username"/></th>
         <th scope="col"><fmt:message key="email"/></th>
         <th scope="col"><fmt:message key="role"/></th>
+        <th scope="col"><fmt:message key="chooseRole"/></th>
+        <th scope="col"><fmt:message key="edit"/></th>
     </tr>
     </thead>
     <tbody>
     <c:forEach items="${users}" var="user">
-        <tr>
-                <%--            <td>--%>
-                <%--                <a href="${pageContext.request.contextPath}/controller?command=find_train_by_id&trainId=${short_train_data.trainId}">--%>
-                <%--                        ${short_train_data.trainId}--%>
-                <%--                </a>--%>
-                <%--            </td>--%>
-            <td>${user.username}</td>
-            <td>${user.email}</td>
-            <td>${user.role.toString()}</td>
-        </tr>
+        <form method="post" action="controller">
+            <input type="hidden" name="command" value="change_role"/>
+            <input type="hidden" name="username" value="${user.username}"/>
+            <input type="hidden" name="email" value="${user.email}"/>
+            <input type="hidden" name="userId" value="${user.id}"/>
+            <tr>
+                <td>${user.username}</td>
+                <td>${user.email}</td>
+                <td>${user.role.toString()}</td>
+                <td><select class="custom-select" id="roleValue" name="role">
+                    <option value="0"><fmt:message key="admin"/></option>
+                    <option value="1"><fmt:message key="user"/></option>
+                </select>
+                </td>
+                <td>
+                    <button type="submit"><fmt:message key="edit"/></button>
+                </td>
+            </tr>
+        </form>
     </c:forEach>
     </tbody>
 </table>

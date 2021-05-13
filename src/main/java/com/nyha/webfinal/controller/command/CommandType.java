@@ -13,11 +13,11 @@ public enum CommandType {
             this.command = new ChangePasswordCommand();
         }
     },
-//    CHANGE_ROLE {
-//        {
-//            this.command = new ChangeRoleCommand();
-//        }
-//    },
+    CHANGE_ROLE {
+        {
+            this.command = new ChangeRoleCommand();
+        }
+    },
     REGISTER {
         {
             this.command = new RegisterCommand();

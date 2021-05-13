@@ -6342,3 +6342,139 @@ Caused by: java.sql.SQLException: Column 'price' not found.
 2021-05-13 02:19:27.750 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
 2021-05-13 02:20:22.941 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
 2021-05-13 02:20:22.942 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-05-13 02:41:24.365 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-05-13 02:41:24.377 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 02:41:24.449 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:41:25.535 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 02:41:25.535 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:41:25.698 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 02:41:25.699 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:41:27.903 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_login_page
+2021-05-13 02:41:27.904 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-05-13 02:41:35.380 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-05-13 02:41:35.443 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 02:41:35.444 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:41:38.718 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_admin_page
+2021-05-13 02:41:38.719 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/admin.jsp
+2021-05-13 02:41:40.509 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_users_page
+2021-05-13 02:41:40.513 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 02:41:40.513 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 02:45:45.985 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-05-13 02:45:45.986 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-05-13 02:48:14.710 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-05-13 02:48:14.725 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 02:48:14.790 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:48:15.879 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 02:48:15.880 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:48:16.017 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 02:48:16.018 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:48:18.590 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_login_page
+2021-05-13 02:48:18.591 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-05-13 02:48:27.250 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-05-13 02:48:27.323 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 02:48:27.324 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 02:48:28.905 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_admin_page
+2021-05-13 02:48:28.907 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/admin.jsp
+2021-05-13 02:48:30.613 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_users_page
+2021-05-13 02:48:30.615 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 02:48:30.616 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 02:49:52.922 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-05-13 02:49:52.923 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-05-13 03:02:53.670 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-05-13 03:02:53.683 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:02:53.748 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:02:54.904 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:02:54.905 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:02:55.136 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:02:55.137 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:02:59.724 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_login_page
+2021-05-13 03:02:59.726 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-05-13 03:03:06.474 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-05-13 03:03:06.527 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:03:06.528 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:03:08.185 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_admin_page
+2021-05-13 03:03:08.186 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/admin.jsp
+2021-05-13 03:03:10.161 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_users_page
+2021-05-13 03:03:10.164 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:03:10.164 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 03:03:26.534 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_role
+2021-05-13 03:03:26.538 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:04:04.093 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_users_page
+2021-05-13 03:04:04.096 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:04:04.098 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 03:04:21.957 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-05-13 03:04:21.958 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-05-13 03:04:41.379 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-05-13 03:04:41.395 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:04:41.477 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:04:42.678 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:04:42.679 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:04:42.827 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:04:42.827 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:04:44.677 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_login_page
+2021-05-13 03:04:44.678 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-05-13 03:04:50.598 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-05-13 03:04:50.663 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:04:50.664 [http-nio-8080-exec-6] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:04:52.102 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_admin_page
+2021-05-13 03:04:52.103 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/admin.jsp
+2021-05-13 03:04:53.398 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_users_page
+2021-05-13 03:04:53.400 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:04:53.401 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 03:04:59.367 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_role
+2021-05-13 03:05:15.477 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:05:19.144 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-05-13 03:05:19.145 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-05-13 03:07:40.924 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-05-13 03:07:40.942 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:07:41.037 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:07:42.377 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:07:42.379 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:07:42.617 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:07:42.618 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:07:49.625 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_login_page
+2021-05-13 03:07:49.626 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-05-13 03:07:56.234 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-05-13 03:07:56.299 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:07:56.299 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:07:57.589 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_admin_page
+2021-05-13 03:07:57.591 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/admin.jsp
+2021-05-13 03:07:58.611 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_users_page
+2021-05-13 03:07:58.613 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:07:58.613 [http-nio-8080-exec-8] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 03:08:02.036 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_role
+2021-05-13 03:08:27.722 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:08:30.814 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-05-13 03:08:30.815 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-05-13 03:11:40.799 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-05-13 03:11:40.815 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:11:40.893 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:11:41.968 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:11:41.969 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:11:42.110 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:11:42.111 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:11:48.670 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_login_page
+2021-05-13 03:11:48.670 [http-nio-8080-exec-4] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-05-13 03:11:54.232 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-05-13 03:11:54.281 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:11:54.281 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/login.jsp
+2021-05-13 03:12:04.371 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- login
+2021-05-13 03:12:04.377 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:12:04.377 [http-nio-8080-exec-7] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:12:06.034 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_admin_page
+2021-05-13 03:12:06.035 [http-nio-8080-exec-9] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/admin.jsp
+2021-05-13 03:12:07.501 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_users_page
+2021-05-13 03:12:07.508 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:12:07.509 [http-nio-8080-exec-10] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 03:12:10.466 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_role
+2021-05-13 03:12:10.477 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:12:10.479 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:12:10.479 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 03:12:13.861 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- change_role
+2021-05-13 03:12:13.868 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:12:13.872 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:12:13.872 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/users.jsp
+2021-05-13 03:12:34.794 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:12:34.794 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:12:52.949 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-05-13 03:12:52.950 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
