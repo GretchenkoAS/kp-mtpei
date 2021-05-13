@@ -10,6 +10,7 @@ import com.nyha.webfinal.model.entity.Train;
 import com.nyha.webfinal.model.service.TrainService;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
@@ -57,6 +58,7 @@ public class TrainServiceImpl implements TrainService {
             logger.error("search error, " + departureStation + ", " + arrivalStation, e);
             throw new ServiceException("search error, " + departureStation + ", " + arrivalStation, e);
         }
+        resultTrains.sort(Comparator.comparing(ShortTrainData::getDepartureTime));
         return resultTrains;
     }
 

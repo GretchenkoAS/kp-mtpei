@@ -6478,3 +6478,16 @@ Caused by: java.sql.SQLException: Column 'price' not found.
 2021-05-13 03:12:34.794 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
 2021-05-13 03:12:52.949 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
 2021-05-13 03:12:52.950 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
+2021-05-13 03:32:19.758 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.pool.ConnectionPool [getInstance] -- ConnectionPool was created
+2021-05-13 03:32:19.773 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:32:19.846 [http-nio-8080-exec-1] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:32:20.941 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:32:20.942 [http-nio-8080-exec-2] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:32:21.146 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- to_main_page
+2021-05-13 03:32:21.147 [http-nio-8080-exec-3] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/main.jsp
+2021-05-13 03:32:30.383 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- find_trains_by_stations
+2021-05-13 03:32:30.445 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:32:30.454 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.pool.ConnectionPool [releaseConnection] -- Connection has been released
+2021-05-13 03:32:30.456 [http-nio-8080-exec-5] INFO  com.nyha.webfinal.controller.Controller [processRequest] -- /pages/trains.jsp
+2021-05-13 03:33:12.707 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [destroyPool] -- Connection pool has been destroyed
+2021-05-13 03:33:12.707 [main] INFO  com.nyha.webfinal.pool.ConnectionPool [deregisterDrivers] -- Drivers removed from registration
