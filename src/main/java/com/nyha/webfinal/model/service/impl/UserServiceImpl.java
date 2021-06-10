@@ -8,19 +8,21 @@ import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.service.UserService;
 import com.nyha.webfinal.validator.UserValidator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.List;
 import java.util.Optional;
 
 //fixme переопределить методы
 public class UserServiceImpl implements UserService {
+    static Logger logger = LogManager.getLogger();
     public static final String INCORRECT_EMAIL = "incorrectEmail";
     public static final String EMAIL_ALREADY_EXISTS = "emailAlreadyExists";
     public static final String INCORRECT_USERNAME = "incorrectUsername";
     public static final String INCORRECT_PASSWORD = "incorrectPassword";
     public static final String PASSWORD_CHANGED = "passwordChanged";
     public static final String USER_UPDATED = "userUpdated";
-
-
     private UserDao userDao = new UserDaoImpl();
 
     @Override

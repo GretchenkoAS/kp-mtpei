@@ -5,10 +5,13 @@ import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.dao.BankDao;
 import com.nyha.webfinal.model.dao.impl.BankDaoImpl;
 import com.nyha.webfinal.model.service.BankService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
 public class BankServiceImpl implements BankService {
+    static Logger logger = LogManager.getLogger();
     public static final String OPERATION_FAILED = "operationFailed";
 
     private BankDao bankDao = new BankDaoImpl();

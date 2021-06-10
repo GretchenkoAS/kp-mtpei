@@ -6,6 +6,8 @@ import com.nyha.webfinal.model.dao.TrainDao;
 import com.nyha.webfinal.model.entity.Route;
 import com.nyha.webfinal.model.entity.Train;
 import com.nyha.webfinal.pool.ConnectionPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -16,10 +18,12 @@ import java.util.List;
 import java.util.Optional;
 
 public class TrainDaoImpl implements TrainDao {
-    private static final String FIND_ALL_TRAINS = "SELECT trains.train_id, trains.number_of_seats, routes.station, routes.route_id, routes.time, routes.price FROM trains JOIN routes ON trains.train_id = routes.train_id order by trains.train_id, routes.time";
-    private static final String FIND_TRAINS_BY_ID = "SELECT trains.train_id, trains.number_of_seats, routes.station, routes.route_id, routes.time, routes.price FROM trains JOIN routes ON trains.train_id = routes.train_id where trains.train_id = ?  order by trains.train_id, routes.time";
+    static Logger logger = LogManager.getLogger();
+    private static final String FIND_ALL_TRAINS = "SELECT trains.train_id, trains.number_of_seats, routes.station, routes.route_id, routes.time, routes.price FROM trains JOIN routes ON trains.train_id = routes.train_id order by trains.train_id, routes.station_number";
+    private static final String FIND_TRAINS_BY_ID = "SELECT trains.train_id, trains.number_of_seats, routes.station, routes.route_id, routes.time, routes.price FROM trains JOIN routes ON trains.train_id = routes.train_id where trains.train_id = ?  order by trains.train_id, routes.station_number";
     private static final String ADD_TRAIN = "INSERT INTO `trains` (`number_of_seats`) VALUES (?)";
     private static final String FIND_ROUTES_BY_STATIONS = "SELECT route_id, train_id, time, station, price FROM routes WHERE station = ?";
+    private static final String FIND_POPULAR_TRAINS = "SELECT train_id, count(train_id) FROM tickets group by train_id order by count(train_id) desc limit 5";
 
     @Override
     public List<Train> findAll() throws DaoException {
@@ -144,6 +148,26 @@ public class TrainDaoImpl implements TrainDao {
             throw new DaoException("search trains error", e);
         }
         return Optional.ofNullable(train);
+    }
+
+    @Override
+    public List<Train> findPopularTrains() throws DaoException {
+        List<Train> trains = new ArrayList<>();
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(FIND_POPULAR_TRAINS, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY)
+        ) {
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                Long trainId = resultSet.getLong(ColumnName.TRAIN_ID);
+                findTrainById(trainId);
+                Train train = findTrainById(trainId).get();
+                trains.add(train);
+            }
+        } catch (SQLException e) {
+            logger.error("search trains error", e);
+            throw new DaoException("search trains error", e);
+        }
+        return trains;
     }
 
     private List<Route> findRoutesByStations(String departureStation) throws DaoException {

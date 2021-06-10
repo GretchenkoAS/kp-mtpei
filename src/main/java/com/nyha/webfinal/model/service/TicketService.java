@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface TicketService {
-    Logger logger = LogManager.getLogger();
     List<Ticket> findAllTickets() throws ServiceException;
     List<Ticket> findUsersTickets(Long userId) throws ServiceException;
     Optional<String> addTicket(Ticket ticket) throws ServiceException;

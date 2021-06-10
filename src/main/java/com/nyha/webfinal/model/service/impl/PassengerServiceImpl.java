@@ -7,11 +7,14 @@ import com.nyha.webfinal.model.dao.PassengerDao;
 import com.nyha.webfinal.model.dao.impl.PassengerDaoImpl;
 import com.nyha.webfinal.model.entity.Passenger;
 import com.nyha.webfinal.model.service.PassengerService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
 
 public class PassengerServiceImpl implements PassengerService {
+    static Logger logger = LogManager.getLogger();
     private PassengerDao passengerDao = new PassengerDaoImpl();
 
     @Override

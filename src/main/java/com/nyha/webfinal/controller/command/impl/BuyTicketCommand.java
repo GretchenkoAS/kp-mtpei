@@ -16,16 +16,22 @@ import com.nyha.webfinal.model.service.TicketService;
 import com.nyha.webfinal.model.service.impl.BankServiceImpl;
 import com.nyha.webfinal.model.service.impl.PassengerServiceImpl;
 import com.nyha.webfinal.model.service.impl.TicketServiceImpl;
+import com.nyha.webfinal.validator.BankValidator;
+import com.nyha.webfinal.validator.PassengerValidator;
+import com.nyha.webfinal.validator.TicketValidator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.sql.Timestamp;
+import java.time.LocalDate;
 import java.util.Optional;
 
 public class BuyTicketCommand implements Command {
+    static Logger logger = LogManager.getLogger();
     public static final String TICKET_BOUGHT = "ticketBought";
-
-
+    public static final String INCORRECT_DATA = "incorrectData";
     private TicketService ticketService = new TicketServiceImpl();
     private PassengerService passengerService = new PassengerServiceImpl();
     private BankService bankService = new BankServiceImpl();
@@ -46,39 +52,48 @@ public class BuyTicketCommand implements Command {
         String passportNumber = request.getParameter(RequestParameter.PASSPORT_NUMBER);
         String phoneNumber = request.getParameter(RequestParameter.PHONE_NUMBER);
         String seatStr = request.getParameter(RequestParameter.SEAT);
-        int seat = Integer.parseInt(seatStr);
         String dateStr = request.getParameter(RequestParameter.DATE);
         String accountNumber = request.getParameter(RequestParameter.ACCOUNT_NUMBER);
-
+        if (!PassengerValidator.isValidName(name) || !PassengerValidator.isValidName(lastName) ||
+                !PassengerValidator.isValidNumber(passportNumber) || !PassengerValidator.isValidNumber(phoneNumber) ||
+                !TicketValidator.isValidSeat(seatStr) || !BankValidator.isValidAccountNumber(accountNumber)) {
+            request.setAttribute(RequestAttribute.INCORRECT_DATA, INCORRECT_DATA);
+            router.setPage(PagePath.TICKET);
+            request.setAttribute(RequestAttribute.TRAIN_ID, trainIdStr);
+            request.setAttribute(RequestAttribute.DEPARTURE_STATION, departureStation);
+            request.setAttribute(RequestAttribute.ARRIVAL_STATION, arrivalStation);
+            request.setAttribute(RequestAttribute.ARRIVAL_TIME, arrivalTime);
+            request.setAttribute(RequestAttribute.DEPARTURE_TIME, departureTime);
+            request.setAttribute(RequestAttribute.PRICE, price);
+            return router;
+        }
         try {
             Optional<String> message = bankService.debitTheAccount(accountNumber, price);
+
+            HttpSession session = request.getSession(true);
+            User user = (User) session.getAttribute(SessionAttribute.USER);
+            Passenger passenger = new Passenger(name, lastName, passportNumber, phoneNumber, user.getId());
+
+            Timestamp departureDate = Timestamp.valueOf(dateStr + " " + departureTime + ":00");
+            if (departureTime.compareTo(arrivalTime) > 0) {
+                LocalDate date = LocalDate.parse(dateStr);
+                dateStr = date.plusDays(1).toString();
+            }
+            Timestamp arrivalDate = Timestamp.valueOf(dateStr + " " + arrivalTime + ":00");
+            int seat = Integer.parseInt(seatStr);
+            Ticket ticket = new Ticket(passenger, trainId, departureStation, arrivalStation, seat, departureDate, arrivalDate, price);
             if (message.isPresent()) {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, message.get());
-                router.setPage(PagePath.REGISTRATION);
+                router.setPage(PagePath.TICKET);
+                request.setAttribute(RequestAttribute.TRAIN_ID, trainIdStr);
+                request.setAttribute(RequestAttribute.DEPARTURE_STATION, departureStation);
+                request.setAttribute(RequestAttribute.ARRIVAL_STATION, arrivalStation);
+                request.setAttribute(RequestAttribute.ARRIVAL_TIME, arrivalTime);
+                request.setAttribute(RequestAttribute.DEPARTURE_TIME, departureTime);
+                request.setAttribute(RequestAttribute.PRICE, price);
+                return router;
             }
-            HttpSession session = request.getSession(true);
-
-            Passenger passenger = new Passenger();
-            passenger.setPhoneNumber(phoneNumber);
-            passenger.setPassportNumber(passportNumber);
-            passenger.setName(name);
-            passenger.setLastName(lastName);
-            User user = (User) session.getAttribute(SessionAttribute.USER);
-            passenger.setUserId(user.getId());
-
             passengerService.addPassenger(passenger);
-
-            Ticket ticket = new Ticket();
-            ticket.setPassenger(passenger);
-            ticket.setTrainId(trainId);
-            ticket.setDepartureStation(departureStation);
-            ticket.setArrivalStation(arrivalStation);
-            ticket.setSeat(seat);
-            ticket.setPrice(price);
-            Timestamp departureDate = Timestamp.valueOf(dateStr + " " + departureTime + ":00");
-            Timestamp arrivalDate = Timestamp.valueOf(dateStr +  " " + arrivalTime + ":00");
-            ticket.setDepartureDate(departureDate);
-            ticket.setArrivalDate(arrivalDate);
             ticketService.addTicket(ticket);
             session.setAttribute(SessionAttribute.TICKET_BOUGHT, TICKET_BOUGHT);
             router.setPage(PagePath.MESSAGE);

@@ -1,3 +1,10 @@
+DROP TABLE IF EXISTS `bank_accounts`;
+CREATE TABLE `bank_accounts` (
+  `bank_account_id` bigint(20) NOT NULL AUTO_INCREMENT,
+  `money_amount` decimal NOT NULL,
+  PRIMARY KEY (`bank_account_id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
 DROP TABLE IF EXISTS `trains`;
 CREATE TABLE `trains` (
   `train_id` bigint(20) NOT NULL AUTO_INCREMENT,
@@ -12,6 +19,7 @@ CREATE TABLE `routes` (
   `time` time DEFAULT NULL,
   `station` varchar(40) DEFAULT NULL,
   `price` decimal NOT NULL,
+  `next_route_id` bigint(20) NOT NULL,
   PRIMARY KEY (`route_id`),
   FOREIGN KEY (`train_id`)  REFERENCES `trains` (`train_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

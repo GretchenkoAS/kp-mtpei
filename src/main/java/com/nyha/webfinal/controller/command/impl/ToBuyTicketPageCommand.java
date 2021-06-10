@@ -5,8 +5,11 @@ import com.nyha.webfinal.controller.RequestParameter;
 import com.nyha.webfinal.controller.command.Command;
 import com.nyha.webfinal.controller.command.PagePath;
 import com.nyha.webfinal.controller.command.Router;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
+import java.time.LocalDate;
 
 public class ToBuyTicketPageCommand implements Command {
     @Override
@@ -26,6 +29,7 @@ public class ToBuyTicketPageCommand implements Command {
         request.setAttribute(RequestAttribute.ARRIVAL_TIME, arrivalTime);
         request.setAttribute(RequestAttribute.DEPARTURE_TIME, departureTime);
         request.setAttribute(RequestAttribute.PRICE, price);
+        request.setAttribute(RequestAttribute.CURRENT_DATE, LocalDate.now().toString());
         return router;
     }
 }

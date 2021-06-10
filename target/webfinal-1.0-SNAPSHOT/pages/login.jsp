@@ -23,7 +23,7 @@
                 <input type="hidden" name="command" value="login"/>
                 <span class="heading"><fmt:message key="authorization"/></span>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder=<fmt:message key="email"/>>
+                    <input type="email" class="form-control" name="email" placeholder="<fmt:message key="email"/>">
                     <i class="fa fa-envelope"></i>
                 </div>
                 <div class="form-group help">

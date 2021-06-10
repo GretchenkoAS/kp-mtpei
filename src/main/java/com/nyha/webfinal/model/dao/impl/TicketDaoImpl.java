@@ -6,6 +6,8 @@ import com.nyha.webfinal.model.dao.TicketDao;
 import com.nyha.webfinal.model.entity.Passenger;
 import com.nyha.webfinal.model.entity.Ticket;
 import com.nyha.webfinal.pool.ConnectionPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,6 +17,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TicketDaoImpl implements TicketDao {
+    static Logger logger = LogManager.getLogger();
     private static final String FIND_ALL_TICKETS = "SELECT ticket_id, train_id, departure_station, arrival_station, seat, departure_date, arrival_date, ticket_price, passengers.passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM tickets JOIN passengers ON tickets.passenger_id = passengers.passenger_id";
     private static final String FIND_USERS_TICKETS = "SELECT ticket_id, train_id, departure_station, arrival_station, seat, departure_date, arrival_date, ticket_price, passengers.passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM tickets JOIN passengers ON tickets.passenger_id = passengers.passenger_id WHERE user_id = ?";
     private static final String ADD_TICKET = "INSERT INTO `tickets` (`train_id`, `passenger_id`, `departure_station`, `arrival_station`, `seat`, `departure_date`, `arrival_date`, `ticket_price`) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";

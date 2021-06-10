@@ -5,6 +5,8 @@ import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.PassengerDao;
 import com.nyha.webfinal.model.entity.Passenger;
 import com.nyha.webfinal.pool.ConnectionPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,9 +16,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PassengerDaoImpl implements PassengerDao {
+    static Logger logger = LogManager.getLogger();
     private static final String FIND_ALL_PASSENGERS = "SELECT passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM passengers";
     private static final String ADD_PASSENGER = "INSERT INTO `passengers` (`first_name`, `last_name`, `passport_number`, `phone_number`, `user_id`, `passenger_id`) VALUES (?, ?, ?, ?, ?, ?)";
     private static final String FIND_PASSENGERS_BY_ID = "SELECT passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM passengers WHERE passenger_id = ?";
+    private static final String UPDATE_PASSENGER = "UPDATE passengers SET first_name = ?, last_name = ?, phone_number = ? WHERE passport_number = ?";
 
     @Override
     public List<Passenger> findAll() throws DaoException {
@@ -46,10 +50,11 @@ public class PassengerDaoImpl implements PassengerDao {
         boolean isAdd;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ADD_PASSENGER);
-        PreparedStatement preparedStatementFind = connection.prepareStatement(FIND_PASSENGERS_BY_ID)) {
+             PreparedStatement preparedStatementFind = connection.prepareStatement(FIND_PASSENGERS_BY_ID)) {
             preparedStatementFind.setLong(1, Long.parseLong(passenger.getPassportNumber()));
             ResultSet resultSet = preparedStatementFind.executeQuery();
             if (resultSet.next()) {
+                updatePassenger(passenger);
                 return true;
             }
             preparedStatement.setString(1, passenger.getName());
@@ -64,5 +69,21 @@ public class PassengerDaoImpl implements PassengerDao {
             throw new DaoException("add error, " + passenger, e);
         }
         return isAdd;
+    }
+
+    private boolean updatePassenger(Passenger passenger) throws DaoException {
+        boolean isUpdate;
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_PASSENGER)) {
+            preparedStatement.setString(1, passenger.getName());
+            preparedStatement.setString(2, passenger.getLastName());
+            preparedStatement.setString(3, passenger.getPhoneNumber());
+            preparedStatement.setString(4, passenger.getPassportNumber());
+            isUpdate = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            logger.error("update error, " + passenger, e);
+            throw new DaoException("update error, " + passenger, e);
+        }
+        return isUpdate;
     }
 }

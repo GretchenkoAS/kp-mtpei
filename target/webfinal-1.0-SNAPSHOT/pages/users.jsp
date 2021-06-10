@@ -19,7 +19,6 @@
         <th scope="col"><fmt:message key="username"/></th>
         <th scope="col"><fmt:message key="email"/></th>
         <th scope="col"><fmt:message key="role"/></th>
-        <th scope="col"><fmt:message key="chooseRole"/></th>
         <th scope="col"><fmt:message key="edit"/></th>
     </tr>
     </thead>
@@ -33,10 +32,15 @@
             <tr>
                 <td>${user.username}</td>
                 <td>${user.email}</td>
-                <td>${user.role.toString()}</td>
                 <td><select class="custom-select" id="roleValue" name="role">
+                    <c:if test="${user.role.ordinal() == 0}">
                     <option value="0"><fmt:message key="admin"/></option>
                     <option value="1"><fmt:message key="user"/></option>
+                    </c:if>
+                    <c:if test="${user.role.ordinal() == 1}">
+                        <option value="1"><fmt:message key="user"/></option>
+                        <option value="0"><fmt:message key="admin"/></option>
+                    </c:if>
                 </select>
                 </td>
                 <td>

@@ -120,7 +120,9 @@
         <div class="form-group row">
             <label class="col-sm-2 col-form-label"> <fmt:message key="date"/></label>
             <div class="col-sm-10">
-                <input type="text"
+                <input type="date"
+                       min="${current_date}"
+                       value="${current_date}"
                        name="date"
                        placeholder="<fmt:message key="date"/>">
             </div>

@@ -5,6 +5,8 @@ import com.nyha.webfinal.model.dao.UserDao;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.pool.ConnectionPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -12,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class UserDaoImpl implements UserDao {
+    static Logger logger = LogManager.getLogger();
 
     private static final String FIND_USER_BY_EMAIL = "SELECT user_id, email, username, role FROM users WHERE email = ?";
     private static final String FIND_USER_BY_EMAIL_AND_PASSWORD = "SELECT user_id, email, username, role FROM users WHERE email = ? AND password = ?";

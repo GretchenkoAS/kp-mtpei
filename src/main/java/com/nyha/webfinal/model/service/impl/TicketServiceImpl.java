@@ -6,11 +6,14 @@ import com.nyha.webfinal.model.dao.TicketDao;
 import com.nyha.webfinal.model.dao.impl.TicketDaoImpl;
 import com.nyha.webfinal.model.entity.Ticket;
 import com.nyha.webfinal.model.service.TicketService;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.util.List;
 import java.util.Optional;
 
 public class TicketServiceImpl implements TicketService {
+    static Logger logger = LogManager.getLogger();
     private TicketDao ticketDao = new TicketDaoImpl();
 
     @Override

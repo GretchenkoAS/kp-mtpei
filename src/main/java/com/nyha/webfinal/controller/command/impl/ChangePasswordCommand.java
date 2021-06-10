@@ -11,19 +11,21 @@ import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.model.service.UserService;
 import com.nyha.webfinal.model.service.impl.UserServiceImpl;
 import com.nyha.webfinal.validator.UserValidator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 public class ChangePasswordCommand implements Command {
+    static Logger logger = LogManager.getLogger();
     public static final String INCORRECT_PASSWORD = "incorrectPassword";
     private UserService service = new UserServiceImpl();
 
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
-        router.setPage(PagePath.PROFILE);
         HttpSession session = request.getSession(true);
         User user = (User)session.getAttribute(SessionAttribute.USER);
         String email = user.getEmail();
@@ -38,6 +40,7 @@ public class ChangePasswordCommand implements Command {
             } else {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, INCORRECT_PASSWORD);
             }
+            router.setPage(PagePath.PROFILE);
         } catch (ServiceException e) {
             logger.error("change password error, " + newPassword, e);
             router.setPage(PagePath.ERROR_500);

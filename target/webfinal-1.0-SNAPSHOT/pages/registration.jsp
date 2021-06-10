@@ -24,11 +24,11 @@
                 <input type="hidden" name="role" value="user"/>
                 <span class="heading"><fmt:message key="registration"/></span>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder=<fmt:message key="email"/>>
+                    <input type="email" class="form-control" name="email" placeholder="<fmt:message key="email"/>">
                     <i class="fa fa-envelope"></i>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" name="username" placeholder=<fmt:message key="username"/>>
+                    <input class="form-control" name="username" placeholder="<fmt:message key="username"/>">
                     <i class="fa fa-user"></i>
                 </div>
                 <div class="form-group help">

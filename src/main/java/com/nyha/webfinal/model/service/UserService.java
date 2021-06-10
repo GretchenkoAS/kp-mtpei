@@ -9,7 +9,6 @@ import java.util.List;
 import java.util.Optional;
 
 public interface UserService {
-    Logger logger = LogManager.getLogger();
     Optional<User> findUserByEmail(String email) throws ServiceException;
     Optional<User> findUserByEmailAndPassword(String email, String password) throws ServiceException;
     List<User> findAllUsers() throws ServiceException;

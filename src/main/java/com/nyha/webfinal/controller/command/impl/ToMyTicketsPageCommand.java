@@ -10,12 +10,15 @@ import com.nyha.webfinal.model.entity.Ticket;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.model.service.TicketService;
 import com.nyha.webfinal.model.service.impl.TicketServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
 public class ToMyTicketsPageCommand implements Command {
+    static Logger logger = LogManager.getLogger();
     public static final String NOT_TICKETS = "notTickets";
     private TicketService service = new TicketServiceImpl();
 
@@ -41,5 +44,4 @@ public class ToMyTicketsPageCommand implements Command {
         }
         return router;
     }
-
 }

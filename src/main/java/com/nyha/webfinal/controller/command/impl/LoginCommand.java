@@ -10,6 +10,8 @@ import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.service.UserService;
 import com.nyha.webfinal.model.service.impl.UserServiceImpl;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 
 import javax.servlet.http.HttpServletRequest;
@@ -17,6 +19,7 @@ import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 public class LoginCommand implements Command {
+    static Logger logger = LogManager.getLogger();
     public static final String INCORRECT_EMAIL_OR_PASSWORD = "incorrectEmailOrPassword";
     private UserService service = new UserServiceImpl();
 
@@ -30,7 +33,7 @@ public class LoginCommand implements Command {
             if (user.isPresent()) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute(SessionAttribute.USER, user.get());
-                router.setPage(PagePath.MAIN);
+                router.setPage(PagePath.INDEX);
                 router.setRedirect();
             } else {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, INCORRECT_EMAIL_OR_PASSWORD);

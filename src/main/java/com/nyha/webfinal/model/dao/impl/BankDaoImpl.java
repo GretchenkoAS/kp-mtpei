@@ -5,6 +5,8 @@ import com.nyha.webfinal.model.dao.BankDao;
 import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.pool.ConnectionPool;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -14,6 +16,7 @@ import java.util.List;
 import java.util.Optional;
 
 public class BankDaoImpl implements BankDao {
+    static Logger logger = LogManager.getLogger();
     private static final String FIND_ACCOUNT = "SELECT bank_account_id, money_amount FROM bank_accounts WHERE bank_account_id = ?";
     private static final String UPDATE_ACCOUNT = "UPDATE `bank_accounts` SET money_amount = ? WHERE bank_account_id = ?";
 

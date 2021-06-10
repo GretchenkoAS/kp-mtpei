@@ -9,5 +9,6 @@ import java.util.Optional;
 public interface TrainDao extends BaseDao<Train> {
     boolean addTrain(Train train) throws DaoException;
     List<Train> findTrainByStation(String departureStation) throws DaoException;
+    List<Train> findPopularTrains() throws DaoException;
     Optional<Train> findTrainById(Long trainId) throws DaoException;
 }

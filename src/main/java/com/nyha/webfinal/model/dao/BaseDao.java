@@ -13,7 +13,6 @@ import java.util.Optional;
 
 public interface BaseDao<T extends Entity> {
     Logger logger = LogManager.getLogger();
-
     List<T> findAll() throws DaoException;
 
 
