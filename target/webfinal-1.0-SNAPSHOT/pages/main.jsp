@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="customtag" prefix="customtag"%>
 <fmt:setLocale value="${locale}"/>
 <fmt:setBundle basename="pagecontent"/>
 <html>
@@ -26,13 +27,18 @@
                                 <div class="col-lg-6 col-md-12">
                                     <div class="block d-flex">
                                         <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" type="search"
-                                               name="departureStation" placeholder="
+                                               name="departureStation"
+                                               pattern="\w{3,40}"
+                                               title="<fmt:message key="stringTitle"/>"
+                                               placeholder="
                                         <fmt:message key="departureStation"/>">
                                     </div>
                                 </div>
                                 <div class="col-lg-6 col-md-12">
                                     <div class="block d-flex">
                                         <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" type="search"
+                                               pattern="\w{3,40}"
+                                               title="<fmt:message key="stringTitle"/>"
                                                name="arrivalStation" placeholder="
                                         <fmt:message key="arrivalStation"/>">
                                         <button class="btn btn-main"><fmt:message key="search"/></button>
@@ -104,9 +110,7 @@
         </table>
     </div>
 </div>
-<footer>
-    <jsp:include page="${pageContext.request.contextPath}/pages/footer.jsp"/>
-</footer>
+<customtag:copyright/>
 </body>
 
 </html>

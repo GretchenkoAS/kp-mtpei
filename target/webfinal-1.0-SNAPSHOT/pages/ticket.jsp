@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="customtag" prefix="customtag"%>
 <fmt:setLocale value="${locale}"/>
 <fmt:setBundle basename="pagecontent"/>
 <html>
@@ -76,7 +77,10 @@
             <label class="col-sm-2 col-form-label"> <fmt:message key="name"/></label>
             <div class="col-sm-10">
                 <input type="text"
+                       pattern="\w{3,40}"
+                       title="<fmt:message key="stringTitle"/>"
                        name="name"
+                       required
                        placeholder="<fmt:message key="name"/>">
             </div>
         </div>
@@ -86,6 +90,9 @@
             <div class="col-sm-10">
                 <input type="text"
                        name="lastName"
+                       pattern="\w{3,40}"
+                       required
+                       title="<fmt:message key="stringTitle"/>"
                        placeholder="<fmt:message key="lastName"/>">
             </div>
         </div>
@@ -95,6 +102,9 @@
             <div class="col-sm-10">
                 <input type="text"
                        name="passportNumber"
+                       pattern="\w{3,15}"
+                       required
+                       title="<fmt:message key="numberTitle"/>"
                        placeholder="<fmt:message key="passportNumber"/>">
             </div>
         </div>
@@ -103,7 +113,10 @@
             <label class="col-sm-2 col-form-label"> <fmt:message key="phoneNumber"/></label>
             <div class="col-sm-10">
                 <input type="text"
+                       required
                        name="phoneNumber"
+                       pattern="\w{3,15}"
+                       title="<fmt:message key="numberTitle"/>"
                        placeholder="<fmt:message key="phoneNumber"/>">
             </div>
         </div>
@@ -112,7 +125,11 @@
             <label class="col-sm-2 col-form-label"> <fmt:message key="seat"/></label>
             <div class="col-sm-10">
                 <input type="text"
+                       required
                        name="seat"
+                       min="1"
+                       pattern="\d{1,5}"
+                       title="<fmt:message key="seatTitle"/>"
                        placeholder="<fmt:message key="seat"/>">
             </div>
         </div>
@@ -121,6 +138,7 @@
             <label class="col-sm-2 col-form-label"> <fmt:message key="date"/></label>
             <div class="col-sm-10">
                 <input type="date"
+                       required
                        min="${current_date}"
                        value="${current_date}"
                        name="date"
@@ -132,7 +150,11 @@
             <label class="col-sm-2 col-form-label"> <fmt:message key="accountNumber"/></label>
             <div class="col-sm-10">
                 <input type="text"
+                       required
                        name="accountNumber"
+                       min="1"
+                       pattern="\d{1,20}"
+                       title="<fmt:message key="accountTitle"/>"
                        placeholder="<fmt:message key="accountNumber"/>">
             </div>
         </div>
@@ -147,7 +169,6 @@
         </button>
     </form>
 </div>
-
-
+<customtag:copyright/>
 </body>
 </html>

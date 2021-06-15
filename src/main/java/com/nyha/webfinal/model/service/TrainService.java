@@ -1,10 +1,8 @@
 package com.nyha.webfinal.model.service;
 
 import com.nyha.webfinal.exception.ServiceException;
-import com.nyha.webfinal.model.entity.ShortTrainData;
-import com.nyha.webfinal.model.entity.Train;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.nyha.webfinal.entity.ShortTrainData;
+import com.nyha.webfinal.entity.Train;
 
 import java.util.List;
 import java.util.Optional;

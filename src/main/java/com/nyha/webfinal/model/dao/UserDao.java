@@ -1,6 +1,6 @@
 package com.nyha.webfinal.model.dao;
 
-import com.nyha.webfinal.model.entity.User;
+import com.nyha.webfinal.entity.User;
 import com.nyha.webfinal.exception.DaoException;
 
 import java.util.Optional;

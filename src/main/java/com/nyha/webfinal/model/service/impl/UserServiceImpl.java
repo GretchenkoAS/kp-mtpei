@@ -1,9 +1,10 @@
 package com.nyha.webfinal.model.service.impl;
 
+import com.nyha.webfinal.util.MailSender;
 import com.nyha.webfinal.util.PasswordEncryption;
 import com.nyha.webfinal.model.dao.UserDao;
 import com.nyha.webfinal.model.dao.impl.UserDaoImpl;
-import com.nyha.webfinal.model.entity.User;
+import com.nyha.webfinal.entity.User;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.service.UserService;
@@ -23,6 +24,8 @@ public class UserServiceImpl implements UserService {
     public static final String INCORRECT_PASSWORD = "incorrectPassword";
     public static final String PASSWORD_CHANGED = "passwordChanged";
     public static final String USER_UPDATED = "userUpdated";
+    public static final String MAIL_SUBJECT = "Registration";
+    public static final String MAIL_TEXT = "Thank you for registering on our website.";
     private UserDao userDao = new UserDaoImpl();
 
     @Override
@@ -87,6 +90,7 @@ public class UserServiceImpl implements UserService {
         try {
             String encodedPassword = PasswordEncryption.encrypt(password);
             userDao.addUser(user, encodedPassword);
+            MailSender.sendEmail(user.getEmail(), MAIL_SUBJECT, MAIL_TEXT);
         } catch (DaoException e) {
             logger.error("add user error, " + user, e);
             throw new ServiceException("add user error, " + user, e);

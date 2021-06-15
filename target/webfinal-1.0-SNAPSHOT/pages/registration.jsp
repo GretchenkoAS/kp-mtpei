@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" pageEncoding="utf-8" language="java" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib uri="customtag" prefix="customtag"%>
 <fmt:setLocale value="${locale}"/>
 <fmt:setBundle basename="pagecontent"/>
 <html>
@@ -24,15 +25,23 @@
                 <input type="hidden" name="role" value="user"/>
                 <span class="heading"><fmt:message key="registration"/></span>
                 <div class="form-group">
-                    <input type="email" class="form-control" name="email" placeholder="<fmt:message key="email"/>">
+                    <input type="email" class="form-control" required name="email" placeholder="<fmt:message key="email"/>">
                     <i class="fa fa-envelope"></i>
                 </div>
                 <div class="form-group">
-                    <input class="form-control" name="username" placeholder="<fmt:message key="username"/>">
+                    <input class="form-control" name="username"
+                           required
+                           pattern="\w{3,40}"
+                           title="<fmt:message key="stringTitle"/>"
+                           placeholder="<fmt:message key="username"/>">
                     <i class="fa fa-user"></i>
                 </div>
                 <div class="form-group help">
-                    <input type="password" class="form-control" name="password" placeholder=<fmt:message
+                    <input type="password" class="form-control" name="password"
+                           required
+                           pattern="^.*(?=.{8,})(?=..*[0-9])(?=.*[a-z])(?=.*[A-Z]).*$"
+                           title="<fmt:message key="passwordTitle"/>"
+                           placeholder=<fmt:message
                             key="password"/>>
                     <i class="fa fa-lock"></i>
                 </div>
@@ -49,9 +58,6 @@
         </div>
     </div>
 </div>
-
-<footer>
-    <jsp:include page="${pageContext.request.contextPath}/pages/footer.jsp"/>
-</footer>
+<customtag:copyright/>
 </body>
 </html>

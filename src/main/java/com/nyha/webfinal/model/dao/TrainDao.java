@@ -1,7 +1,7 @@
 package com.nyha.webfinal.model.dao;
 
 import com.nyha.webfinal.exception.DaoException;
-import com.nyha.webfinal.model.entity.Train;
+import com.nyha.webfinal.entity.Train;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,9 +1,7 @@
 package com.nyha.webfinal.model.service;
 
 import com.nyha.webfinal.exception.ServiceException;
-import com.nyha.webfinal.model.entity.Passenger;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+import com.nyha.webfinal.entity.Passenger;
 
 import java.util.Optional;
 

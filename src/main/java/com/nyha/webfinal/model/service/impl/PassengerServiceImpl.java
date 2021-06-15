@@ -5,7 +5,7 @@ import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.dao.PassengerDao;
 import com.nyha.webfinal.model.dao.impl.PassengerDaoImpl;
-import com.nyha.webfinal.model.entity.Passenger;
+import com.nyha.webfinal.entity.Passenger;
 import com.nyha.webfinal.model.service.PassengerService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

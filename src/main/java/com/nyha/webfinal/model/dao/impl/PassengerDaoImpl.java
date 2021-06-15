@@ -3,7 +3,7 @@ package com.nyha.webfinal.model.dao.impl;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.PassengerDao;
-import com.nyha.webfinal.model.entity.Passenger;
+import com.nyha.webfinal.entity.Passenger;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

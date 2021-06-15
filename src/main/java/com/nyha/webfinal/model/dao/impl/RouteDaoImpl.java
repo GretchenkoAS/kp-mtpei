@@ -3,7 +3,7 @@ package com.nyha.webfinal.model.dao.impl;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.RouteDao;
-import com.nyha.webfinal.model.entity.Route;
+import com.nyha.webfinal.entity.Route;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

@@ -3,7 +3,6 @@ package com.nyha.webfinal.model.dao.impl;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.model.dao.BankDao;
 import com.nyha.webfinal.model.dao.ColumnName;
-import com.nyha.webfinal.model.entity.User;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -13,7 +12,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
-import java.util.Optional;
 
 public class BankDaoImpl implements BankDao {
     static Logger logger = LogManager.getLogger();

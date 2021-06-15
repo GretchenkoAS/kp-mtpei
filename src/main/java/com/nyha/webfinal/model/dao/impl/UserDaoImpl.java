@@ -2,7 +2,7 @@ package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.UserDao;
-import com.nyha.webfinal.model.entity.User;
+import com.nyha.webfinal.entity.User;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;

@@ -1,6 +1,6 @@
 package com.nyha.webfinal.model.dao;
 
-import com.nyha.webfinal.model.entity.Entity;
+import com.nyha.webfinal.entity.Entity;
 import com.nyha.webfinal.exception.DaoException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -9,7 +9,6 @@ import java.sql.Connection;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
-import java.util.Optional;
 
 public interface BaseDao<T extends Entity> {
     Logger logger = LogManager.getLogger();

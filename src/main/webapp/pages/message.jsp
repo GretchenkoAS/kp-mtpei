@@ -1,6 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib uri="customtag" prefix="customtag"%>
 <fmt:setLocale value="${locale}"/>
 <fmt:setBundle basename="pagecontent"/>
 <head>
@@ -21,3 +22,4 @@
     <p class="alert-success"><fmt:message key="${ticket_bought}"/></p>
     <div>
 </c:if>
+<customtag:copyright/>

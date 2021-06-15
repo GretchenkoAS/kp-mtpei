@@ -7,7 +7,7 @@ import com.nyha.webfinal.controller.command.Command;
 import com.nyha.webfinal.controller.command.PagePath;
 import com.nyha.webfinal.controller.command.Router;
 import com.nyha.webfinal.exception.ServiceException;
-import com.nyha.webfinal.model.entity.User;
+import com.nyha.webfinal.entity.User;
 import com.nyha.webfinal.model.service.UserService;
 import com.nyha.webfinal.model.service.impl.UserServiceImpl;
 import org.apache.logging.log4j.LogManager;

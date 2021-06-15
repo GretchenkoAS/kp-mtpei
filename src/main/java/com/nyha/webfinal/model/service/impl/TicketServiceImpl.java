@@ -4,7 +4,7 @@ import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.exception.ServiceException;
 import com.nyha.webfinal.model.dao.TicketDao;
 import com.nyha.webfinal.model.dao.impl.TicketDaoImpl;
-import com.nyha.webfinal.model.entity.Ticket;
+import com.nyha.webfinal.entity.Ticket;
 import com.nyha.webfinal.model.service.TicketService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
