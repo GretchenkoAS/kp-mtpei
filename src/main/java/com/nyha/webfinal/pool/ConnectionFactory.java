@@ -21,13 +21,13 @@ final class ConnectionFactory {
     private static final String DATABASE_USERNAME;
 
     static {
-        resourceBundle = ResourceBundle.getBundle(RESOURCE);
-        String driverName = resourceBundle.getString(DB_DRIVER);
         try {
+            resourceBundle = ResourceBundle.getBundle(RESOURCE);
+            String driverName = resourceBundle.getString(DB_DRIVER);
             Class.forName(driverName);
         } catch (ClassNotFoundException e) {
-            logger.fatal("can't register driver" + driverName + " " + e);
-            throw new RuntimeException("fatal: can't register driver: " + driverName, e);
+            logger.fatal("can't register driver or find a resources" + e);
+            throw new ExceptionInInitializerError("fatal: can't register driver or find a resources");
         }
         DATABASE_URL = resourceBundle.getString(URL);
         DATABASE_USERNAME = resourceBundle.getString(USERNAME);
