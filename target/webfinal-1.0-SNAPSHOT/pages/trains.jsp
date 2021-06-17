@@ -22,6 +22,7 @@
                 <div class="block d-flex">
                     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" type="search"
                            pattern="\w{3,40}"
+                           required
                            title="<fmt:message key="stringTitle"/>"
                            name="departureStation" placeholder="
                     <fmt:message key="departureStation"/>">
@@ -31,6 +32,7 @@
                 <div class="block d-flex">
                     <input type="text" class="form-control mb-2 mr-sm-2 mb-sm-0" type="search"
                            pattern="\w{3,40}"
+                           required
                            title="<fmt:message key="stringTitle"/>"
                            name="arrivalStation" placeholder="
                     <fmt:message key="arrivalStation"/>">

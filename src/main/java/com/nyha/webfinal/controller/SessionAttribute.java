@@ -7,6 +7,7 @@ public class SessionAttribute {
     public static final String SHORT_TRAINS_DATA = "short_trains_data";
     public static final String TICKET_BOUGHT = "ticket_bought";
     public static final String USERS = "users";
+    public static final String ERROR_MESSAGE = "error_message";
 
     private SessionAttribute() {
     }

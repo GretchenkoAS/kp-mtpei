@@ -1,13 +1,14 @@
 package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
-import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.TicketDao;
 import com.nyha.webfinal.entity.Passenger;
 import com.nyha.webfinal.entity.Ticket;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
+import static com.nyha.webfinal.model.dao.ColumnName.*;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -30,22 +31,22 @@ public class TicketDaoImpl implements TicketDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Ticket ticket = new Ticket();
-                ticket.setId(resultSet.getLong(ColumnName.TICKET_ID));
+                ticket.setId(resultSet.getLong(TICKET_ID));
                 Passenger passenger = new Passenger();
-                passenger.setId(resultSet.getLong(ColumnName.PASSENGER_ID));
-                passenger.setName(resultSet.getString(ColumnName.PASSENGER_FIRST_NAME));
-                passenger.setLastName(resultSet.getString(ColumnName.PASSENGER_LAST_NAME));
-                passenger.setPassportNumber(resultSet.getString(ColumnName.PASSENGER_PASSPORT_NUMBER));
-                passenger.setPhoneNumber(resultSet.getString(ColumnName.PASSENGER_PHONE_NUMBER));
-                passenger.setUserId(resultSet.getLong(ColumnName.USER_ID));
+                passenger.setId(resultSet.getLong(PASSENGER_ID));
+                passenger.setName(resultSet.getString(PASSENGER_FIRST_NAME));
+                passenger.setLastName(resultSet.getString(PASSENGER_LAST_NAME));
+                passenger.setPassportNumber(resultSet.getString(PASSENGER_PASSPORT_NUMBER));
+                passenger.setPhoneNumber(resultSet.getString(PASSENGER_PHONE_NUMBER));
+                passenger.setUserId(resultSet.getLong(USER_ID));
                 ticket.setPassenger(passenger);
-                ticket.setTrainId(resultSet.getLong(ColumnName.TRAIN_ID));
-                ticket.setDepartureStation(resultSet.getString(ColumnName.TICKET_DEPARTURE_STATION));
-                ticket.setArrivalStation(resultSet.getString(ColumnName.TICKET_ARRIVAL_STATION));
-                ticket.setSeat(resultSet.getInt(ColumnName.TICKET_SEAT));
-                ticket.setDepartureDate(resultSet.getTimestamp(ColumnName.TICKET_DEPARTURE_DATE));
-                ticket.setArrivalDate(resultSet.getTimestamp(ColumnName.TICKET_ARRIVAL_DATE));
-                ticket.setPrice(resultSet.getDouble(ColumnName.TICKET_PRICE));
+                ticket.setTrainId(resultSet.getLong(TRAIN_ID));
+                ticket.setDepartureStation(resultSet.getString(TICKET_DEPARTURE_STATION));
+                ticket.setArrivalStation(resultSet.getString(TICKET_ARRIVAL_STATION));
+                ticket.setSeat(resultSet.getInt(TICKET_SEAT));
+                ticket.setDepartureDate(resultSet.getTimestamp(TICKET_DEPARTURE_DATE));
+                ticket.setArrivalDate(resultSet.getTimestamp(TICKET_ARRIVAL_DATE));
+                ticket.setPrice(resultSet.getDouble(TICKET_PRICE));
                 tickets.add(ticket);
             }
         } catch (SQLException e) {
@@ -85,27 +86,28 @@ public class TicketDaoImpl implements TicketDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Ticket ticket = new Ticket();
-                ticket.setId(resultSet.getLong(ColumnName.TICKET_ID));
+                ticket.setId(resultSet.getLong(TICKET_ID));
                 Passenger passenger = new Passenger();
-                passenger.setId(resultSet.getLong(ColumnName.PASSENGER_ID));
-                passenger.setName(resultSet.getString(ColumnName.PASSENGER_FIRST_NAME));
-                passenger.setLastName(resultSet.getString(ColumnName.PASSENGER_LAST_NAME));
-                passenger.setPassportNumber(resultSet.getString(ColumnName.PASSENGER_PASSPORT_NUMBER));
-                passenger.setPhoneNumber(resultSet.getString(ColumnName.PASSENGER_PHONE_NUMBER));
-                passenger.setUserId(resultSet.getLong(ColumnName.USER_ID));
+                passenger.setId(resultSet.getLong(PASSENGER_ID));
+                passenger.setName(resultSet.getString(PASSENGER_FIRST_NAME));
+                passenger.setLastName(resultSet.getString(PASSENGER_LAST_NAME));
+                passenger.setPassportNumber(resultSet.getString(PASSENGER_PASSPORT_NUMBER));
+                passenger.setPhoneNumber(resultSet.getString(PASSENGER_PHONE_NUMBER));
+                passenger.setUserId(resultSet.getLong(USER_ID));
                 ticket.setPassenger(passenger);
-                ticket.setTrainId(resultSet.getLong(ColumnName.TRAIN_ID));
-                ticket.setDepartureStation(resultSet.getString(ColumnName.TICKET_DEPARTURE_STATION));
-                ticket.setArrivalStation(resultSet.getString(ColumnName.TICKET_ARRIVAL_STATION));
-                ticket.setSeat(resultSet.getInt(ColumnName.TICKET_SEAT));
-                ticket.setDepartureDate(resultSet.getTimestamp(ColumnName.TICKET_DEPARTURE_DATE));
-                ticket.setArrivalDate(resultSet.getTimestamp(ColumnName.TICKET_ARRIVAL_DATE));
-                ticket.setPrice(resultSet.getDouble(ColumnName.TICKET_PRICE));
+                ticket.setTrainId(resultSet.getLong(TRAIN_ID));
+                ticket.setDepartureStation(resultSet.getString(TICKET_DEPARTURE_STATION));
+                ticket.setArrivalStation(resultSet.getString(TICKET_ARRIVAL_STATION));
+                ticket.setSeat(resultSet.getInt(TICKET_SEAT));
+                ticket.setDepartureDate(resultSet.getTimestamp(TICKET_DEPARTURE_DATE));
+                ticket.setArrivalDate(resultSet.getTimestamp(TICKET_ARRIVAL_DATE));
+                ticket.setPrice(resultSet.getDouble(TICKET_PRICE));
                 tickets.add(ticket);
             }
         } catch (SQLException e) {
             logger.error("search error", e);
             throw new DaoException("search error", e);
         }
-        return tickets;    }
+        return tickets;
+    }
 }

@@ -1,10 +1,10 @@
 package com.nyha.webfinal.model.dao.impl;
 
-import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.UserDao;
 import com.nyha.webfinal.entity.User;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.pool.ConnectionPool;
+import static com.nyha.webfinal.model.dao.ColumnName.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -32,10 +32,10 @@ public class UserDaoImpl implements UserDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 User user = new User();
-                user.setId(resultSet.getLong(ColumnName.USER_ID));
-                user.setEmail(resultSet.getString(ColumnName.USER_EMAIL));
-                user.setUsername(resultSet.getString(ColumnName.USER_USERNAME));
-                user.setRole(User.Role.valueOf(resultSet.getString(ColumnName.USER_ROLE).toUpperCase()));
+                user.setId(resultSet.getLong(USER_ID));
+                user.setEmail(resultSet.getString(USER_EMAIL));
+                user.setUsername(resultSet.getString(USER_USERNAME));
+                user.setRole(User.Role.valueOf(resultSet.getString(USER_ROLE).toUpperCase()));
                 users.add(user);
             }
         } catch (SQLException e) {
@@ -56,10 +56,10 @@ public class UserDaoImpl implements UserDao {
             User user = null;
             while (resultSet.next()) {
                 user = new User();
-                user.setId(resultSet.getLong(ColumnName.USER_ID));
-                user.setEmail(resultSet.getString(ColumnName.USER_EMAIL));
-                user.setUsername(resultSet.getString(ColumnName.USER_USERNAME));
-                user.setRole(User.Role.valueOf(resultSet.getString(ColumnName.USER_ROLE).toUpperCase()));
+                user.setId(resultSet.getLong(USER_ID));
+                user.setEmail(resultSet.getString(USER_EMAIL));
+                user.setUsername(resultSet.getString(USER_USERNAME));
+                user.setRole(User.Role.valueOf(resultSet.getString(USER_ROLE).toUpperCase()));
             }
             userOptional = Optional.ofNullable(user);
         } catch (SQLException e) {
@@ -79,10 +79,10 @@ public class UserDaoImpl implements UserDao {
             User user = null;
             while (resultSet.next()) {
                 user = new User();
-                user.setId(resultSet.getLong(ColumnName.USER_ID));
-                user.setEmail(resultSet.getString(ColumnName.USER_EMAIL));
-                user.setUsername(resultSet.getString(ColumnName.USER_USERNAME));
-                user.setRole(User.Role.valueOf(resultSet.getString(ColumnName.USER_ROLE).toUpperCase()));
+                user.setId(resultSet.getLong(USER_ID));
+                user.setEmail(resultSet.getString(USER_EMAIL));
+                user.setUsername(resultSet.getString(USER_USERNAME));
+                user.setRole(User.Role.valueOf(resultSet.getString(USER_ROLE).toUpperCase()));
             }
             userOptional = Optional.ofNullable(user);
         } catch (SQLException e) {

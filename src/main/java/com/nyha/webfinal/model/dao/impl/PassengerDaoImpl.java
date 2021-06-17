@@ -1,7 +1,6 @@
 package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
-import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.PassengerDao;
 import com.nyha.webfinal.entity.Passenger;
 import com.nyha.webfinal.pool.ConnectionPool;
@@ -14,6 +13,8 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+
+import static com.nyha.webfinal.model.dao.ColumnName.*;
 
 public class PassengerDaoImpl implements PassengerDao {
     static Logger logger = LogManager.getLogger();
@@ -30,12 +31,12 @@ public class PassengerDaoImpl implements PassengerDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Passenger passenger = new Passenger();
-                passenger.setId(resultSet.getLong(ColumnName.PASSENGER_ID));
-                passenger.setName(resultSet.getString(ColumnName.PASSENGER_FIRST_NAME));
-                passenger.setLastName(resultSet.getString(ColumnName.PASSENGER_LAST_NAME));
-                passenger.setPassportNumber(resultSet.getString(ColumnName.PASSENGER_PASSPORT_NUMBER));
-                passenger.setPhoneNumber(resultSet.getString(ColumnName.PASSENGER_PHONE_NUMBER));
-                passenger.setUserId(resultSet.getLong(ColumnName.USER_ID));
+                passenger.setId(resultSet.getLong(PASSENGER_ID));
+                passenger.setName(resultSet.getString(PASSENGER_FIRST_NAME));
+                passenger.setLastName(resultSet.getString(PASSENGER_LAST_NAME));
+                passenger.setPassportNumber(resultSet.getString(PASSENGER_PASSPORT_NUMBER));
+                passenger.setPhoneNumber(resultSet.getString(PASSENGER_PHONE_NUMBER));
+                passenger.setUserId(resultSet.getLong(USER_ID));
                 passengers.add(passenger);
             }
         } catch (SQLException e) {

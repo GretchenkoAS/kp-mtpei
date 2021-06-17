@@ -2,8 +2,8 @@ package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.model.dao.BankDao;
-import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.pool.ConnectionPool;
+import static com.nyha.webfinal.model.dao.ColumnName.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -30,7 +30,7 @@ public class BankDaoImpl implements BankDao {
             double currentMoney = 0;
             boolean flag = false;
             while (resultSet.next()) {
-                currentMoney = resultSet.getDouble(ColumnName.MONEY_AMOUNT);
+                currentMoney = resultSet.getDouble(MONEY_AMOUNT);
                 flag = true;
             }
             if (flag) {

@@ -17,6 +17,8 @@ public class RequestAttribute {
     public static final String PRICE = "price";
     public static final String USERS = "users";
     public static final String CURRENT_DATE = "current_date";
+    public static final String SHORT_TRAINS_DATA = "short_trains_data";
+
 
     private RequestAttribute() {
     }

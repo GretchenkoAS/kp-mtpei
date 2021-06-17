@@ -35,7 +35,7 @@ public class RegisterCommand implements Command {
             if(message.isEmpty()) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute(SessionAttribute.USER, user);
-                router.setPage(PagePath.MAIN);
+                router.setPage(PagePath.INDEX);
                 router.setRedirect();
             }
             else {

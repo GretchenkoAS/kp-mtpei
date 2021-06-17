@@ -1,12 +1,12 @@
 package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
-import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.RouteDao;
 import com.nyha.webfinal.entity.Route;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import static com.nyha.webfinal.model.dao.ColumnName.*;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -25,10 +25,10 @@ public class RouteDaoImpl implements RouteDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Route route = new Route();
-                route.setId(resultSet.getLong(ColumnName.ROUTE_ID));
-                route.setStation(resultSet.getString(ColumnName.ROUTE_STATION));
-                route.setTime(resultSet.getTime(ColumnName.ROUTE_TIME));
-                route.setTrainNumber(resultSet.getLong(ColumnName.ROUTE_TRAIN_NUMBER));
+                route.setId(resultSet.getLong(ROUTE_ID));
+                route.setStation(resultSet.getString(ROUTE_STATION));
+                route.setTime(resultSet.getTime(ROUTE_TIME));
+                route.setTrainNumber(resultSet.getLong(ROUTE_TRAIN_NUMBER));
                 routes.add(route);
             }
         } catch (SQLException e) {

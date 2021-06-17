@@ -2482,6 +2482,7 @@ footer {
     position: fixed;
     left: 0; bottom: 0;
     padding: 10px;
-    background: #39b54a;
+    background: #393939;
     width: 100%;
+    text-align: center;
 }

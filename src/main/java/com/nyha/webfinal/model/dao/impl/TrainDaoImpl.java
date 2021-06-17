@@ -1,11 +1,11 @@
 package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
-import com.nyha.webfinal.model.dao.ColumnName;
 import com.nyha.webfinal.model.dao.TrainDao;
 import com.nyha.webfinal.entity.Route;
 import com.nyha.webfinal.entity.Train;
 import com.nyha.webfinal.pool.ConnectionPool;
+import static com.nyha.webfinal.model.dao.ColumnName.*;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -35,17 +35,17 @@ public class TrainDaoImpl implements TrainDao {
             while (resultSet.next()) {
                 Train train = new Train();
                 List<Route> routes = new ArrayList<>();
-                train.setId(resultSet.getLong(ColumnName.TRAIN_ID));
-                train.setNumberOfSeats(resultSet.getInt(ColumnName.TRAIN_NUMBER_OF_SEATS));
+                train.setId(resultSet.getLong(TRAIN_ID));
+                train.setNumberOfSeats(resultSet.getInt(TRAIN_NUMBER_OF_SEATS));
                 do {
                     Route route = new Route();
-                    route.setId(resultSet.getLong(ColumnName.ROUTE_ID));
-                    route.setStation(resultSet.getString(ColumnName.ROUTE_STATION));
-                    route.setTime(resultSet.getTime(ColumnName.ROUTE_TIME));
-                    route.setTrainNumber(resultSet.getLong(ColumnName.ROUTE_TRAIN_NUMBER));
-                    route.setPrice(resultSet.getDouble(ColumnName.ROUTE_PRICE));
+                    route.setId(resultSet.getLong(ROUTE_ID));
+                    route.setStation(resultSet.getString(ROUTE_STATION));
+                    route.setTime(resultSet.getTime(ROUTE_TIME));
+                    route.setTrainNumber(resultSet.getLong(ROUTE_TRAIN_NUMBER));
+                    route.setPrice(resultSet.getDouble(ROUTE_PRICE));
                     routes.add(route);
-                } while (resultSet.next() && train.getId().equals(resultSet.getLong(ColumnName.TRAIN_ID)));
+                } while (resultSet.next() && train.getId().equals(resultSet.getLong(TRAIN_ID)));
                 if (!resultSet.isAfterLast()) {
                     resultSet.previous();
                 }
@@ -89,17 +89,17 @@ public class TrainDaoImpl implements TrainDao {
                 while (resultSet.next()) {
                     Train train = new Train();
                     List<Route> trainRoutes = new ArrayList<>();
-                    train.setId(resultSet.getLong(ColumnName.TRAIN_ID));
-                    train.setNumberOfSeats(resultSet.getInt(ColumnName.TRAIN_NUMBER_OF_SEATS));
+                    train.setId(resultSet.getLong(TRAIN_ID));
+                    train.setNumberOfSeats(resultSet.getInt(TRAIN_NUMBER_OF_SEATS));
                     do {
                         Route trainRoute = new Route();
-                        trainRoute.setId(resultSet.getLong(ColumnName.ROUTE_ID));
-                        trainRoute.setStation(resultSet.getString(ColumnName.ROUTE_STATION));
-                        trainRoute.setTime(resultSet.getTime(ColumnName.ROUTE_TIME));
-                        trainRoute.setTrainNumber(resultSet.getLong(ColumnName.ROUTE_TRAIN_NUMBER));
-                        trainRoute.setPrice(resultSet.getDouble(ColumnName.ROUTE_PRICE));
+                        trainRoute.setId(resultSet.getLong(ROUTE_ID));
+                        trainRoute.setStation(resultSet.getString(ROUTE_STATION));
+                        trainRoute.setTime(resultSet.getTime(ROUTE_TIME));
+                        trainRoute.setTrainNumber(resultSet.getLong(ROUTE_TRAIN_NUMBER));
+                        trainRoute.setPrice(resultSet.getDouble(ROUTE_PRICE));
                         trainRoutes.add(trainRoute);
-                    } while (resultSet.next() && train.getId().equals(resultSet.getLong(ColumnName.TRAIN_ID)));
+                    } while (resultSet.next() && train.getId().equals(resultSet.getLong(TRAIN_ID)));
                     if (!resultSet.isAfterLast()) {
                         resultSet.previous();
                     }
@@ -126,17 +126,17 @@ public class TrainDaoImpl implements TrainDao {
             while (resultSet.next()) {
                 train = new Train();
                 List<Route> routes = new ArrayList<>();
-                train.setId(resultSet.getLong(ColumnName.TRAIN_ID));
-                train.setNumberOfSeats(resultSet.getInt(ColumnName.TRAIN_NUMBER_OF_SEATS));
+                train.setId(resultSet.getLong(TRAIN_ID));
+                train.setNumberOfSeats(resultSet.getInt(TRAIN_NUMBER_OF_SEATS));
                 do {
                     Route route = new Route();
-                    route.setId(resultSet.getLong(ColumnName.ROUTE_ID));
-                    route.setStation(resultSet.getString(ColumnName.ROUTE_STATION));
-                    route.setTime(resultSet.getTime(ColumnName.ROUTE_TIME));
-                    route.setTrainNumber(resultSet.getLong(ColumnName.ROUTE_TRAIN_NUMBER));
-                    route.setPrice(resultSet.getDouble(ColumnName.ROUTE_PRICE));
+                    route.setId(resultSet.getLong(ROUTE_ID));
+                    route.setStation(resultSet.getString(ROUTE_STATION));
+                    route.setTime(resultSet.getTime(ROUTE_TIME));
+                    route.setTrainNumber(resultSet.getLong(ROUTE_TRAIN_NUMBER));
+                    route.setPrice(resultSet.getDouble(ROUTE_PRICE));
                     routes.add(route);
-                } while (resultSet.next() && train.getId().equals(resultSet.getLong(ColumnName.TRAIN_ID)));
+                } while (resultSet.next() && train.getId().equals(resultSet.getLong(TRAIN_ID)));
                 if (!resultSet.isAfterLast()) {
                     resultSet.previous();
                 }
@@ -158,7 +158,7 @@ public class TrainDaoImpl implements TrainDao {
         ) {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
-                Long trainId = resultSet.getLong(ColumnName.TRAIN_ID);
+                Long trainId = resultSet.getLong(TRAIN_ID);
                 findTrainById(trainId);
                 Train train = findTrainById(trainId).get();
                 trains.add(train);
@@ -178,11 +178,11 @@ public class TrainDaoImpl implements TrainDao {
             ResultSet resultSet = preparedStatement.executeQuery();
             while (resultSet.next()) {
                 Route route = new Route();
-                route.setId(resultSet.getLong(ColumnName.ROUTE_ID));
-                route.setStation(resultSet.getString(ColumnName.ROUTE_STATION));
-                route.setTime(resultSet.getTime(ColumnName.ROUTE_TIME));
-                route.setTrainNumber(resultSet.getLong(ColumnName.ROUTE_TRAIN_NUMBER));
-                route.setPrice(resultSet.getDouble(ColumnName.ROUTE_PRICE));
+                route.setId(resultSet.getLong(ROUTE_ID));
+                route.setStation(resultSet.getString(ROUTE_STATION));
+                route.setTime(resultSet.getTime(ROUTE_TIME));
+                route.setTrainNumber(resultSet.getLong(ROUTE_TRAIN_NUMBER));
+                route.setPrice(resultSet.getDouble(ROUTE_PRICE));
                 routes.add(route);
             }
         } catch (SQLException e) {

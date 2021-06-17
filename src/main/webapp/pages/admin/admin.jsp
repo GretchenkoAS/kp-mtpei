@@ -22,7 +22,7 @@
                 <a href="${pageContext.request.contextPath}/controller?command=to_my_tickets_page"
                    class="list-group-item list-group-item-action text-style">
                     <fmt:message key="tickets"/></a>
-                <a href="${pageContext.request.contextPath}/controller?command=to_users_page"
+                <a href="${pageContext.request.contextPath}/controller?command=show_all_trains"
                    class="list-group-item list-group-item-action text-style active">
                     <fmt:message key="trains"/></a>
             </div>
