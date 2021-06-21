@@ -1,5 +1,10 @@
 package com.nyha.webfinal.controller;
 
+/**
+ * Describes all request parameter
+ *
+ * @author Andrey Gretchenko
+ */
 public class RequestParameter {
     public static final String COMMAND = "command";
     public static final String EMAIL = "email";

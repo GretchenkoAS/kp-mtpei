@@ -7,6 +7,12 @@ import com.nyha.webfinal.controller.command.Router;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The command is responsible for logout
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class LogoutCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {

@@ -1,5 +1,10 @@
 package com.nyha.webfinal.entity;
 
+/**
+ * Describes the entity ShortTrainData
+ *
+ * @author Andrey Gretchenko
+ */
 public class ShortTrainData {
     private Long trainId;
     private String departureStation;

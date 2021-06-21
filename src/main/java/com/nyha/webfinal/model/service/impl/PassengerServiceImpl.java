@@ -12,7 +12,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
-
+/**
+ * The service is responsible for passenger operations
+ *
+ * @author Andrey Gretchenko
+ * @see PassengerService
+ */
 public class PassengerServiceImpl implements PassengerService {
     static Logger logger = LogManager.getLogger();
     private PassengerDao passengerDao = new PassengerDaoImpl();

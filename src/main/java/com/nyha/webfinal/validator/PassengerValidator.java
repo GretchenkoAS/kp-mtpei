@@ -3,6 +3,11 @@ package com.nyha.webfinal.validator;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+/**
+ * Validates passenger info
+ *
+ * @author Andrey Gretchenko
+ */
 public class PassengerValidator {
     private static final Pattern NAME_REGEX = Pattern
             .compile("\\w{3,40}");
@@ -13,6 +18,12 @@ public class PassengerValidator {
     private PassengerValidator() {
     }
 
+    /**
+     * Checks if name is valid
+     *
+     * @param name {@link String}
+     * @return boolean true if name is valid, else false
+     */
     public static boolean isValidName(String name) {
         if (name == null || name.isBlank()) {
             return false;
@@ -21,6 +32,12 @@ public class PassengerValidator {
         return matcher.matches();
     }
 
+    /**
+     * Checks if number is valid
+     *
+     * @param number {@link String}
+     * @return boolean true if number is valid, else false
+     */
     public static boolean isValidNumber(String number) {
         if (number == null || number.isBlank()) {
             return false;

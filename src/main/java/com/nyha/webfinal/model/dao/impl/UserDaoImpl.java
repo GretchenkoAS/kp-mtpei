@@ -1,5 +1,6 @@
 package com.nyha.webfinal.model.dao.impl;
 
+import com.nyha.webfinal.model.dao.TrainDao;
 import com.nyha.webfinal.model.dao.UserDao;
 import com.nyha.webfinal.entity.User;
 import com.nyha.webfinal.exception.DaoException;
@@ -13,6 +14,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Works with database table users
+ *
+ * @author Andrey Gretchenko
+ * @see UserDao
+ */
 public class UserDaoImpl implements UserDao {
     static Logger logger = LogManager.getLogger();
 

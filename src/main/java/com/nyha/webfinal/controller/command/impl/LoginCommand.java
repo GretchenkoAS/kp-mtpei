@@ -18,6 +18,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * The command is responsible for the login
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class LoginCommand implements Command {
     static Logger logger = LogManager.getLogger();
     public static final String INCORRECT_EMAIL_OR_PASSWORD = "incorrectEmailOrPassword";

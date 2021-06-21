@@ -18,15 +18,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * The command is responsible for changing a password
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class ChangePasswordCommand implements Command {
     static Logger logger = LogManager.getLogger();
     public static final String INCORRECT_PASSWORD = "incorrectPassword";
+    public static final String ERROR_ACCESS = "errorAccess";
     private UserService service = new UserServiceImpl();
 
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
         HttpSession session = request.getSession(true);
+        if (session.getAttribute(SessionAttribute.USER) == null) {
+            request.setAttribute(RequestAttribute.EXCEPTION, ERROR_ACCESS);
+            router.setPage(PagePath.ERROR_500);
+            return router;
+        }
         User user = (User)session.getAttribute(SessionAttribute.USER);
         String email = user.getEmail();
         String password = request.getParameter(RequestParameter.PASSWORD);

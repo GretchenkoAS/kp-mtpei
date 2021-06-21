@@ -8,6 +8,11 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.util.ResourceBundle;
 
+/**
+ * The ConnectionFactory is responsible for for creating connections
+ *
+ * @author Andrey Gretchenko
+ */
 final class ConnectionFactory {
     static Logger logger = LogManager.getLogger();
     private static final String RESOURCE = "database";
@@ -37,7 +42,13 @@ final class ConnectionFactory {
     private ConnectionFactory() {
     }
 
-    static Connection getConnection() throws SQLException {
+    /**
+     * Creates a connection to the database
+     *
+     * @return {@link Connection} connection to the database
+     * @throws SQLException
+     */
+    static Connection createConnection() throws SQLException {
         return DriverManager.getConnection(DATABASE_URL, DATABASE_USERNAME, DATABASE_PASSWORD);
     }
 }

@@ -17,6 +17,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
+/**
+ * The command is responsible for user registration
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class RegisterCommand implements Command {
     static Logger logger = LogManager.getLogger();
     private UserService service = new UserServiceImpl();
@@ -32,13 +38,12 @@ public class RegisterCommand implements Command {
         User user = new User(username, email, role);
         try {
             Optional<String> message = service.addUser(user, password);
-            if(message.isEmpty()) {
+            if (message.isEmpty()) {
                 HttpSession session = request.getSession(true);
                 session.setAttribute(SessionAttribute.USER, user);
                 router.setPage(PagePath.INDEX);
                 router.setRedirect();
-            }
-            else {
+            } else {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, message.get());
                 router.setPage(PagePath.REGISTRATION);
             }

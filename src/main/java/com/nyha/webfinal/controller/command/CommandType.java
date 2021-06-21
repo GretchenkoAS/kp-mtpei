@@ -2,6 +2,13 @@ package com.nyha.webfinal.controller.command;
 
 import com.nyha.webfinal.controller.command.impl.*;
 
+import java.util.Optional;
+
+/**
+ * Describes all command types
+ *
+ * @author Andrey Gretchenko
+ */
 public enum CommandType {
     LOGIN {
         {

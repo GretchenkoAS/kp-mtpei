@@ -8,6 +8,12 @@ import javax.servlet.jsp.JspWriter;
 import javax.servlet.jsp.tagext.TagSupport;
 import java.io.IOException;
 
+/**
+ * Custom tag copyright
+ *
+ * @author Andrey Gretchenko
+ * @see TagSupport
+ */
 public class CopyrightTag extends TagSupport {
     static Logger logger = LogManager.getLogger();
     private static final String FOOTER = "Copyright by Andrey Gretchenko 2021 ";

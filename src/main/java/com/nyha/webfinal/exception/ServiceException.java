@@ -1,5 +1,11 @@
 package com.nyha.webfinal.exception;
 
+/**
+ * Describes exception in Service
+ *
+ * @author Andrey Gretchenko
+ * @see Exception
+ */
 public class ServiceException extends Exception {
     public ServiceException() {
         super();

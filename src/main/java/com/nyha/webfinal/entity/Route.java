@@ -2,6 +2,11 @@ package com.nyha.webfinal.entity;
 
 import java.sql.Time;
 
+/**
+ * Describes the entity Route
+ *
+ * @author Andrey Gretchenko
+ */
 public class Route extends Entity{
     private String station;
     private Time time;

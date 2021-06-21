@@ -6,6 +6,12 @@ import com.nyha.webfinal.controller.command.Router;
 
 import javax.servlet.http.HttpServletRequest;
 
+/**
+ * The command is responsible for going to the login page
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class ToLoginPageCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {

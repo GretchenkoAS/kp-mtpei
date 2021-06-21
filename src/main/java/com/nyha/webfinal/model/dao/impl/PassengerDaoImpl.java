@@ -1,6 +1,7 @@
 package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
+import com.nyha.webfinal.model.dao.BankDao;
 import com.nyha.webfinal.model.dao.PassengerDao;
 import com.nyha.webfinal.entity.Passenger;
 import com.nyha.webfinal.pool.ConnectionPool;
@@ -16,6 +17,12 @@ import java.util.List;
 
 import static com.nyha.webfinal.model.dao.ColumnName.*;
 
+/**
+ * Works with database table passengers
+ *
+ * @author Andrey Gretchenko
+ * @see PassengerDao
+ */
 public class PassengerDaoImpl implements PassengerDao {
     static Logger logger = LogManager.getLogger();
     private static final String FIND_ALL_PASSENGERS = "SELECT passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM passengers";
@@ -72,6 +79,13 @@ public class PassengerDaoImpl implements PassengerDao {
         return isAdd;
     }
 
+    /**
+     * Updates passenger
+     *
+     * @param passenger {@link Passenger}
+     * @return boolean true if the passenger updated successfully, else false
+     * @throws DaoException if {@link SQLException} occur
+     */
     private boolean updatePassenger(Passenger passenger) throws DaoException {
         boolean isUpdate;
         try (Connection connection = ConnectionPool.getInstance().getConnection();

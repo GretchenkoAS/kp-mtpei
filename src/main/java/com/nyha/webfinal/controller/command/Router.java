@@ -1,5 +1,10 @@
 package com.nyha.webfinal.controller.command;
 
+/**
+ * Describes the router
+ *
+ * @author Andrey Gretchenko
+ */
 public class Router {
     private String page;
     private boolean isRedirect;

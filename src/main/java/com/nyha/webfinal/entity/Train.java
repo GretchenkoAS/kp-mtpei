@@ -3,6 +3,11 @@ package com.nyha.webfinal.entity;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Describes the entity Train
+ *
+ * @author Andrey Gretchenko
+ */
 public class Train extends Entity{
     private int numberOfSeats;
     private List<Route> routes;

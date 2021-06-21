@@ -17,22 +17,34 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
+/**
+ * The command is responsible for going to the tickets page
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class ToMyTicketsPageCommand implements Command {
     static Logger logger = LogManager.getLogger();
     public static final String NOT_TICKETS = "notTickets";
+    public static final String ERROR_ACCESS = "errorAccess";
     private TicketService service = new TicketServiceImpl();
 
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
-        router.setPage(PagePath.TICKETS);
         HttpSession session = request.getSession(true);
-        User user = (User)session.getAttribute(SessionAttribute.USER);
+        if (session.getAttribute(SessionAttribute.USER) == null) {
+            request.setAttribute(RequestAttribute.EXCEPTION, ERROR_ACCESS);
+            router.setPage(PagePath.ERROR_500);
+            return router;
+        }
+        router.setPage(PagePath.TICKETS);
+        User user = (User) session.getAttribute(SessionAttribute.USER);
         Long userId = user.getId();
         List<Ticket> tickets;
         try {
             tickets = service.findUsersTickets(userId);
-            if(!tickets.isEmpty()) {
+            if (!tickets.isEmpty()) {
                 request.setAttribute(RequestAttribute.TICKETS, tickets);
             } else {
                 request.setAttribute(RequestAttribute.MESSAGE, NOT_TICKETS);

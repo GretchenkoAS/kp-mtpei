@@ -1,11 +1,23 @@
 package com.nyha.webfinal.model.service;
 
+import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.exception.ServiceException;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
+/**
+ * The interface for operations with the bank account
+ *
+ * @author Andrey Gretchenko
+ */
 public interface BankService {
+    /**
+     * Debits the account
+     *
+     * @param accountNumber {@link String}
+     * @param price         {@link double}
+     * @return {@link Optional} of {@link String}
+     * @throws ServiceException if {@link DaoException} occurs
+     */
     Optional<String> debitTheAccount(String accountNumber, double price) throws ServiceException;
 }

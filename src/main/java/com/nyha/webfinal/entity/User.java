@@ -1,5 +1,10 @@
 package com.nyha.webfinal.entity;
 
+/**
+ * Describes the entity User
+ *
+ * @author Andrey Gretchenko
+ */
 public class User extends Entity{
     public enum Role {
         ADMIN, USER, GUEST

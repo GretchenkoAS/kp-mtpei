@@ -5,7 +5,9 @@ import com.nyha.webfinal.model.dao.TrainDao;
 import com.nyha.webfinal.entity.Route;
 import com.nyha.webfinal.entity.Train;
 import com.nyha.webfinal.pool.ConnectionPool;
+
 import static com.nyha.webfinal.model.dao.ColumnName.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -17,11 +19,16 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Works with database table trains
+ *
+ * @author Andrey Gretchenko
+ * @see TrainDao
+ */
 public class TrainDaoImpl implements TrainDao {
     static Logger logger = LogManager.getLogger();
     private static final String FIND_ALL_TRAINS = "SELECT trains.train_id, trains.number_of_seats, routes.station, routes.route_id, routes.time, routes.price FROM trains JOIN routes ON trains.train_id = routes.train_id order by trains.train_id, routes.station_number";
     private static final String FIND_TRAINS_BY_ID = "SELECT trains.train_id, trains.number_of_seats, routes.station, routes.route_id, routes.time, routes.price FROM trains JOIN routes ON trains.train_id = routes.train_id where trains.train_id = ?  order by trains.train_id, routes.station_number";
-    private static final String ADD_TRAIN = "INSERT INTO `trains` (`number_of_seats`) VALUES (?)";
     private static final String FIND_ROUTES_BY_STATIONS = "SELECT route_id, train_id, time, station, price FROM routes WHERE station = ?";
     private static final String FIND_POPULAR_TRAINS = "SELECT train_id, count(train_id) FROM tickets group by train_id order by count(train_id) desc limit 5";
 
@@ -60,23 +67,9 @@ public class TrainDaoImpl implements TrainDao {
     }
 
     @Override
-    public boolean addTrain(Train train) throws DaoException {
-        boolean isAdd;
-        try (Connection connection = ConnectionPool.getInstance().getConnection();
-             PreparedStatement preparedStatement = connection.prepareStatement(ADD_TRAIN)) {
-            preparedStatement.setInt(1, train.getNumberOfSeats());
-            isAdd = preparedStatement.executeUpdate() > 0;
-        } catch (SQLException e) {
-            logger.error("add error, " + train, e);
-            throw new DaoException("add error, " + train, e);
-        }
-        return isAdd;
-    }
-
-    @Override
     public List<Train> findTrainByStation(String departureStation) throws DaoException {
         List<Train> trains = new ArrayList<>();
-        List<Route> routes = findRoutesByStations(departureStation);
+        List<Route> routes = findRoutesByStation(departureStation);
         if (routes.isEmpty()) {
             return trains;
         }
@@ -170,7 +163,14 @@ public class TrainDaoImpl implements TrainDao {
         return trains;
     }
 
-    private List<Route> findRoutesByStations(String departureStation) throws DaoException {
+    /**
+     * Finds routes by station passenger
+     *
+     * @param departureStation {@link String}
+     * @return {@link List} of {@link Route}
+     * @throws DaoException if {@link SQLException} occur
+     */
+    private List<Route> findRoutesByStation(String departureStation) throws DaoException {
         List<Route> routes = new ArrayList<>();
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(FIND_ROUTES_BY_STATIONS)) {

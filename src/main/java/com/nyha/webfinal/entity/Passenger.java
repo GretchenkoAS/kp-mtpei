@@ -1,5 +1,10 @@
 package com.nyha.webfinal.entity;
 
+/**
+ * Describes the entity Passenger
+ *
+ * @author Andrey Gretchenko
+ */
 public class Passenger extends Entity{
     private String name;
     private String lastName;

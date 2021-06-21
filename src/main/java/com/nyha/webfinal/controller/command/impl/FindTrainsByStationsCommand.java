@@ -18,7 +18,13 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-public class FindTrainsByStationsCommand  implements Command {
+/**
+ * The command is responsible for finding a trains by stations
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
+public class FindTrainsByStationsCommand implements Command {
     static Logger logger = LogManager.getLogger();
     public static final String INCORRECT_STATION_NAME = "incorrectStationName";
     public static final String TRAINS_NOT_FOUND = "trainsNotFound";
@@ -46,7 +52,7 @@ public class FindTrainsByStationsCommand  implements Command {
         } catch (ServiceException e) {
             router.setPage(PagePath.ERROR_500);
             request.setAttribute(RequestAttribute.EXCEPTION, e.getMessage());
-            logger.error("search error",e);
+            logger.error("search error", e);
         }
         return router;
     }

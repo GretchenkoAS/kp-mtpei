@@ -1,5 +1,10 @@
 package com.nyha.webfinal.entity;
 
+/**
+ * The class is the base for all entity classes
+ *
+ * @author Andrey Gretchenko
+ */
 public abstract class Entity {
     private Long id;
 

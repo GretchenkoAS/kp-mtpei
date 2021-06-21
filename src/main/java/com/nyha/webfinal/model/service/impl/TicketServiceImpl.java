@@ -12,6 +12,12 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The service is responsible for ticket operations
+ *
+ * @author Andrey Gretchenko
+ * @see TicketService
+ */
 public class TicketServiceImpl implements TicketService {
     static Logger logger = LogManager.getLogger();
     private TicketDao ticketDao = new TicketDaoImpl();

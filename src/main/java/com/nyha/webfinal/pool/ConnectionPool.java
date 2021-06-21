@@ -11,6 +11,11 @@ import java.util.concurrent.LinkedBlockingDeque;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
+/**
+ * Pool of connections used while the system is running
+ *
+ * @author Andrey Gretchenko
+ */
 public class ConnectionPool {
     static Logger logger = LogManager.getLogger();
     private static final int DEFAULT_POOL_SIZE = 8;
@@ -19,12 +24,15 @@ public class ConnectionPool {
     private final BlockingQueue<ProxyConnection> freeConnections;
     private final BlockingQueue<ProxyConnection> givenAwayConnections;
 
+    /**
+     * Initialize connection pool
+     */
     private ConnectionPool() {
         freeConnections = new LinkedBlockingDeque<>(DEFAULT_POOL_SIZE);
         givenAwayConnections = new LinkedBlockingDeque<>();
         for (int i = 0; i < DEFAULT_POOL_SIZE; i++) {
             try {
-                Connection connection = ConnectionFactory.getConnection();
+                Connection connection = ConnectionFactory.createConnection();
                 freeConnections.add(new ProxyConnection(connection));
             } catch (SQLException e) {
                 logger.fatal("couldn't create connection to data base: ", e);
@@ -35,6 +43,11 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Gets instance of this class
+     *
+     * @return {@link ConnectionPool} instance
+     */
     public static ConnectionPool getInstance() {
         if (instance == null) {
             try {
@@ -50,6 +63,11 @@ public class ConnectionPool {
         return instance;
     }
 
+    /**
+     * Gets a connection from the connection pool
+     *
+     * @return {@link Connection} connection to the database
+     */
     public Connection getConnection() {
         ProxyConnection connection = null;
         try {
@@ -61,6 +79,11 @@ public class ConnectionPool {
         return connection;
     }
 
+    /**
+     * Returns the connection to the connection pool
+     *
+     * @param connection {@link Connection} connection to the database
+     */
     public void releaseConnection(Connection connection) {
         if (connection.getClass() == ProxyConnection.class || givenAwayConnections.remove(connection)) {
             try {
@@ -74,6 +97,9 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Destroy connection pool
+     */
     public void destroyPool() {
         try {
             for (int i = 0; i < DEFAULT_POOL_SIZE; i++) {
@@ -88,11 +114,15 @@ public class ConnectionPool {
         }
     }
 
+    /**
+     * Unregisters drivers
+     *
+     * @throws {@link SQLException}
+     */
     private void deregisterDrivers() throws SQLException {
         while (DriverManager.getDrivers().hasMoreElements()) {
             DriverManager.deregisterDriver(DriverManager.getDrivers().nextElement());
         }
         logger.info("Drivers removed from registration");
     }
-
 }

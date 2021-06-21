@@ -15,7 +15,12 @@ import org.apache.logging.log4j.Logger;
 import java.util.List;
 import java.util.Optional;
 
-//fixme переопределить методы
+/**
+ * The service is responsible for user operations
+ *
+ * @author Andrey Gretchenko
+ * @see UserService
+ */
 public class UserServiceImpl implements UserService {
     static Logger logger = LogManager.getLogger();
     public static final String INCORRECT_EMAIL = "incorrectEmail";

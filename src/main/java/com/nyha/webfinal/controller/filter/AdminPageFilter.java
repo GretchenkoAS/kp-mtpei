@@ -15,6 +15,12 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
+/**
+ * Filter to control access to admin pages
+ *
+ * @author Andrey Gretchenko
+ * @see Filter
+ */
 @WebFilter(urlPatterns = {"/pages/admin/*"})
 public class AdminPageFilter implements Filter {
     public static final String ERROR_ACCESS = "errorAccess";
@@ -26,6 +32,11 @@ public class AdminPageFilter implements Filter {
         HttpServletResponse httpResponse = (HttpServletResponse) response;
         HttpSession session = httpRequest.getSession(true);
         User user = (User) session.getAttribute(SessionAttribute.USER);
+        if (session.getAttribute(SessionAttribute.USER) == null) {
+            httpResponse.sendRedirect(PagePath.ERROR_500);
+            session.setAttribute(SessionAttribute.EXCEPTION, ERROR_ACCESS);
+            return;
+        }
         if (!user.getRole().equals(User.Role.ADMIN)) {
             httpResponse.sendRedirect(PagePath.MESSAGE);
             session.setAttribute(SessionAttribute.ERROR_MESSAGE, ERROR_ACCESS);

@@ -4,6 +4,12 @@ import javax.servlet.*;
 import javax.servlet.annotation.*;
 import java.io.IOException;
 
+/**
+ * Filter for setting the encoding
+ *
+ * @author Andrey Gretchenko
+ * @see Filter
+ */
 @WebFilter(urlPatterns = {"/*"},
         initParams = {
                 @WebInitParam(name = "encoding", value = "UTF-8", description = "Encoding Param")})

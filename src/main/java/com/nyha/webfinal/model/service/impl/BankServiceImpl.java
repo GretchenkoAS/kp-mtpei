@@ -10,6 +10,12 @@ import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
 
+/**
+ * The service is responsible for bank account operations
+ *
+ * @author Andrey Gretchenko
+ * @see BankService
+ */
 public class BankServiceImpl implements BankService {
     static Logger logger = LogManager.getLogger();
     public static final String OPERATION_FAILED = "operationFailed";

@@ -16,6 +16,12 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * The service is responsible for train operations
+ *
+ * @author Andrey Gretchenko
+ * @see TrainService
+ */
 public class TrainServiceImpl implements TrainService {
     static Logger logger = LogManager.getLogger();
     private TrainDao trainDao = new TrainDaoImpl();
@@ -133,6 +139,14 @@ public class TrainServiceImpl implements TrainService {
         return resultTrains;
     }
 
+    /**
+     * Calculates price
+     *
+     * @param train            {@link Train}
+     * @param departureStation {@link String}
+     * @param arrivalStation   {@link String}
+     * @return double
+     */
     private double calculatePrice(Train train, String departureStation, String arrivalStation) {
         double price = 0;
         boolean flag = false;

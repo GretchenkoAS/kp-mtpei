@@ -28,8 +28,15 @@ import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.util.Optional;
 
+/**
+ * The command is responsible for buying a ticket
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class BuyTicketCommand implements Command {
     static Logger logger = LogManager.getLogger();
+    public static final String ERROR_ACCESS = "errorAccess";
     public static final String TICKET_BOUGHT = "ticketBought";
     public static final String INCORRECT_DATA = "incorrectData";
     private TicketService ticketService = new TicketServiceImpl();
@@ -39,6 +46,12 @@ public class BuyTicketCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
+        HttpSession session = request.getSession(true);
+        if (session.getAttribute(SessionAttribute.USER) == null) {
+            request.setAttribute(RequestAttribute.EXCEPTION, ERROR_ACCESS);
+            router.setPage(PagePath.ERROR_500);
+            return router;
+        }
         String trainIdStr = request.getParameter(RequestParameter.TRAIN_ID);
         Long trainId = Long.parseLong(trainIdStr);
         String departureStation = request.getParameter(RequestParameter.DEPARTURE_STATION);
@@ -69,8 +82,6 @@ public class BuyTicketCommand implements Command {
         }
         try {
             Optional<String> message = bankService.debitTheAccount(accountNumber, price);
-
-            HttpSession session = request.getSession(true);
             User user = (User) session.getAttribute(SessionAttribute.USER);
             Passenger passenger = new Passenger(name, lastName, passportNumber, phoneNumber, user.getId());
 

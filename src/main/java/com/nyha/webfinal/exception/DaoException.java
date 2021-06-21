@@ -1,5 +1,11 @@
 package com.nyha.webfinal.exception;
 
+/**
+ * Describes exception in Dao
+ *
+ * @author Andrey Gretchenko
+ * @see Exception
+ */
 public class DaoException extends Exception {
     public DaoException() {
         super();

@@ -3,6 +3,11 @@ package com.nyha.webfinal.entity;
 
 import java.sql.Timestamp;
 
+/**
+ * Describes the entity Ticket
+ *
+ * @author Andrey Gretchenko
+ */
 public class Ticket extends Entity {
     private Passenger passenger;
     private Long trainId;

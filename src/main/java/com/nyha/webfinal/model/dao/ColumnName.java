@@ -1,5 +1,10 @@
 package com.nyha.webfinal.model.dao;
 
+/**
+ * Describes all column name
+ *
+ * @author Andrey Gretchenko
+ */
 public class ColumnName {
 
     //Constants for users table

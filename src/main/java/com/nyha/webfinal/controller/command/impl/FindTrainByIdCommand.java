@@ -15,6 +15,12 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import java.util.Optional;
 
+/**
+ * The command is responsible for finding a train by id
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class FindTrainByIdCommand implements Command {
     static Logger logger = LogManager.getLogger();
     public static final String TRAIN_NOT_FOUND = "trainNotFound";

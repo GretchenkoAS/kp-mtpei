@@ -4,10 +4,20 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.Optional;
-
+/**
+ * CommandProvider is used for defining command
+ *
+ * @author Andrey Gretchenko
+ */
 public class CommandProvider {
     static Logger logger = LogManager.getLogger();
 
+    /**
+     * Define command
+     *
+     * @param commandName {@link String} command name
+     * @return {@link Optional} of {@link Command}
+     */
     public static Optional<Command> defineCommand(String commandName) {
         Optional<Command> current;
         if(commandName == null || commandName.isBlank()){

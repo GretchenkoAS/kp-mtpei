@@ -3,7 +3,9 @@ package com.nyha.webfinal.model.dao.impl;
 import com.nyha.webfinal.exception.DaoException;
 import com.nyha.webfinal.model.dao.BankDao;
 import com.nyha.webfinal.pool.ConnectionPool;
+
 import static com.nyha.webfinal.model.dao.ColumnName.*;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -13,6 +15,12 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
+/**
+ * Works with database table bank_accounts
+ *
+ * @author Andrey Gretchenko
+ * @see BankDao
+ */
 public class BankDaoImpl implements BankDao {
     static Logger logger = LogManager.getLogger();
     private static final String FIND_ACCOUNT = "SELECT bank_account_id, money_amount FROM bank_accounts WHERE bank_account_id = ?";

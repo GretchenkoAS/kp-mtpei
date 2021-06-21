@@ -1,17 +1,25 @@
 package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
+import com.nyha.webfinal.model.dao.PassengerDao;
 import com.nyha.webfinal.model.dao.RouteDao;
 import com.nyha.webfinal.entity.Route;
 import com.nyha.webfinal.pool.ConnectionPool;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+
 import static com.nyha.webfinal.model.dao.ColumnName.*;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Works with database table routes
+ *
+ * @author Andrey Gretchenko
+ * @see RouteDao
+ */
 public class RouteDaoImpl implements RouteDao {
     static Logger logger = LogManager.getLogger();
     private static final String FIND_ALL_ROUTES = "SELECT route_id, train_id, time, station, price FROM routes";

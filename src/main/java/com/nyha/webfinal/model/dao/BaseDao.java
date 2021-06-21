@@ -10,11 +10,29 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+/**
+ * The root interface in the dao hierarchy
+ *
+ * @author Andrey Gretchenko
+ *
+ * @param <T> entity
+ */
 public interface BaseDao<T extends Entity> {
     Logger logger = LogManager.getLogger();
+    /**
+     * Find all records in the corresponding database table
+     *
+     * @return {@link List} of entity
+     * @throws DaoException if {@link SQLException} occur
+     */
     List<T> findAll() throws DaoException;
 
 
+    /**
+     * Close statement
+     *
+     * @param statement {@link Statement}
+     */
     default void close(Statement statement) {
         try {
             if (statement != null) {
@@ -24,7 +42,11 @@ public interface BaseDao<T extends Entity> {
             logger.error("close statement error", e);
         }
     }
-
+    /**
+     * Close connection
+     *
+     * @param connection {@link Connection}
+     */
     default void close(Connection connection) {
         try {
             if (connection != null) {
@@ -35,14 +57,4 @@ public interface BaseDao<T extends Entity> {
             logger.error("close connection error", e);
         }
     }
-
-//    default void rollback(Connection connection) {
-//        try {
-//            if (connection != null) {
-//                connection.rollback();
-//            }
-//        } catch (SQLException e) {
-//            logger.error("rollback error", e);
-//        }
-//    }
 }

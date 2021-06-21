@@ -1,5 +1,10 @@
 package com.nyha.webfinal.controller;
 
+/**
+ * Describes all session attributes
+ *
+ * @author Andrey Gretchenko
+ */
 public class SessionAttribute {
     public static final String CURRENT_PAGE = "currentPage";
     public static final String LOCALE = "locale";
@@ -8,6 +13,9 @@ public class SessionAttribute {
     public static final String TICKET_BOUGHT = "ticket_bought";
     public static final String USERS = "users";
     public static final String ERROR_MESSAGE = "error_message";
+    public static final String EXCEPTION = "exception";
+    public static final String COMMAND = "command";
+
 
     private SessionAttribute() {
     }

@@ -16,7 +16,12 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 import java.util.List;
 
-//fixme переделать
+/**
+ * The command is responsible for going to the main page
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class ToMainPageCommand implements Command {
     static Logger logger = LogManager.getLogger();
     public static final String TRAINS_NOT_FOUND = "trainsNotFound";
@@ -40,7 +45,7 @@ public class ToMainPageCommand implements Command {
         } catch (ServiceException e) {
             router.setPage(PagePath.ERROR_500);
             request.setAttribute(RequestAttribute.EXCEPTION, e.getMessage());
-            logger.error("search error",e);
+            logger.error("search error", e);
         }
         return router;
     }

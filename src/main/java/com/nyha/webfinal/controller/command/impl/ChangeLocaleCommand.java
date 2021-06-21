@@ -10,6 +10,12 @@ import org.apache.logging.log4j.Logger;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
+/**
+ * The command is responsible for changing a locale
+ *
+ * @author Andrey Gretchenko
+ * @see Command
+ */
 public class ChangeLocaleCommand implements Command {
     static Logger logger = LogManager.getLogger();
 

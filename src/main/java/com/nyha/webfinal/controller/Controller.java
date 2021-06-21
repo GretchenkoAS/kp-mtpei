@@ -15,6 +15,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
 
+/**
+ * Controller receive request from client (get or post)
+ *
+ * @author Andrey Gretchenko
+ * @see HttpServlet
+ */
 @WebServlet(name = "controller", urlPatterns = {"/controller"})
 public class Controller extends HttpServlet {
     static Logger logger = LogManager.getLogger();
@@ -35,6 +41,14 @@ public class Controller extends HttpServlet {
         processRequest(request, response);
     }
 
+    /**
+     * Processes get and post requests
+     *
+     * @param request  {@link HttpServletRequest}
+     * @param response {@link HttpServletResponse}
+     * @throws ServletException
+     * @throws IOException
+     */
     private void processRequest(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         String commandStr = request.getParameter(RequestParameter.COMMAND);
         logger.info(commandStr);

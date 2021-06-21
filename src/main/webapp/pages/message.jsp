@@ -12,9 +12,6 @@
     <jsp:include page="${pageContext.request.contextPath}/pages/header.jsp"/>
 </header>
 <hr/>
-
-<p class="alert-warning"><fmt:message key="${error_message}"/></p>
-
 <c:if test="${incorrect_data != null}">
     <p class="alert-warning"><fmt:message key="${incorrect_data}"/></p>
 </c:if>

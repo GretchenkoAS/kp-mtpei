@@ -1,6 +1,7 @@
 package com.nyha.webfinal.model.dao.impl;
 
 import com.nyha.webfinal.exception.DaoException;
+import com.nyha.webfinal.model.dao.RouteDao;
 import com.nyha.webfinal.model.dao.TicketDao;
 import com.nyha.webfinal.entity.Passenger;
 import com.nyha.webfinal.entity.Ticket;
@@ -17,6 +18,12 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Works with database table tickets
+ *
+ * @author Andrey Gretchenko
+ * @see TicketDao
+ */
 public class TicketDaoImpl implements TicketDao {
     static Logger logger = LogManager.getLogger();
     private static final String FIND_ALL_TICKETS = "SELECT ticket_id, train_id, departure_station, arrival_station, seat, departure_date, arrival_date, ticket_price, passengers.passenger_id, first_name, last_name, passport_number, phone_number, user_id FROM tickets JOIN passengers ON tickets.passenger_id = passengers.passenger_id";
