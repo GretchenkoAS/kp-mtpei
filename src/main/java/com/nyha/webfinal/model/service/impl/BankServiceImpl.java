@@ -23,9 +23,9 @@ public class BankServiceImpl implements BankService {
     private BankDao bankDao = new BankDaoImpl();
 
     @Override
-    public Optional<String> debitTheAccount(String accountNumber, double price) throws ServiceException {
+    public Optional<String> debitAccount(String accountNumber, double price) throws ServiceException {
         try {
-            if (!bankDao.debitTheAccount(accountNumber, price)) {
+            if (!bankDao.debitAccount(accountNumber, price)) {
                return Optional.of(OPERATION_FAILED);
             }
         } catch (DaoException e) {

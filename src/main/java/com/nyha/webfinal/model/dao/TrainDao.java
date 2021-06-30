@@ -22,6 +22,7 @@ public interface TrainDao extends BaseDao<Train> {
      * @throws DaoException if {@link SQLException} occur
      */
     List<Train> findTrainByStation(String departureStation) throws DaoException;
+
     /**
      * Finds popular trains
      *
@@ -29,6 +30,7 @@ public interface TrainDao extends BaseDao<Train> {
      * @throws DaoException if {@link SQLException} occur
      */
     List<Train> findPopularTrains() throws DaoException;
+
     /**
      * Finds trains by id
      *
@@ -37,4 +39,13 @@ public interface TrainDao extends BaseDao<Train> {
      * @throws DaoException if {@link SQLException} occur
      */
     Optional<Train> findTrainById(Long trainId) throws DaoException;
+
+    /**
+     * Adds train
+     *
+     * @param train {@link Train}
+     * @return boolean true if the train added successfully, else false
+     * @throws DaoException if {@link SQLException} occur
+     */
+    boolean addTrain(Train train) throws DaoException;
 }

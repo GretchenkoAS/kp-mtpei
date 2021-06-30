@@ -31,6 +31,7 @@ public class ToBuyTicketPageCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.INDEX);
         router.setPage(PagePath.TICKET);
         String trainIdStr = request.getParameter(RequestParameter.TRAIN_ID);
         String departureStation = request.getParameter(RequestParameter.DEPARTURE_STATION);

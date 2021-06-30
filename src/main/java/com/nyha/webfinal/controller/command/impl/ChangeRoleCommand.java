@@ -43,6 +43,7 @@ public class ChangeRoleCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.TO_USERS);
         String email = request.getParameter(RequestParameter.EMAIL);
         String username = request.getParameter(RequestParameter.USERNAME);
         String roleStr = request.getParameter(RequestParameter.ROLE);

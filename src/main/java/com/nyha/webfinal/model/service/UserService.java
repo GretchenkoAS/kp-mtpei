@@ -55,17 +55,17 @@ public interface UserService {
      *
      * @param user     {@link User}
      * @param password {@link String}
-     * @return {@link String}
+     * @return {@link Optional} of {@link String}
      * @throws ServiceException if {@link DaoException} occurs
      */
-    String changePassword(User user, String password) throws ServiceException;
+    Optional<String> changePassword(User user, String password) throws ServiceException;
 
     /**
      * Updates user
      *
      * @param user {@link User}
-     * @return {@link String}
+     * @return {@link Optional} of {@link String}
      * @throws ServiceException if {@link DaoException} occurs
      */
-    String updateUser(User user) throws ServiceException;
+    Optional<String> updateUser(User user) throws ServiceException;
 }

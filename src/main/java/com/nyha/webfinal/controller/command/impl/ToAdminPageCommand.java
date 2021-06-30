@@ -35,6 +35,7 @@ public class ToAdminPageCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.ADMIN);
         router.setPage(PagePath.ADMIN);
         return router;
     }

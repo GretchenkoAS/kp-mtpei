@@ -32,12 +32,13 @@ public class LoginCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
+        HttpSession session = request.getSession(true);
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.LOGIN);
         String email = request.getParameter(RequestParameter.EMAIL);
         String password = request.getParameter(RequestParameter.PASSWORD);
         try {
             Optional<User> user = service.findUserByEmailAndPassword(email, password);
             if (user.isPresent()) {
-                HttpSession session = request.getSession(true);
                 session.setAttribute(SessionAttribute.USER, user.get());
                 router.setPage(PagePath.INDEX);
                 router.setRedirect();

@@ -2,6 +2,7 @@ package com.nyha.webfinal.controller.command.impl;
 
 import com.nyha.webfinal.controller.RequestAttribute;
 import com.nyha.webfinal.controller.RequestParameter;
+import com.nyha.webfinal.controller.SessionAttribute;
 import com.nyha.webfinal.controller.command.Command;
 import com.nyha.webfinal.controller.command.PagePath;
 import com.nyha.webfinal.controller.command.Router;
@@ -13,6 +14,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import java.util.Optional;
 
 /**
@@ -28,6 +30,8 @@ public class FindTrainByIdCommand implements Command {
 
     @Override
     public Router execute(HttpServletRequest request) {
+        HttpSession session = request.getSession(true);
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.INDEX);
         Router router = new Router();
         String trainIdStr = request.getParameter(RequestParameter.TRAIN_ID);
         Long trainId = Long.parseLong(trainIdStr);

@@ -32,7 +32,8 @@ public class ToMainPageCommand implements Command {
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
         router.setPage(PagePath.MAIN);
-
+        HttpSession session = request.getSession(true);
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.MAIN);
         List<ShortTrainData> shortTrainsData;
         try {
             shortTrainsData = service.findPopularTrains();
@@ -40,7 +41,6 @@ public class ToMainPageCommand implements Command {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, TRAINS_NOT_FOUND);
                 return router;
             }
-            HttpSession session = request.getSession(true);
             session.setAttribute(SessionAttribute.SHORT_TRAINS_DATA, shortTrainsData);
         } catch (ServiceException e) {
             router.setPage(PagePath.ERROR_500);

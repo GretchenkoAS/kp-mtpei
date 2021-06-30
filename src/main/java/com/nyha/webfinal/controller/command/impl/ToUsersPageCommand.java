@@ -42,6 +42,7 @@ public class ToUsersPageCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.TO_USERS);
         List<User> users;
         try {
             users = service.findAllUsers();

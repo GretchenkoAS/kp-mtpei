@@ -19,5 +19,5 @@ public interface BankService {
      * @return {@link Optional} of {@link String}
      * @throws ServiceException if {@link DaoException} occurs
      */
-    Optional<String> debitTheAccount(String accountNumber, double price) throws ServiceException;
+    Optional<String> debitAccount(String accountNumber, double price) throws ServiceException;
 }

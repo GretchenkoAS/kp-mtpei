@@ -39,6 +39,7 @@ public class ChangePasswordCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.PROFILE);
         User user = (User)session.getAttribute(SessionAttribute.USER);
         String email = user.getEmail();
         String password = request.getParameter(RequestParameter.PASSWORD);
@@ -46,8 +47,8 @@ public class ChangePasswordCommand implements Command {
         try {
             Optional<User> userOptional = service.findUserByEmailAndPassword(email, password);
             if (userOptional.isPresent() && UserValidator.isValidPassword(newPassword)) {
-                String message = service.changePassword(user, newPassword);
-                request.setAttribute(RequestAttribute.MESSAGE, message);
+                Optional<String> message = service.changePassword(user, newPassword);
+                request.setAttribute(RequestAttribute.MESSAGE, message.get());
                 router.setRedirect();
             } else {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, INCORRECT_PASSWORD);

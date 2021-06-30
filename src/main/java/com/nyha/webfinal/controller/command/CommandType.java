@@ -60,6 +60,11 @@ public enum CommandType {
             this.command = new BuyTicketCommand();
         }
     },
+    ADD_TRAIN {
+        {
+            this.command = new AddTrainCommand();
+        }
+    },
     TO_BUY_TICKET_PAGE {
         {
             this.command = new ToBuyTicketPageCommand();
@@ -93,6 +98,11 @@ public enum CommandType {
     TO_USERS_PAGE {
         {
             this.command = new ToUsersPageCommand();
+        }
+    },
+    TO_ADD_TRAIN_PAGE {
+        {
+            this.command = new ToAddTrainPageCommand();
         }
     },
     TO_LOGIN_PAGE {

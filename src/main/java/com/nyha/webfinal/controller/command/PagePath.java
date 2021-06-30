@@ -21,6 +21,11 @@ public class PagePath {
     public static final String TICKET = "/pages/user/ticket.jsp";
     public static final String MESSAGE = "/pages/message.jsp";
     public static final String ADMIN = "/pages/admin/admin.jsp";
+    public static final String ADD_TRAIN = "/pages/admin/add_train.jsp";
+
+    public static final String TO_USERS = "/controller?command=to_users_page";
+    public static final String TO_TRAINS = "/controller?command=show_all_trains";
+    public static final String TO_MY_TICKETS = "/controller?command=to_my_tickets_page";
 
     private PagePath() {
     }

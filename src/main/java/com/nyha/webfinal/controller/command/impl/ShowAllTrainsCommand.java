@@ -44,6 +44,7 @@ public class ShowAllTrainsCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.TO_TRAINS);
         List<ShortTrainData> shortTrainsData;
         try {
             shortTrainsData = service.findAllTrains();

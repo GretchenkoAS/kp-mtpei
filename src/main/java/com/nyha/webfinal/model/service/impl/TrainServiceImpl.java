@@ -8,6 +8,8 @@ import com.nyha.webfinal.entity.Route;
 import com.nyha.webfinal.entity.ShortTrainData;
 import com.nyha.webfinal.entity.Train;
 import com.nyha.webfinal.model.service.TrainService;
+import com.nyha.webfinal.util.MailSender;
+import com.nyha.webfinal.util.PasswordEncryption;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -24,6 +26,7 @@ import java.util.Optional;
  */
 public class TrainServiceImpl implements TrainService {
     static Logger logger = LogManager.getLogger();
+    public static final String TRAIN_ALREADY_EXISTS = "trainAlreadyExists";
     private TrainDao trainDao = new TrainDaoImpl();
 
     @Override
@@ -137,6 +140,20 @@ public class TrainServiceImpl implements TrainService {
             throw new ServiceException("search error, ", e);
         }
         return resultTrains;
+    }
+
+    @Override
+    public Optional<String> addTrain(Train train) throws ServiceException {
+        if (findTrainById(train.getId()).isPresent()) {
+            return Optional.of(TRAIN_ALREADY_EXISTS);
+        }
+        try {
+            trainDao.addTrain(train);
+        } catch (DaoException e) {
+            logger.error("add user error, " + train, e);
+            throw new ServiceException("add user error, " + train, e);
+        }
+        return Optional.empty();
     }
 
     /**

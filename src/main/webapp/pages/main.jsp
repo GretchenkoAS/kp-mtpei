@@ -91,7 +91,7 @@
                     <td>${short_train_data.arrivalTime} <br/>
                             ${short_train_data.arrivalStation} </td>
                     <td>${short_train_data.price}
-                        <c:if test="${sessionScope.user != null}">
+                        <c:if test="${sessionScope.user.role.ordinal() == 1}">
                             <br/>
                             <form method="POST" action="controller">
                                 <input type="hidden" name="command" value="to_buy_ticket_page"/>
@@ -110,6 +110,14 @@
             </c:forEach>
             </tbody>
         </table>
+        <div class="row">
+            <div class="col-md-12">
+                <br/>
+                <br/>
+                <br/>
+                <br/>
+            </div>
+        </div>
     </div>
 </div>
 <customtag:copyright/>

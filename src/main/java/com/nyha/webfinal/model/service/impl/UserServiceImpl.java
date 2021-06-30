@@ -104,7 +104,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public String changePassword(User user, String password) throws ServiceException {
+    public Optional<String> changePassword(User user, String password) throws ServiceException {
         try {
             String encodedPassword = PasswordEncryption.encrypt(password);
             userDao.changePassword(user, encodedPassword);
@@ -112,17 +112,17 @@ public class UserServiceImpl implements UserService {
             logger.error("change password error, " + user, e);
             throw new ServiceException("change password error, " + user, e);
         }
-        return PASSWORD_CHANGED;
+        return Optional.of(PASSWORD_CHANGED);
     }
 
     @Override
-    public String updateUser(User user) throws ServiceException {
+    public Optional<String> updateUser(User user) throws ServiceException {
         try {
             userDao.updateUser(user);
         } catch (DaoException e) {
-            logger.error("change role error, " + user, e);
-            throw new ServiceException("change role error, " + user, e);
+            logger.error("updateUser error, " + user, e);
+            throw new ServiceException("updateUser error, " + user, e);
         }
-        return USER_UPDATED;
+        return Optional.of(USER_UPDATED);
     }
 }

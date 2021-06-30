@@ -27,7 +27,7 @@ public class BankDaoImpl implements BankDao {
     private static final String UPDATE_ACCOUNT = "UPDATE `bank_accounts` SET money_amount = ? WHERE bank_account_id = ?";
 
     @Override
-    public boolean debitTheAccount(String accountNumber, double price) throws DaoException {
+    public boolean debitAccount(String accountNumber, double price) throws DaoException {
         boolean isUpdate = false;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatementFind = connection.prepareStatement(FIND_ACCOUNT);

@@ -21,9 +21,12 @@
                 <a href="${pageContext.request.contextPath}/controller?command=to_profile_page"
                    class="list-group-item list-group-item-action text-style active">
                     <i class="fas fa-user-edit"></i> <fmt:message key="profile"/></a>
-                <a href="${pageContext.request.contextPath}/controller?command=to_my_tickets_page"
-                   class="list-group-item list-group-item-action text-style">
-                    <i class="fas fa-eye"></i> <fmt:message key="myTickets"/></a>
+                <c:if test="${sessionScope.user.role.ordinal() == 1}">
+                    <a href="${pageContext.request.contextPath}/controller?command=to_my_tickets_page"
+                       class="list-group-item list-group-item-action text-style">
+                        <i class="fas fa-eye"></i> <fmt:message key="myTickets"/></a>
+                    </li>
+                </c:if>
             </div>
         </div>
         <div class="col-9">

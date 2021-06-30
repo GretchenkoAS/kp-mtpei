@@ -20,12 +20,15 @@ import java.util.Optional;
  */
 public class PassengerServiceImpl implements PassengerService {
     static Logger logger = LogManager.getLogger();
+    public static final String PASSENGER_NOT_ADDED = "passengerNotAdded";
     private PassengerDao passengerDao = new PassengerDaoImpl();
 
     @Override
     public Optional<String> addPassenger(Passenger passenger) throws ServiceException {
         try {
-            passengerDao.addPassenger(passenger);
+            if (!passengerDao.addPassenger(passenger)) {
+                return Optional.of(PASSENGER_NOT_ADDED);
+            }
         } catch (DaoException e) {
             logger.error("add passenger error, " + passenger, e);
             throw new ServiceException("add passenger error, " + passenger, e);

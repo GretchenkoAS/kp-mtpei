@@ -10,6 +10,8 @@ import java.util.regex.Pattern;
  */
 public class UserValidator {
     private static final int MAX_LENGTH = 40;
+    private static final Pattern USERNAME_REGEX = Pattern
+            .compile("\\w{3,40}");
     private static final Pattern EMAIL_REGEX = Pattern
             .compile("^[-0-9a-zA-Z.+_]+@[-0-9a-zA-Z.+_]+\\.[a-zA-Z]{2,4}");
     private static final Pattern PASSWORD_PATTERN = Pattern
@@ -27,11 +29,11 @@ public class UserValidator {
      * @return boolean true if username is valid, else false
      */
     public static boolean isValidUsername(String username) {
-        boolean isCorrect = true;
-        if (username == null || username.isBlank() || username.length() > MAX_LENGTH) {
-            isCorrect = false;
+        if (username == null || username.isBlank()) {
+            return false;
         }
-        return isCorrect;
+        Matcher matcher = USERNAME_REGEX.matcher(username);
+        return matcher.matches();
     }
 
     /**

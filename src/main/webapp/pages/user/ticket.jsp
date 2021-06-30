@@ -20,7 +20,7 @@
         <input type="hidden" name="command" value="buy_ticket"/>
 
         <div class="form-group row">
-            <label  class="col-sm-2 col-form-label "> <fmt:message key="trainNumber"/></label>
+            <label class="col-sm-2 col-form-label "> <fmt:message key="trainNumber"/></label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext"
                        name="trainId"
@@ -29,7 +29,7 @@
         </div>
 
         <div class="form-group row">
-            <label  class="col-sm-2 col-form-label "> <fmt:message key="departureStation"/></label>
+            <label class="col-sm-2 col-form-label "> <fmt:message key="departureStation"/></label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext"
                        name="departureStation"
@@ -38,7 +38,7 @@
         </div>
 
         <div class="form-group row">
-            <label  class="col-sm-2 col-form-label "> <fmt:message key="departureTime"/></label>
+            <label class="col-sm-2 col-form-label "> <fmt:message key="departureTime"/></label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext"
                        name="departureTime"
@@ -47,7 +47,7 @@
         </div>
 
         <div class="form-group row">
-            <label  class="col-sm-2 col-form-label "> <fmt:message key="arrivalStation"/></label>
+            <label class="col-sm-2 col-form-label "> <fmt:message key="arrivalStation"/></label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext"
                        name="arrivalStation"
@@ -56,7 +56,7 @@
         </div>
 
         <div class="form-group row">
-            <label  class="col-sm-2 col-form-label "> <fmt:message key="arrivalTime"/></label>
+            <label class="col-sm-2 col-form-label "> <fmt:message key="arrivalTime"/></label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext"
                        name="arrivalTime"
@@ -65,7 +65,7 @@
         </div>
 
         <div class="form-group row">
-            <label  class="col-sm-2 col-form-label "> <fmt:message key="price"/></label>
+            <label class="col-sm-2 col-form-label "> <fmt:message key="price"/></label>
             <div class="col-sm-10">
                 <input type="text" readonly class="form-control-plaintext"
                        name="price"
@@ -168,6 +168,14 @@
             <fmt:message key="buyTicket"/>
         </button>
     </form>
+    <div class="row">
+        <div class="col-md-12">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+        </div>
+    </div>
 </div>
 <customtag:copyright/>
 </body>

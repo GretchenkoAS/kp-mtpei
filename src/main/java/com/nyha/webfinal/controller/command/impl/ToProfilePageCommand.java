@@ -27,6 +27,7 @@ public class ToProfilePageCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.PROFILE);
         router.setPage(PagePath.PROFILE);
         return router;
     }

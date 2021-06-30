@@ -33,6 +33,8 @@ public class FindTrainsByStationsCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
+        HttpSession session = request.getSession(true);
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.TRAINS);
         String departureStation = request.getParameter(RequestParameter.DEPARTURE_STATION);
         String arrivalStation = request.getParameter(RequestParameter.ARRIVAL_STATION);
         if (!RouteValidator.isValidStation(departureStation) || !RouteValidator.isValidStation(departureStation)) {
@@ -47,7 +49,6 @@ public class FindTrainsByStationsCommand implements Command {
                 request.setAttribute(RequestAttribute.INCORRECT_DATA, TRAINS_NOT_FOUND);
                 return router;
             }
-            HttpSession session = request.getSession(true);
             session.setAttribute(SessionAttribute.SHORT_TRAINS_DATA, shortTrainsData);
         } catch (ServiceException e) {
             router.setPage(PagePath.ERROR_500);

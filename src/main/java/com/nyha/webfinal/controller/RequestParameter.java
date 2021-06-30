@@ -27,6 +27,9 @@ public class RequestParameter {
     public static final String SEAT = "seat";
     public static final String DATE = "date";
     public static final String ACCOUNT_NUMBER = "accountNumber";
+    public static final String SEAT_NUMBER = "seatNumber";
+    public static final String STATION = "station";
+    public static final String TIME = "time";
 
     private RequestParameter() {
     }

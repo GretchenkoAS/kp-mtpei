@@ -23,7 +23,7 @@ import java.util.List;
 public class RouteDaoImpl implements RouteDao {
     static Logger logger = LogManager.getLogger();
     private static final String FIND_ALL_ROUTES = "SELECT route_id, train_id, time, station, price FROM routes";
-    private static final String ADD_ROUTE = "INSERT INTO `routes` (`train_id`, `time`, `station`, `price`) VALUES (?, ?, ?, ?)";
+    private static final String ADD_ROUTE = "INSERT INTO `routes` (`train_id`, `time`, `station`, `price`, `station_number`) VALUES (?, ?, ?, ?, ?)";
 
     @Override
     public List<Route> findAll() throws DaoException {
@@ -47,7 +47,7 @@ public class RouteDaoImpl implements RouteDao {
     }
 
     @Override
-    public boolean addRoute(Route route) throws DaoException {
+    public boolean addRoute(Route route, int stationNumber) throws DaoException {
         boolean isAdd;
         try (Connection connection = ConnectionPool.getInstance().getConnection();
              PreparedStatement preparedStatement = connection.prepareStatement(ADD_ROUTE)) {
@@ -55,6 +55,7 @@ public class RouteDaoImpl implements RouteDao {
             preparedStatement.setTime(2, route.getTimeTime());
             preparedStatement.setString(3, route.getStation());
             preparedStatement.setDouble(4, route.getPrice());
+            preparedStatement.setInt(5, stationNumber);
             isAdd = preparedStatement.executeUpdate() > 0;
         } catch (SQLException e) {
             logger.error("add error, " + route, e);

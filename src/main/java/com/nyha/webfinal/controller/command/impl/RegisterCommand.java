@@ -30,6 +30,8 @@ public class RegisterCommand implements Command {
     @Override
     public Router execute(HttpServletRequest request) {
         Router router = new Router();
+        HttpSession session = request.getSession(true);
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.REGISTRATION);
         String email = request.getParameter(RequestParameter.EMAIL);
         String password = request.getParameter(RequestParameter.PASSWORD);
         String username = request.getParameter(RequestParameter.USERNAME);
@@ -39,7 +41,6 @@ public class RegisterCommand implements Command {
         try {
             Optional<String> message = service.addUser(user, password);
             if (message.isEmpty()) {
-                HttpSession session = request.getSession(true);
                 session.setAttribute(SessionAttribute.USER, user);
                 router.setPage(PagePath.INDEX);
                 router.setRedirect();

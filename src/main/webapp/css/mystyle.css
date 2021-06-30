@@ -2486,3 +2486,9 @@ footer {
     width: 100%;
     text-align: center;
 }
+
+.white_block {
+    background: #ffffff;
+    width: 100%;
+    height: 2000px;
+}

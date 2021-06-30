@@ -31,6 +31,7 @@ public class TrainDaoImpl implements TrainDao {
     private static final String FIND_TRAINS_BY_ID = "SELECT trains.train_id, trains.number_of_seats, routes.station, routes.route_id, routes.time, routes.price FROM trains JOIN routes ON trains.train_id = routes.train_id where trains.train_id = ?  order by trains.train_id, routes.station_number";
     private static final String FIND_ROUTES_BY_STATIONS = "SELECT route_id, train_id, time, station, price FROM routes WHERE station = ?";
     private static final String FIND_POPULAR_TRAINS = "SELECT train_id, count(train_id) FROM tickets group by train_id order by count(train_id) desc limit 5";
+    private static final String ADD_TRAIN = "INSERT INTO `trains` (`train_id`, `number_of_seats`) VALUES (?, ?)";
 
     @Override
     public List<Train> findAll() throws DaoException {
@@ -161,6 +162,21 @@ public class TrainDaoImpl implements TrainDao {
             throw new DaoException("search trains error", e);
         }
         return trains;
+    }
+
+    @Override
+    public boolean addTrain(Train train) throws DaoException {
+        boolean isAdd;
+        try (Connection connection = ConnectionPool.getInstance().getConnection();
+             PreparedStatement preparedStatement = connection.prepareStatement(ADD_TRAIN)) {
+            preparedStatement.setLong(1, train.getId());
+            preparedStatement.setInt(2, train.getNumberOfSeats());
+            isAdd = preparedStatement.executeUpdate() > 0;
+        } catch (SQLException e) {
+            logger.error("add error, " + train, e);
+            throw new DaoException("add error, " + train, e);
+        }
+        return isAdd;
     }
 
     /**

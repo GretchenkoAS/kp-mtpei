@@ -16,8 +16,9 @@ public interface RouteDao extends BaseDao<Route> {
      * Adds a route
      *
      * @param route {@link Route}
+     * @param stationNumber
      * @return boolean true if the route added successfully, else false
      * @throws DaoException if {@link SQLException} occur
      */
-    boolean addRoute(Route route) throws DaoException;
+    boolean addRoute(Route route, int stationNumber) throws DaoException;
 }

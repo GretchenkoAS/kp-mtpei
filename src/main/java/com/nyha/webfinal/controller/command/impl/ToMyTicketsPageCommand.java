@@ -38,6 +38,7 @@ public class ToMyTicketsPageCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.TO_MY_TICKETS);
         router.setPage(PagePath.TICKETS);
         User user = (User) session.getAttribute(SessionAttribute.USER);
         Long userId = user.getId();

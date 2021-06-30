@@ -20,6 +20,7 @@ import java.util.Optional;
  */
 public class TicketServiceImpl implements TicketService {
     static Logger logger = LogManager.getLogger();
+    public static final String TICKET_NOT_ADDED = "ticketNotAdded";
     private TicketDao ticketDao = new TicketDaoImpl();
 
     @Override
@@ -49,7 +50,9 @@ public class TicketServiceImpl implements TicketService {
     @Override
     public Optional<String> addTicket(Ticket ticket) throws ServiceException {
         try {
-            ticketDao.addTicket(ticket);
+            if (!ticketDao.addTicket(ticket)) {
+                return Optional.of(TICKET_NOT_ADDED);
+            }
         } catch (DaoException e) {
             logger.error("add ticket error, " + ticket, e);
             throw new ServiceException("add ticket error, " + ticket, e);

@@ -52,6 +52,7 @@ public class BuyTicketCommand implements Command {
             router.setPage(PagePath.ERROR_500);
             return router;
         }
+        session.setAttribute(SessionAttribute.CURRENT_COMMAND, PagePath.INDEX);
         String trainIdStr = request.getParameter(RequestParameter.TRAIN_ID);
         Long trainId = Long.parseLong(trainIdStr);
         String departureStation = request.getParameter(RequestParameter.DEPARTURE_STATION);
@@ -81,7 +82,7 @@ public class BuyTicketCommand implements Command {
             return router;
         }
         try {
-            Optional<String> message = bankService.debitTheAccount(accountNumber, price);
+            Optional<String> message = bankService.debitAccount(accountNumber, price);
             User user = (User) session.getAttribute(SessionAttribute.USER);
             Passenger passenger = new Passenger(name, lastName, passportNumber, phoneNumber, user.getId());
 

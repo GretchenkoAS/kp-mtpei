@@ -21,5 +21,5 @@ public interface BankDao extends BaseDao {
      * @return boolean true if the account was debited successful, else false
      * @throws DaoException if {@link SQLException} occur
      */
-    boolean debitTheAccount(String accountNumber, double price) throws DaoException;
+    boolean debitAccount(String accountNumber, double price) throws DaoException;
 }

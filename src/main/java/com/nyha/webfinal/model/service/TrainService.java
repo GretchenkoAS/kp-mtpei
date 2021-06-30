@@ -48,4 +48,13 @@ public interface TrainService {
      * @throws ServiceException if {@link DaoException} occurs
      */
     Optional<Train> findTrainById(Long trainId) throws ServiceException;
+
+    /**
+     * Adds train
+     *
+     * @param train     {@link Train}
+     * @return {@link Optional} of {@link String}
+     * @throws ServiceException if {@link DaoException} occurs
+     */
+    Optional<String> addTrain(Train train) throws ServiceException;
 }
